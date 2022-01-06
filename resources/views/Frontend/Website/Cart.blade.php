@@ -1,4 +1,5 @@
-@include('Frontend.Layouts.Header')
+@extends('Home')
+@section('content')
 <section id="cart_items">
 		<div class="container">
 			<div class="breadcrumbs">
@@ -178,4 +179,4 @@
 			</div>
 		</div>
 	</section><!--/#do_action-->
-@include ('Frontend.Layouts.Footer')
+	@endsection
