@@ -31,4 +31,6 @@ Route::get('/checkout', function () {
 Route::get('/404', function () {
     return view('Frontend.Website.404');
 });
-
+Route::get('/admin', function () {
+    return view('Backend.Admin.Index');
+});
