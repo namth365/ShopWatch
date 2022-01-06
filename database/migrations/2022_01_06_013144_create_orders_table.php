@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->string('phone');
             $table->string('gender');
             $table->double('total');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

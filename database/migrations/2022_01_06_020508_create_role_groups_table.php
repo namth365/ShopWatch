@@ -19,6 +19,7 @@ class CreateRoleGroupsTable extends Migration
             $table->unsignedInteger('group_id');
             $table->foreign('role_id')->references('id')->on('roles');
             $table->foreign('group_id')->references('id')->on('groups');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
