@@ -20,6 +20,7 @@ class CreateCartsTable extends Migration
             $table->double('price');
             $table->unsignedInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

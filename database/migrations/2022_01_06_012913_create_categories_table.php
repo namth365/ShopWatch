@@ -18,6 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->string('banner');
             $table->unsignedInteger('parent_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
