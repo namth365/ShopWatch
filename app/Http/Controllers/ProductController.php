@@ -2,18 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Interfaces\ProductServiceInterface;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    protected $ProductService;
+    
+    public function __construct(ProductServiceInterface $ProductService){
+        $this->ProductService = $ProductService;
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($request)
     {
-        //
+        $products = $this->ProductService->getAll($request);
+        // dd($items);
+        return view('Frontend.Layouts.Content',compact('products'));
     }
 
     /**
