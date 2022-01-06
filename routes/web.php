@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +36,15 @@ Route::get('/404', function () {
 Route::get('/admin', function () {
     return view('Backend.Admin.Index');
 });
+
+//Back-End
+Route::resource('categories',CategoryController::class);
+Route::resource('products',ProductController::class);
+Route::resource('users',UserController::class);
+Route::resource('orders',OrderController::class);
+Route::resource('orderitem',OrderitemController::class);
+Route::resource('slider',SliderController::class);
+
+//Front-End
+// Route::get('home',[FrontendController::class,'index'])->name('home');
+// Route::get('home',[FrontendController::class,'index'])->name('home');

@@ -2,26 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\Interfaces\CategoryServiceInterface;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class SliderController extends Controller
 {
-    protected $CategoryService;
-    
-    public function __construct(CategoryServiceInterface $CategoryService){
-        $this->CategoryService = $CategoryService;
-    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $categories = $this->CategoryService->getAll($request);
-        // dd($items);
-        return view('Frontend.Layouts.Content',compact('categories'));
+        //
     }
 
     /**
