@@ -26,19 +26,18 @@ class HomeController extends Controller
         // dd($categories);
         return view('Frontend.Website.Home',compact('categories','products'));
     }
-<<<<<<< HEAD
+
     public function slider(Request $request){
+        $categories = $this->CategoryService->getAll($request);
+        $products = $this->ProductService->getAll($request);
         $sliders = $this->SliderService->getAll($request);
         dd($sliders);
-        return view('Frontend.Website.Slider',compact('sliders'));
+        return view('Frontend.Layouts.Slidebar',compact('sliders'));
     }
-}
-=======
-
     public function product_detail($id) {
         $categories = $this->CategoryService->getAll('');
         $product = $this->ProductService->findById($id);
-        return view('Frontend.Website.ProductDetail',compact('product'));
+        return view('Frontend.Website.ProductDetail',compact('product','categories'));
     }
 }
->>>>>>> 76dac0c46ab0508b4f39c81dc66f3008057c72b7
+

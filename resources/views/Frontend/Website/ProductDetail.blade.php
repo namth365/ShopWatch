@@ -42,7 +42,7 @@
                     <!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                            <img src="{{asset('images/home/'.$product->image)}}" alt="" />
+                            <img src="{{asset('images/home/'.$product_detail->image)}}" alt="" />
                         </div>
                         <div id="similar-product" class="carousel slide" data-ride="carousel">
 
@@ -72,7 +72,7 @@
                                 <input type="text" value="3" />
 
                             </span>
-                            <p><b>Tồn:</b>{{$product->quantily}}</p>
+                            <p><b>Tồn:</b>{{$product->quantity}}</p>
                             <p><b>Mô Tả:</b> {{$product->description}}</p>
                             <button type="button" class="btn btn-fefault cart">
                                 <i class="fa fa-shopping-cart"></i>
