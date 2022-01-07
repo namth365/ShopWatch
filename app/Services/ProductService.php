@@ -7,7 +7,7 @@ use App\Services\Interfaces\ProductServiceInterface;
 
 class ProductService implements ProductServiceInterface {
 
-    protected $CategoryRepository;
+    protected $ProductRepository;
     public function __construct(ProductInterface $ProductRepository){
         $this->ProductRepository = $ProductRepository;
     }

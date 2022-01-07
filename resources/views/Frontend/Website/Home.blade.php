@@ -18,19 +18,13 @@
                 </div>
                 
             </div>
-
-
         </div>
         <!--/category-products-->
-
-
-
         <div class="shipping text-center">
             <!--shipping-->
             <img src="images/home/shipping.jpg" alt="" />
         </div>
         <!--/shipping-->
-
     </div>
 </div>
 
@@ -57,7 +51,8 @@
     </div>
     <!--features_items-->
 
-    <div class="recommended_items">
+
+<div class="recommended_items">
         <!--recommended_items-->
         <h2 class="title text-center">Sản Phẩm Nổi Bật</h2>
 
@@ -105,4 +100,5 @@
         </div>
     </div>
     <!--/recommended_items-->
+
     @endsection

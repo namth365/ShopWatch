@@ -48,9 +48,7 @@
                                 <div class="item active">
                                     <a href=""><img src="" alt=""></a>
                                 </div>
-
                             </div>
-
                             <!-- Controls -->
                             <a class="left item-control" href="#similar-product" data-slide="prev">
                                 <i class="fa fa-angle-left"></i>
@@ -59,7 +57,6 @@
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </div>
-
                     </div>
                     <div class="col-sm-7">
                         <div class="product-information">
@@ -102,21 +99,10 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
-
-
 
                         <div class="tab-pane fade active in" id="reviews">
                             <div class="col-sm-12">
-
-
-                                <form action="#">
-
-
-
-                                </form>
                             </div>
                         </div>
 
