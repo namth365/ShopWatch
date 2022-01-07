@@ -47,6 +47,6 @@ Route::resource('orderitem',OrderitemController::class);
 Route::resource('slider',SliderController::class);
 
 //Front-end
-
 Route::get('/',[HomeController::class,'index']);
 Route::get('category/{id}',[HomeController::class,'category'])->name('category');
+Route::get('sliders',[HomeController::class,'slider'])->name('sliders');

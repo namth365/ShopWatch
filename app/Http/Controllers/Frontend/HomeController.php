@@ -5,16 +5,19 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Services\Interfaces\CategoryServiceInterface;
 use App\Services\Interfaces\ProductServiceInterface;
+use App\Services\Interfaces\SliderServiceInterface;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     protected $CategoryService;
     protected $ProductService;
+    protected $SliderService;
 
-    public function __construct(CategoryServiceInterface $CategoryService,ProductServiceInterface $ProductService){
+    public function __construct(CategoryServiceInterface $CategoryService,ProductServiceInterface $ProductService,SliderServiceInterface $SliderService){
         $this->CategoryService = $CategoryService;
         $this->ProductService = $ProductService;
+        $this->SliderService = $SliderService;
     }
     public function index(Request $request)
     {
@@ -22,5 +25,10 @@ class HomeController extends Controller
         $products = $this->ProductService->getAll($request);
         // dd($categories);
         return view('Frontend.Website.Home',compact('categories','products'));
+    }
+    public function slider(Request $request){
+        $sliders = $this->SliderService->getAll($request);
+        dd($sliders);
+        return view('Frontend.Website.Slider',compact('sliders'));
     }
 }
