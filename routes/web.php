@@ -15,14 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
-    return view('Home');
-});
 Route::get('/product-detail', function () {
-    return view('Frontend.Website.Products.ProductDetail');
+    return view('Frontend.Website.ProductDetail');
 });
 Route::get('/shop', function () {
-    return view('Frontend.Website.Shop');
+    return view('Frontend.Website.Home');
 });
 Route::get('/cart', function () {
     return view('Frontend.Website.Cart');

@@ -1,4 +1,3 @@
-@include('Frontend.Layouts.Header')
 <div class="container text-center">
 		<div class="logo-404">
 			<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
@@ -10,4 +9,3 @@
 			<h2><a href="index.html">Bring me back Home</a></h2>
 		</div>
 	</div>
-@include ('Frontend.Layouts.Footer')

@@ -30,7 +30,6 @@
     <header id="header">
         <!--header-->
         <!--header_top-->
-        @include('Frontend.Layouts.Header_Top')
         <!--/header_top-->
         @include('Frontend.Layouts.Header')
         <!--/header-->

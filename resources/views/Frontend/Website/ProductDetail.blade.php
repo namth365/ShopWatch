@@ -1,6 +1,7 @@
-@include('Frontend.Layouts.Header')
+@extends('Frontend.Layouts.Master')
+@section('content')
 <section>
-		<div class="container">
+<div class="container">
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="left-sidebar">
@@ -489,4 +490,4 @@
 			</div>
 		</div>
 	</section>
-@include ('Frontend.Layouts.Footer')
+@endsection

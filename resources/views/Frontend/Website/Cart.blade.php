@@ -1,4 +1,4 @@
-@extends('Home')
+@extends('Frontend.Layouts.Master')
 @section('content')
 <section id="cart_items">
 		<div class="container">
