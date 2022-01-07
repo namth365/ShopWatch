@@ -70,15 +70,13 @@
                                 <li><a href="shop.html">Products</a></li>
                             </ul>
                         </li>
-
-                        <li><a href="/404">404</a></li>
                         <li><a href="/lien-he">Liên Hệ</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="search_box pull-right">
-                    <input type="text" placeholder="Search" />
+                    <input type="text" placeholder="Tìm kiếm" />
                 </div>
             </div>
         </div>

@@ -34,6 +34,9 @@ Route::get('/404', function () {
 Route::get('/admin', function () {
     return view('Backend.Admin.Index');
 });
+Route::get('/success', function () {
+    return view('Frontend.Website.Success');
+});
 
 //Back-end
 Route::resource('categories',CategoryController::class);
