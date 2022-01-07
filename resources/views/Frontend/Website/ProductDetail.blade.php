@@ -5,27 +5,24 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="left-sidebar">
-                    <h2>Category</h2>
-                    <div class="panel-group category-products" id="accordian">
-                        <!--category-productsr-->
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                        Sportswear
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="sportswear" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <ul>
-                                        <li><a href="">Nike </a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <h2>Thể Loại</h2>
+        <div class="panel-group category-products" id="accordian">
+            <!--category-productsr-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    @foreach($categories as $category)
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordian" href="{{route('category',$category->id)}}">
+                            {{$category->name}}
+                        </a>
+                    </h4>
+                    @endforeach
+                </div>
+                
+            </div>
+
+
+        </div>
                     <!--/category-products-->
 
                     <div class="shipping text-center">
@@ -42,7 +39,7 @@
                     <!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                            <img src="{{asset('images/home/'.$product->image)}}" alt="" />
+                            <img src="{{asset('images/product-details/'.$product->image)}}" alt="" />
                         </div>
                         <div id="similar-product" class="carousel slide" data-ride="carousel">
 
@@ -68,14 +65,14 @@
                         <div class="product-information">
                             <!--/product-information-->
                             <img src="{{asset('images/'.$product->image)}}" class="newarrival" alt="" />
-                            <h2>Tên Sản Phẩm: {{$product->name}}</h2>
+                            <h2> {{$product->name}}</h2>
                             <span>
                                 <span>Giá: {{number_format($product->price)."đ"}}</span>
                                 <label>Số Lượng: </label>
                                 <input type="text" value="3" />
 
                             </span>
-                            <p><b>Tồn:</b>{{$product->quantily}}</p>
+                            <p><b>Chỉ Còn:</b>{{$product->quantily}} Sản Phẩm</p>
                             <p><b>Mô Tả:</b> {{$product->description}}</p>
                             <button type="button" class="btn btn-fefault cart">
                                 <i class="fa fa-shopping-cart"></i>
