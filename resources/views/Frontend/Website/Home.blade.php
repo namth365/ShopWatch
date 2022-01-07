@@ -17,13 +17,7 @@
                     </h4>
                     @endforeach
                 </div>
-                <div id="mens" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <ul>
-                            <li><a href="#">Fendi</a></li>
-                        </ul>
-                    </div>
-                </div>
+                
             </div>
         </div>
         <!--/category-products-->
@@ -44,7 +38,7 @@
             <div class="product-image-wrapper">
                 <div class="single-products">
                     <div class="productinfo text-center">
-                        <img src="{{asset('images/home/'.$product->image)}}" alt=""/>
+                        <img src="{{asset('images/product-details/'.$product->image)}}" alt=""/>
                         <h2>{{number_format($product->price)."đ"}}</h2>
                         <p>{{$product->name}}</p>
                         <a href="{{route('product_detail', $product->id)}}" class="btn btn-default "><i class=""></i>Xem Chi Tiết</a>

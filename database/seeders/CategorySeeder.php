@@ -14,41 +14,41 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        // $item = new Category;
-        // $item->id = 1;
-        // $item->name = "Đồng Hồ Treo Tường";
-        // $item->banner = "Đồng Hồ";
-        // $item->parent_id = 1;
-        // $item->created_at = date('Y-m-d H:i:s');
-        // $item->updated_at  = date('Y-m-d H:i:s');
-        // $item->save();
+        $item = new Category;
+        $item->id = 1;
+        $item->name = "Đồng hồ thời trang ADRIATICA";
+        $item->banner = "Đồng Hồ";
+        $item->parent_id = 1;
+        $item->created_at = date('Y-m-d H:i:s');
+        $item->updated_at  = date('Y-m-d H:i:s');
+        $item->save();
 
-        // $item = new Category;
-        // $item->id = 2;
-        // $item->name = "Đồng Hồ";
-        // $item->banner = "Đồng Hồ";
-        // $item->parent_id = 1;
-        // $item->created_at = date('Y-m-d H:i:s');
-        // $item->updated_at  = date('Y-m-d H:i:s');
-        // $item->save();
+        $item = new Category;
+        $item->id = 2;
+        $item->name = "Đồng Hồ";
+        $item->banner = "Đồng Hồ";
+        $item->parent_id = 1;
+        $item->created_at = date('Y-m-d H:i:s');
+        $item->updated_at  = date('Y-m-d H:i:s');
+        $item->save();
 
-        // $item = new Category;
-        // $item->id = 3;
-        // $item->name = "Đồng Hồ Đeo Tay";
-        // $item->banner = "Đồng Hồ";
-        // $item->parent_id = 1;
-        // $item->created_at = date('Y-m-d H:i:s');
-        // $item->updated_at  = date('Y-m-d H:i:s');
-        // $item->save();
+        $item = new Category;
+        $item->id = 3;
+        $item->name = "Đồng Hồ Đeo Tay";
+        $item->banner = "Đồng Hồ";
+        $item->parent_id = 1;
+        $item->created_at = date('Y-m-d H:i:s');
+        $item->updated_at  = date('Y-m-d H:i:s');
+        $item->save();
 
-        // $item = new Category;
-        // $item->id = 4;
-        // $item->name = "Đồng Hồ Bàn Nilong";
-        // $item->banner = "Đồng Hồ";
-        // $item->parent_id = 1;
-        // $item->created_at = date('Y-m-d H:i:s');
-        // $item->updated_at  = date('Y-m-d H:i:s');
-        // $item->save();
+        $item = new Category;
+        $item->id = 4;
+        $item->name = "Đồng Hồ Bàn Nilong";
+        $item->banner = "Đồng Hồ";
+        $item->parent_id = 1;
+        $item->created_at = date('Y-m-d H:i:s');
+        $item->updated_at  = date('Y-m-d H:i:s');
+        $item->save();
 
         $item = new Category;
         $item->id = 5;
