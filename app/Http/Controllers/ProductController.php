@@ -21,7 +21,7 @@ class ProductController extends Controller
     {
         $products = $this->ProductService->getAll($request);
         // dd($items);
-        return view('Frontend.Layouts.Content',compact('products'));
+        return view('Frontend.Website.Home',compact('products'));
     }
 
     /**

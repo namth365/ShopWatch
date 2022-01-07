@@ -8,12 +8,13 @@
             <!--category-productsr-->
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    @foreach($categories as $category)
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordian" href="#mens">
-                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                            Đồng Hồ Nam
+                        <a data-toggle="collapse" data-parent="#accordian" href="{{route('category',$category->id)}}">
+                            {{$category->name}}
                         </a>
                     </h4>
+                    @endforeach
                 </div>
                 <div id="mens" class="panel-collapse collapse">
                     <div class="panel-body">
@@ -24,7 +25,7 @@
                 </div>
             </div>
 
-    
+
         </div>
         <!--/category-products-->
 
@@ -43,20 +44,20 @@
     <div class="features_items">
         <!--features_items-->
         <h2 class="title text-center">Tất Cả Sản Phẩm</h2>
+        @foreach($products as $product)
         <div class="col-sm-4">
             <div class="product-image-wrapper">
                 <div class="single-products">
                     <div class="productinfo text-center">
-                        <img src="images/home/product1.jpg" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
-                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
+                        <img src="{{asset('images/'.$product->image)}}" alt=""/>
+                        <h2>{{number_format($product->price)."đ"}}</h2>
+                        <p>{{$product->name}}</p>
+                        <a href="" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
                     </div>
-              
                 </div>
-
             </div>
         </div>
+        @endforeach
 
     </div>
     <!--features_items-->
@@ -75,14 +76,13 @@
                                     <img src="images/home/recommend1.jpg" alt="" />
                                     <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i
-                                            class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-            
+
                 </div>
                 <div class="item">
                     <div class="col-sm-4">
@@ -92,14 +92,13 @@
                                     <img src="images/home/recommend1.jpg" alt="" />
                                     <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i
-                                            class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-               
+
                 </div>
             </div>
             <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
@@ -111,4 +110,4 @@
         </div>
     </div>
     <!--/recommended_items-->
-@endsection
+    @endsection

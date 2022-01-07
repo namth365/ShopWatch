@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,7 +38,7 @@ Route::get('/success', function () {
     return view('Frontend.Website.Success');
 });
 
-//Back-End
+//Back-end
 Route::resource('categories',CategoryController::class);
 Route::resource('products',ProductController::class);
 Route::resource('users',UserController::class);
@@ -45,6 +46,7 @@ Route::resource('orders',OrderController::class);
 Route::resource('orderitem',OrderitemController::class);
 Route::resource('slider',SliderController::class);
 
-//Front-End
-// Route::get('home',[FrontendController::class,'index'])->name('home');
-// Route::get('home',[FrontendController::class,'index'])->name('home');
+//Front-end
+
+Route::get('/',[HomeController::class,'index']);
+Route::get('category/{id}',[HomeController::class,'category'])->name('category');
