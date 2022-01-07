@@ -42,14 +42,14 @@
                     <!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                            <img src="images/product-details/1.jpg" alt="" />
+                            <img src="{{asset('images/'.$product->image)}}" alt="" />
                         </div>
                         <div id="similar-product" class="carousel slide" data-ride="carousel">
 
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
+                                    <a href=""><img src="" alt=""></a>
                                 </div>
 
                             </div>
@@ -67,16 +67,16 @@
                     <div class="col-sm-7">
                         <div class="product-information">
                             <!--/product-information-->
-                            <img src="images/product-details/new.jpg" class="newarrival" alt="" />
-                            <h2>Tên Sản Phẩm: Anne Klein Sleeveless Colorblock Scuba</h2>
+                            <img src="{{asset('images/'.$product->image)}}" class="newarrival" alt="" />
+                            <h2>Tên Sản Phẩm: {{$product->name}}</h2>
                             <span>
-                                <span>Giá: US $59</span>
-                                <label>Số Lượng:</label>
+                                <span>Giá: {{number_format($product->price)."đ"}}</span>
+                                <label>Số Lượng: </label>
                                 <input type="text" value="3" />
 
                             </span>
-                            <p><b>Tồn:</b> Số lượng</p>
-                            <p><b>Nhãn Hiệu:</b> E-SHOPPER</p>
+                            <p><b>Tồn:</b>{{$product->quantily}}</p>
+                            <p><b>Mô Tả:</b> {{$product->description}}</p>
                             <button type="button" class="btn btn-fefault cart">
                                 <i class="fa fa-shopping-cart"></i>
                                 Thêm Vào Giỏ

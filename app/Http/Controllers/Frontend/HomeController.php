@@ -23,4 +23,10 @@ class HomeController extends Controller
         // dd($categories);
         return view('Frontend.Website.Home',compact('categories','products'));
     }
+
+    public function product_detail($id) {
+        $categories = $this->CategoryService->getAll('');
+        $product = $this->ProductService->findById($id);
+        return view('Frontend.Website.ProductDetail',compact('product'));
+    }
 }

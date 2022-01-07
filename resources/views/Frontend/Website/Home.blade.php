@@ -52,6 +52,7 @@
                         <img src="{{asset('images/'.$product->image)}}" alt=""/>
                         <h2>{{number_format($product->price)."đ"}}</h2>
                         <p>{{$product->name}}</p>
+                        <a href="{{route('product_detail', $product->id)}}" class="btn btn-default "><i class=""></i>Xem Chi Tiết</a>
                         <a href="" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
                     </div>
                 </div>
@@ -64,7 +65,7 @@
 
     <div class="recommended_items">
         <!--recommended_items-->
-        <h2 class="title text-center">Sản Phẩm Liên Quan</h2>
+        <h2 class="title text-center">Sản Phẩm Nổi Bật</h2>
 
         <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">

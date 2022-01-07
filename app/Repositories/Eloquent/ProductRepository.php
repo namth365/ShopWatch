@@ -16,6 +16,6 @@ class ProductRepository extends EloquentRepository implements ProductInterface {
         return $products;
     }
     public function findById($id){
-
+        return Product::find($id);
     }
 }

@@ -50,3 +50,4 @@ Route::resource('slider',SliderController::class);
 
 Route::get('/',[HomeController::class,'index']);
 Route::get('category/{id}',[HomeController::class,'category'])->name('category');
+Route::get('/product-detail/{id}',[HomeController::class,'product_detail'])->name('product_detail');
