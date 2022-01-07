@@ -76,7 +76,7 @@
                                     <h2>$56</h2>
                                     <p>Easy Polo Black Edition</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i
-                                            class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
                                 </div>
 
                             </div>

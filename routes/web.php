@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/product-detail', function () {
     return view('Frontend.Website.ProductDetail');
 });
-Route::get('/shop', function () {
+Route::get('/', function () {
     return view('Frontend.Website.Home');
 });
 Route::get('/cart', function () {
