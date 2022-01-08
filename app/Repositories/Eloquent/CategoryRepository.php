@@ -14,7 +14,5 @@ class CategoryRepository extends EloquentRepository implements CategoryInterface
         $categories = $this->model->get();
         return $categories;
     }
-    public function findById($id){
-
-    }
+   
 }

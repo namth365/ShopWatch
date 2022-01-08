@@ -28,4 +28,8 @@ class ProductService implements ProductServiceInterface {
     public function destroy($id){
 
     }
+    public function related_products($id){
+       $related_products = $this->ProductRepository->related_products($id);
+       return $related_products;
+    }
 }

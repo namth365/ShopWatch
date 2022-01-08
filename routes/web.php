@@ -22,9 +22,9 @@ Route::get('/product-detail', function () {
 Route::get('/', function () {
     return view('Frontend.Website.Home');
 });
-Route::get('/cart', function () {
-    return view('Frontend.Website.Cart');
-});
+// Route::get('/cart', function () {
+//     return view('Frontend.Website.Cart');
+// });
 Route::get('/checkout', function () {
     return view('Frontend.Website.Checkout');
 });
@@ -51,4 +51,6 @@ Route::get('/',[HomeController::class,'index']);
 Route::get('category/{id}',[HomeController::class,'category'])->name('category');
 Route::get('/product-detail/{id}',[HomeController::class,'product_detail'])->name('product_detail');
 Route::get('sliders',[HomeController::class,'slider'])->name('sliders');
+Route::get('addtocart/{id}',[HomeController::class,'addtocart'])->name('addtocart');
+Route::get('cart',[HomeController::class,'cart'])->name('cart');
 

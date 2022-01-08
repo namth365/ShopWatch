@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="logo pull-left">
-                    <a href="/"><img src="images/home/logo.png" alt="" /></a>
+                    <a href="/" style="color:black"><img src="images/home/logo-shop.jpg" width= "70px" alt="" /> <b>SHOP-WATCH</b></a>
                 </div>
                 <div class="btn-group pull-right">
 
