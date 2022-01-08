@@ -25,7 +25,7 @@ class CategorySeeder extends Seeder
 
         $item = new Category;
         $item->id = 2;
-        $item->name = "Đồng Hồ";
+        $item->name = "Đồng hồ Nam Casio";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
         $item->created_at = date('Y-m-d H:i:s');

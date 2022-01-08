@@ -49,8 +49,6 @@ Route::resource('slider',SliderController::class);
 //Front-end
 Route::get('/',[HomeController::class,'index']);
 Route::get('category/{id}',[HomeController::class,'category'])->name('category');
-<<<<<<< HEAD
 Route::get('sliders',[HomeController::class,'slider'])->name('sliders');
-=======
 Route::get('/product-detail/{id}',[HomeController::class,'product_detail'])->name('product_detail');
->>>>>>> 76dac0c46ab0508b4f39c81dc66f3008057c72b7
+

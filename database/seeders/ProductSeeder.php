@@ -97,5 +97,117 @@ class ProductSeeder extends Seeder
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
+
+        $item = new Product;
+        $item->id = 10;
+        $item->name = "Đồng hồ Nam Casio MTP-E321B-1AVDF";
+        $item->image = "";
+        $item->price = "";
+        $item->quantily = "10";
+        $item->status = "1";
+        $item->supplier = "ACC";
+        $item->description = "";
+        $item->category_id = 2;
+        $item->created_at = date('Y-m-d H:i:s');
+        $item->updated_at  = date('Y-m-d H:i:s');
+        $item->save();
+
+        $item = new Product;
+        $item->id = ;
+        $item->name = "";
+        $item->image = "";
+        $item->price = "";
+        $item->quantily = "10";
+        $item->status = "1";
+        $item->supplier = "ACC";
+        $item->description = "";
+        $item->category_id = 2;
+        $item->created_at = date('Y-m-d H:i:s');
+        $item->updated_at  = date('Y-m-d H:i:s');
+        $item->save();
+
+        $item = new Product;
+        $item->id = ;
+        $item->name = "";
+        $item->image = "";
+        $item->price = "";
+        $item->quantily = "10";
+        $item->status = "1";
+        $item->supplier = "ACC";
+        $item->description = "";
+        $item->category_id = 2;
+        $item->created_at = date('Y-m-d H:i:s');
+        $item->updated_at  = date('Y-m-d H:i:s');
+        $item->save();
+
+        $item = new Product;
+        $item->id = ;
+        $item->name = "";
+        $item->image = "";
+        $item->price = "";
+        $item->quantily = "10";
+        $item->status = "1";
+        $item->supplier = "ACC";
+        $item->description = "";
+        $item->category_id = 2;
+        $item->created_at = date('Y-m-d H:i:s');
+        $item->updated_at  = date('Y-m-d H:i:s');
+        $item->save();
+
+        $item = new Product;
+        $item->id = ;
+        $item->name = "";
+        $item->image = "";
+        $item->price = "";
+        $item->quantily = "10";
+        $item->status = "1";
+        $item->supplier = "ACC";
+        $item->description = "";
+        $item->category_id = 2;
+        $item->created_at = date('Y-m-d H:i:s');
+        $item->updated_at  = date('Y-m-d H:i:s');
+        $item->save();
+
+        $item = new Product;
+        $item->id = ;
+        $item->name = "";
+        $item->image = "";
+        $item->price = "";
+        $item->quantily = "10";
+        $item->status = "1";
+        $item->supplier = "ACC";
+        $item->description = "";
+        $item->category_id = 2;
+        $item->created_at = date('Y-m-d H:i:s');
+        $item->updated_at  = date('Y-m-d H:i:s');
+        $item->save();
+
+        $item = new Product;
+        $item->id = ;
+        $item->name = "";
+        $item->image = "";
+        $item->price = "";
+        $item->quantily = "10";
+        $item->status = "1";
+        $item->supplier = "ACC";
+        $item->description = "";
+        $item->category_id = 2;
+        $item->created_at = date('Y-m-d H:i:s');
+        $item->updated_at  = date('Y-m-d H:i:s');
+        $item->save();
+
+        $item = new Product;
+        $item->id = ;
+        $item->name = "";
+        $item->image = "";
+        $item->price = "";
+        $item->quantily = "10";
+        $item->status = "1";
+        $item->supplier = "ACC";
+        $item->description = "";
+        $item->category_id = 2;
+        $item->created_at = date('Y-m-d H:i:s');
+        $item->updated_at  = date('Y-m-d H:i:s');
+        $item->save();
     }
 }
