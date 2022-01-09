@@ -52,17 +52,19 @@
 							<span>
 								<span>Giá: {{number_format($product->price)."đ"}}</span>
 								<label>Số Lượng: </label>
-								<form action="">
-									<input type="text" value="3" />
-								</form>
+								<form action="{{route('addtocart',$product->id)}}" method="post">
+									@csrf
+									<input type="text" value="1" name="quantity"/>
 							</span>
-							<p><b>Chỉ Còn: </b>{{$product->quantily}} Sản Phẩm</p>
+							<p><b>Tình trạng: </b>{{$product->status}}</p>
+							<p><b>Sản xuất: </b>{{$product->supplier}}</p>
 							<p><b>Mô Tả:</b> {{$product->description}}</p>
 							<br>
-							<a href="{{route('cart')}}" type="button" class="btn btn-fefault cart">
+							<button type="submit" class="btn btn-fefault cart">
 								<i class="fa fa-shopping-cart"></i>
-								Thêm Vào Giỏ
-							</a>
+								Thêm vào giỏ hàng
+							</button>
+							</form>
 							<button href="" type="button" class="btn btn-primary" style="display:inline;margin-top:-10px">
 								Tiếp tục mua hàng
 							</button>
@@ -76,7 +78,7 @@
 					<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
 						<div class="carousel-inner">
 							<div class="item active">
-							@foreach($related_products as $related_product)
+								@foreach($related_products as $related_product)
 								<div class="col-sm-4">
 									<div class="product-image-wrapper">
 										<div class="single-products">
@@ -84,12 +86,13 @@
 												<img src="{{asset('images/product-details/'.$related_product->image)}}" alt="" />
 												<h2>{{number_format($related_product->price)."đ"}}</h2>
 												<p>{{$related_product->name}}</p>
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+												<a href="{{route('product_detail', $product->id)}}" class="btn btn-warning">Xem Chi Tiết</a>
+												<a style="display:inline" href="{{route('cart',$product->id)}}" class="btn btn-warning add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
 											</div>
 										</div>
 									</div>
 								</div>
-							@endforeach
+								@endforeach
 							</div>
 
 						</div>

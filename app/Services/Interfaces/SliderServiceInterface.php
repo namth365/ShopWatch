@@ -5,5 +5,4 @@ use App\Services\Interfaces\ServiceInterface;
 
 interface SliderServiceInterface extends ServiceInterface{
     
-
 }

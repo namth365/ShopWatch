@@ -39,7 +39,7 @@
                         <img src="{{asset('images/product-details/'.$product->image)}}" alt=""/>
                         <h2>{{number_format($product->price)."đ"}}</h2>
                         <p>{{$product->name}}</p>
-                        <a href="{{route('product_detail', $product->id)}}" class="btn btn-default" >Xem Chi Tiết</a>
+                        <a href="{{route('product_detail', $product->id)}}" class="btn btn-default">Xem Chi Tiết</a>
                         <a href="" class="btn btn-default add-to-cart" style="display:inline"><i class="fa fa-shopping-cart"></i>Thêm Vào Giỏ</a>
                     </div>
                 </div>

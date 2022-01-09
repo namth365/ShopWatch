@@ -17,7 +17,7 @@ class CategoryService implements CategoryServiceInterface {
         return $categories;
     }
     public function findById($id){
-
+        
     }
     public function create($request){
 

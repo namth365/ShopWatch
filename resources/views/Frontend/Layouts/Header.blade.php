@@ -5,8 +5,8 @@
             <div class="col-sm-6">
                 <div class="contactinfo">
                     <ul class="nav nav-pills">
-                        <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                        <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+                        <li><a href="#"><i class="fa fa-phone"></i> +84 981 56 88 89</a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i> SHN@gmail.com</a></li>
                     </ul>
                 </div>
             </div>
@@ -39,7 +39,7 @@
             <div class="col-sm-8">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="/checkout"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                        <li><a href="/checkout"><i class="fa fa-crosshairs"></i>Thanh Toán</a></li>
                         <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
                     </ul>
                 </div>

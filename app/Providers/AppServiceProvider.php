@@ -15,21 +15,21 @@ use App\Repositories\Interfaces\CategoryInterface;
 
 
 
-//product
+//Product
 use App\Services\ProductService;
 use App\Services\Interfaces\ProductServiceInterface;
 
 use App\Repositories\Eloquent\ProductRepository;
 use App\Repositories\Interfaces\ProductInterface;
 
-//slider
+//Slider
 use App\Services\SliderService;
 use App\Services\Interfaces\SliderServiceInterface;
 
 use App\Repositories\Eloquent\SliderRepository;
 use App\Repositories\Interfaces\SliderInterface;
 
-//cart
+//Cart
 use App\Services\CartService;
 use App\Services\Interfaces\CartServiceInterface;
 
@@ -51,8 +51,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(RepositoryInterface::class, EloquentRepository::class);
          //CategoryInterface - CategoryRepository
         $this->app->singleton(CategoryInterface::class, CategoryRepository::class);
+         //ProductInterface - ProductRepository
         $this->app->singleton(ProductInterface::class, ProductRepository::class);
+         //SliderInterface - SliderRepository
         $this->app->singleton(SliderInterface::class, SliderRepository::class);
+         //CartInterface - CartRepository
         $this->app->singleton(CartInterface::class,CartRepository::class);
         /* Binding  Service*/
         $this->app->singleton(CategoryServiceInterface::class, CategoryService::class);

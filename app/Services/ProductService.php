@@ -20,7 +20,7 @@ class ProductService implements ProductServiceInterface {
         return $this->ProductRepository->findById($id);
     }
     public function create($request){
-
+         
     }
     public function update($request,$id){
 

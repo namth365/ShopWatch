@@ -18,8 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('image');
             $table->double('price');
-            $table->integer('quantily');
-            $table->integer('status');
+            $table->integer('quantity');
+            $table->string('status');
             $table->string('supplier');
             $table->string('description');
             $table->unsignedInteger('category_id');

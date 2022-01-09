@@ -20,7 +20,7 @@ class CartService implements CartServiceInterface {
         return $this->CartRepository->findById($id);
     }
     public function create($request){
-
+        return $this->CartRepository->create($request);
     }
     public function update($request,$id){
 
@@ -28,4 +28,8 @@ class CartService implements CartServiceInterface {
     public function destroy($id){
 
     }
+    public function cart_code( $value ){
+        return $this->CartRepository->cart_code($value);
+    }
+
 }

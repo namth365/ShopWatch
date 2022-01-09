@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Frontend\SliderController;
+use App\Http\Controllers\Frontend\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,7 +52,7 @@ Route::resource('slider',SliderController::class);
 Route::get('/',[HomeController::class,'index']);
 Route::get('category/{id}',[HomeController::class,'category'])->name('category');
 Route::get('/product-detail/{id}',[HomeController::class,'product_detail'])->name('product_detail');
-Route::get('sliders',[HomeController::class,'slider'])->name('sliders');
-Route::get('addtocart/{id}',[HomeController::class,'addtocart'])->name('addtocart');
-Route::get('cart',[HomeController::class,'cart'])->name('cart');
+Route::get('sliders',[SliderController::class,'slider'])->name('sliders');
+Route::post('addtocart/{id}',[CartController::class,'addtocart'])->name('addtocart');
+Route::get('cart',[CartController::class,'cart'])->name('cart');
 

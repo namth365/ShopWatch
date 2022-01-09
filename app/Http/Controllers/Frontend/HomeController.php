@@ -35,13 +35,13 @@ class HomeController extends Controller
         return view('Frontend.Layouts.Slidebar',compact('sliders'));
     }
     public function product_detail($id) {
+      
         $categories         = $this->CategoryService->getAll('');
         $product            = $this->ProductService->findById($id);
+
         $related_products   = $this->ProductService->related_products($product->category_id);
         return view('Frontend.Website.ProductDetail',compact('product','categories','related_products'));
     }
-    public function cart(){
-        return view('Frontend.Website.Cart');
-    }
+ 
 }
 

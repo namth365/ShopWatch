@@ -21,31 +21,33 @@
 						</tr>
 					</thead>
 					<tbody>
+						@foreach($cart_code as $cart)
 						<tr>
 							<td class="cart_product">
-								<a href=""><img src="images/cart/one.png" alt=""></a>
+								<a href=""><img src="{{asset('images/product-details/'. $cart->image)}}" width= "100px" height= "100px"alt=""></a>
 							</td>
 							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
+								<h4><a href="">{{$cart->name}}</a></h4>
 								<p>Web ID: 1089772</p>
 							</td>
 							<td class="cart_price">
-								<p>$59</p>
+								<p>{{number_format($cart->price)."đ"}}</p>
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
 									<a class="cart_quantity_up" href=""> + </a>
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+									<input class="cart_quantity_input" type="text" name="quantity" value="{{$cart->quantity}}" autocomplete="off" size="2">
 									<a class="cart_quantity_down" href=""> - </a>
 								</div>
 							</td>
 							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
+								<p class="cart_total_price">{{number_format($cart->total)."đ"}}</p>
 							</td>
 							<td class="cart_delete">
 								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
+						@endforeach
 					</tbody>
 				</table>
 			</div>
@@ -55,7 +57,7 @@
 	<section id="do_action">
 		<div class="container">
 			<div class="heading">
-				<h3>Bạn thích làm gì tiếp theo?</h3>
+				
 				<p>Thông tin đơn hàng</p>
 			</div>
 			<div class="row">

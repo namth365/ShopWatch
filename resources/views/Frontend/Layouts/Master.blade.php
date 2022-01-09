@@ -25,7 +25,6 @@
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head>
 <!--/head-->
-
 <body>
     <header id="header">
         <!--header-->
@@ -33,18 +32,14 @@
         <!--/header_top-->
         @include('Frontend.Layouts.Header')
         <!--/header-->
-
         <!--slider-->
         @include('Frontend.Layouts.Slidebar')
         <!--/slider-->
-
         <section>
             <div class="container">
                 <div class="row">
                     @yield('content')
-
                     @include('Frontend.Layouts.Footer')
-
                     <!--/Footer-->
                     <script src="{{asset('js/jquery.js')}}"></script>
                     <script src="{{asset('js/bootstrap.min.js')}}"></script>

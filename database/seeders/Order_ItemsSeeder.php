@@ -16,7 +16,7 @@ class Order_ItemsSeeder extends Seeder
     {
         $item = new OrderItems;
         $item->id = 1;
-        $item->quantily = "2";
+        $item->quantity = "2";
         $item->total = "1000";
         $item->order_id = 1;
         $item->product_id = 1;
@@ -26,7 +26,7 @@ class Order_ItemsSeeder extends Seeder
 
         $item = new OrderItems;
         $item->id = 2;
-        $item->quantily = "2";
+        $item->quantity = "2";
         $item->total = "1000";
         $item->order_id = 2;
         $item->product_id = 2;
@@ -36,7 +36,7 @@ class Order_ItemsSeeder extends Seeder
 
         $item = new OrderItems;
         $item->id = 3;
-        $item->quantily = "2";
+        $item->quantity = "2";
         $item->total = "1000";
         $item->order_id = 3;
         $item->product_id = 3;
