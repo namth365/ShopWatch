@@ -10,7 +10,7 @@
                 <div class="panel-heading">
                     @foreach($categories as $category)
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordian" href="{{route('category',$category->id)}}">
+                        <a  href="{{route('category',$category->id)}}">
                             <br>
                             {{$category->name}}
                         </a>

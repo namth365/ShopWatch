@@ -32,4 +32,7 @@ class ProductService implements ProductServiceInterface {
        $related_products = $this->ProductRepository->related_products($id);
        return $related_products;
     }
+    public function category($id){
+        return $this->ProductRepository->category($id);
+    }
 }

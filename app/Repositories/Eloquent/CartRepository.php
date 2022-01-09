@@ -46,4 +46,28 @@ class CartRepository extends EloquentRepository implements CartInterface {
         ->get();
         return $carts;
     }
+    public function update($request, $id){
+      // var_dump($id);
+      // dd($request->all());
+      $code = (empty(session('cart_code'))) ? "" : session('cart_code'); 
+      foreach ($request['product_id'] as $key => $product_id) {
+        //tìm sql với điều kiện name = product->id và code = id để lấy được id của sản phẩm,tên sản phẩm  
+        $carts = DB::table('carts')->join('products','carts.product_id','products.id')
+        ->select('products.name','products.id')
+        ->where('products.name',$product_id)
+        ->where('code',$id)->first();
+        // dd($carts);
+        $cart_product = Cart::where('product_id', '=',$carts->id)->where('code', '=', $id)->first();
+        // dd($cart_product);
+        // dd($request->quantity[$key]);
+        $cart_product['quantity'] = $request->quantity[$key];
+        $cart_product->save();
+       }
+       return $cart_product;
+   
+    }
+    public function product_total($code){
+      $total = DB::table('carts')->select(DB::raw('sum(price * quantity) as total' ))->where('code', $code)->first();
+      return $total;
+    }
 }

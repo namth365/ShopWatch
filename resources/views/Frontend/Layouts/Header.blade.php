@@ -40,7 +40,11 @@
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
                         <li><a href="/checkout"><i class="fa fa-crosshairs"></i>Thanh Toán</a></li>
-                        <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
+                        <!-- <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li> -->
+                        <li>
+                        <!-- <small><a href=""></a>0</small> -->
+					    <a  class = "display" href="{{route('cart')}}"><i class="fa fa-shopping-cart"></i> <small style="color:red">({{$count}})</small> Giỏ hàng</a> 
+                        </li>
                     </ul>
                 </div>
             </div>

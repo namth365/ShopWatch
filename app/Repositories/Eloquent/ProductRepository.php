@@ -23,4 +23,8 @@ class ProductRepository extends EloquentRepository implements ProductInterface {
         $related_product = DB::table('products')->where('category_id',$id)->paginate(3);
         return $related_product;
     }
+    public function category($id){
+        $category = Product::where('category_id',$id)->get();
+        return $category;
+    }
 }

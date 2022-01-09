@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cart;
 use App\Services\Interfaces\CartServiceInterface;
 use App\Services\Interfaces\ProductServiceInterface;
 use Illuminate\Http\Request;
@@ -18,15 +19,13 @@ class CartController extends Controller
 
     }
     public function cart(){
-        $value = (empty(session('cart_code'))) ? "" : session('cart_code');
-        
+        $value = (empty(session('cart_code'))) ? "" : session('cart_code'); 
+        $total = $this->CartService->product_total($value);
         $cart_code = $this->CartService->cart_code( $value );
-    
-     
-        return view('Frontend.Website.Cart',compact('cart_code'));
+        return view('Frontend.Website.Cart',compact('cart_code','total'));
     }
     public function addtoCart(Request $request,$id){
-        //mã không thay đổi
+        
         $product = $this->ProductService->findById($id);
 
         if ($request->session()->has('cart_code')) {
@@ -45,5 +44,15 @@ class CartController extends Controller
         return redirect()->route('cart');
  
     }
+    public function edit_cart(Request $request){
+
+        $code = (empty(session('cart_code'))) ? "" : session('cart_code'); 
+        // dd($request->all());
+        $update_cart = $this->CartService->update($request,$code);
+
+        return redirect()->route('cart')->with('success', 'Chỉnh sửa thành công');
+    }
+    
+
 
 }
