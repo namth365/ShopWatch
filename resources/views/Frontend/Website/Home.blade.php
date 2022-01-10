@@ -22,7 +22,7 @@
         <!--/category-products-->
         <div class="shipping text-center">
             <!--shipping-->
-            <img src="images/home/pr2.jpg" alt="" height= "290px"; width="250px"; />
+            <img src="{{ asset('images/home/pr2.jpg')}}" alt="" height= "290px"; width="250px"; />
         </div>
         <br>
         <!--/shipping-->
