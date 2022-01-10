@@ -7,6 +7,8 @@ use App\Services\Interfaces\CartServiceInterface;
 use App\Services\Interfaces\CategoryServiceInterface;
 use App\Services\Interfaces\ProductServiceInterface;
 use App\Services\Interfaces\SliderServiceInterface;
+use Illuminate\Support\Facades\Validator;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

@@ -26,6 +26,7 @@
         </div>
         <br>
         <!--/shipping-->
+    
     </div>
 </div>
 <div class="col-sm-9 padding-right">
@@ -48,6 +49,8 @@
         </div>
         @endforeach
     </div>
-  
+    <div class="page_number">
+        {{ $products->links() }}
+    </div>
     <!--features_items-->
     @endsection
