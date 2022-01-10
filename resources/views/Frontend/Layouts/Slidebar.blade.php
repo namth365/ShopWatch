@@ -14,7 +14,7 @@
                             <div class="col-sm-6">
                                 @foreach($sliders as $slider)
                                 <a href="{{route('sliders')}}"><img
-                                        src="{{ asset('public/images/'.$slider->image) }}" class="girl img-responsive"
+                                        src="{{ asset('images/home/'.$slider->image) }}" class="girl img-responsive"
                                         alt="" /></a>
                                 @endforeach
                             </div>
