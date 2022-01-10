@@ -16,7 +16,7 @@ class CartController extends Controller
 
     public function __construct(ProductServiceInterface $ProductService,CartServiceInterface $CartService,CategoryServiceInterface $CategoryService){
         $this->ProductService  = $ProductService;
-        $this->CartService  = $CartService;
+        $this->CartService     = $CartService;
         $this->CategoryService = $CategoryService;
 
     }
@@ -28,7 +28,6 @@ class CartController extends Controller
         }else{
             $count = count($cart_code);
         }
-        
         $total     = $this->CartService->product_total($value);
         $cart_code = $this->CartService->cart_code( $value );
         return view('Frontend.Website.Cart',compact('cart_code','total','count'));
@@ -61,7 +60,6 @@ class CartController extends Controller
         return redirect()->route('cart')->with('success', 'Chỉnh sửa thành công');
     }
     public function destroy($id){
-      
         // $code = (empty(session('cart_code'))) ? "" : session('cart_code'); 
         $delete_cart = $this->CartService->destroy($id);
         return redirect()->route('cart');
