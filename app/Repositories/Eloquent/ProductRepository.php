@@ -14,6 +14,7 @@ class ProductRepository extends EloquentRepository implements ProductInterface {
     }
     public function getAll($request){
         $products = $this->model->paginate(6);
+        // dd(123);
         return $products;
     }
     public function findById($id){
@@ -24,7 +25,11 @@ class ProductRepository extends EloquentRepository implements ProductInterface {
         return $related_product;
     }
     public function category($id){
-        $category = Product::where('category_id',$id)->get();
+        $category = Product::where('category_id',$id)->paginate(6);
         return $category;
+    }
+    public function filter_search($orderBy){
+         
+        return $this->ProductService->filter_search($orderBy);
     }
 }

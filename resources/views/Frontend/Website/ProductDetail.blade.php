@@ -12,7 +12,7 @@
 							<div class="panel-heading">
 								@foreach($categories as $category)
 								<h4 class="panel-title">
-									<a data-toggle="collapse" data-parent="#accordian" href="{{route('category',$category->id)}}">
+									<a href="{{route('category',$category->id)}}" >
 										<br>
 										{{$category->name}}
 									</a>
@@ -86,8 +86,7 @@
 												<img src="{{asset('images/product-details/'.$related_product->image)}}" alt="" />
 												<h2>{{number_format($related_product->price)."đ"}}</h2>
 												<p>{{$related_product->name}}</p>
-												<a href="{{route('product_detail', $product->id)}}" class="btn btn-warning">Xem Chi Tiết</a>
-												<a style="display:inline" href="{{route('cart',$product->id)}}" class="btn btn-warning add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+												<a href="{{route('product_detail', $related_product->id)}}" class="btn btn-warning">Xem Chi Tiết</a>
 											</div>
 										</div>
 									</div>
@@ -105,7 +104,7 @@
 					</div>
 				</div>
 				<!--/recommended_items-->
-
+				
 			</div>
 		</div>
 	</div>

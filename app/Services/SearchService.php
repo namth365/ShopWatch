@@ -29,4 +29,8 @@ class SearchService implements SearchServiceInterface
     public function destroy($id)
     {
     }
+    public function search($request){
+        return $this->SearchService->search($request);
+    }
+   
 }

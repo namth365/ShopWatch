@@ -60,7 +60,7 @@
     <!--header-bottom-->
     <div class="container">
         <div class="row">
-            <div class="col-sm-9">
+            <div class="col-sm-6">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -77,10 +77,21 @@
                 </div>
             </div>
             <div class="col-sm-3">
+                <div>
+                    <form action="" method="get" style="display:flex;">
+                        <select name= "sector" value="Giá"> 
+                            <option value="Thấp đến cap">Thấp đến cao</option>
+                            <option value="Cao đến thấp">Cao đến thấp</option>
+                        </select>
+                        <button type="submit" class="btn btn-warning" style="margin-left: 5px;">Lọc</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-3">
                 <div class="search_box pull-right">
-                    <form action="" method="get">
-                        @csrf
-                    <input type="text" placeholder="Tìm kiếm" name="search" />
+                    <form action="{{route('search')}}" method="get">
+                    <input type="text" placeholder="Tìm kiếm" name="search"/>
+                    <button type="submit" class="btn btn-warning"><i class="fas fa-search"></i></button>
                     </form>
                 </div>
             </div>

@@ -34,8 +34,9 @@ class CategoryController extends Controller
     }
     $products   = $this->ProductService->category($id);
     $categories = $this->CategoryService->getAll($request);
+    // dd($categories);
     $sliders   = $this->SliderService->getAll($request);
-
+    // dd($products, $categories, $sliders);
     return view('Frontend.Website.Home', compact('categories', 'products','count','sliders'));
   }
 }

@@ -22,7 +22,7 @@
         <!--/category-products-->
         <div class="shipping text-center">
             <!--shipping-->
-            <img src="{{ asset('images/home/pr2.jpg')}}" alt="" height= "290px"; width="250px"; />
+            <img src="{{ asset('images/home/pr2.jpg')}}" alt="" height="290px" ; width="250px" ; />
         </div>
         <br>
         <!--/shipping-->
@@ -48,6 +48,9 @@
         </div>
         @endforeach
     </div>
-  
+    
+    <div class=" d-flex justify-content-end text-center">
+        {{ $products->links() }}
+    </div>
     <!--features_items-->
     @endsection

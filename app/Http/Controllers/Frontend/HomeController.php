@@ -8,6 +8,7 @@ use App\Services\Interfaces\CategoryServiceInterface;
 use App\Services\Interfaces\ProductServiceInterface;
 use App\Services\Interfaces\SliderServiceInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -35,20 +36,25 @@ class HomeController extends Controller
         $categories = $this->CategoryService->getAll($request);
         $products   = $this->ProductService->getAll($request);
         $sliders    = $this->SliderService->getAll($request);
-
         // dd($categories);
         return view('Frontend.Website.Home',compact('categories','products','count','sliders'));
     }
     public function search(Request $request){
-        $code = (empty(session('cart_code'))) ? "" : session('cart_code'); 
-        $key_word = $this->CartService->cart_code( $code );
+        // dd($request->all());
+        $key_word = (empty(session('cart_code'))) ? "" : session('cart_code'); 
+        $carts = $this->CartService->cart_code( $key_word );
+        if(count($carts) === 0){
+            $count = 0;
+        }else{
+            $count = count($carts);
+        }
+        $search    = $request->search;
         $categories = $this->CategoryService->getAll($request);
-        $products   = $this->ProductService->getAll($request);
         $sliders    = $this->SliderService->getAll($request);
+        $products   = $this->ProductService->getAll($request);
+        $products = DB::table('products')->where('name','like','%'.$search.'%')->paginate(6);
+       
         return view('Frontend.Website.Home', compact('categories','products','count','sliders'));
     }
-
-   
-   
- 
+  
 }

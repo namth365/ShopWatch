@@ -11,5 +11,10 @@ class SearchRepository extends EloquentRepository implements SearchInterface {
     public function getModel(){
         return Product::class;
     }
+
+    public function search($request){
+       
+    }
+    
     
 }
