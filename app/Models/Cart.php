@@ -10,7 +10,7 @@ class Cart extends Model
 {
     use HasFactory,SoftDeletes;
     protected $table = 'carts';
-   protected $fillable = [
+    protected $fillable = [
        'id','code','quantity','price','product_id'
    ];
    public $timestamps = false;

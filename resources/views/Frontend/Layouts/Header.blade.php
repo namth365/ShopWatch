@@ -5,8 +5,8 @@
             <div class="col-sm-6">
                 <div class="contactinfo">
                     <ul class="nav nav-pills">
-                        <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                        <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+                        <li><a href="#"><i class="fa fa-phone"></i> +84 981 56 88 89</a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i> SHN@gmail.com</a></li>
                     </ul>
                 </div>
             </div>
@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="logo pull-left">
-                    <a href="/"><img src="images/home/logo.png" alt="" /></a>
+                    <a href="/" style="color:black"><img src="images/home/logo-shop.jpg" width= "70px" alt="" /> <b>SHOP-WATCH</b></a>
                 </div>
                 <div class="btn-group pull-right">
 
@@ -39,8 +39,12 @@
             <div class="col-sm-8">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="/checkout"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                        <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
+                        <li><a href="/checkout"><i class="fa fa-crosshairs"></i>Thanh Toán</a></li>
+                        <!-- <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li> -->
+                        <li>
+                        <!-- <small><a href=""></a>0</small> -->
+					    <a  class = "display" href="{{route('cart')}}"><i class="fa fa-shopping-cart"></i> <small style="color:red">({{$count}})</small> Giỏ hàng</a> 
+                        </li>
                     </ul>
                 </div>
             </div>
