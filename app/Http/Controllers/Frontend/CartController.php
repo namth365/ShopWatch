@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Cart;
 use App\Services\Interfaces\CartServiceInterface;
+use App\Services\Interfaces\CategoryServiceInterface;
 use App\Services\Interfaces\ProductServiceInterface;
 use Illuminate\Http\Request;
 
@@ -12,17 +12,27 @@ class CartController extends Controller
 {
     protected $ProductService;
     protected $CartService;
+    protected $CategoryService;
 
-    public function __construct(ProductServiceInterface $ProductService,CartServiceInterface $CartService){
+    public function __construct(ProductServiceInterface $ProductService,CartServiceInterface $CartService,CategoryServiceInterface $CategoryService){
         $this->ProductService  = $ProductService;
         $this->CartService  = $CartService;
+        $this->CategoryService = $CategoryService;
 
     }
     public function cart(){
-        $value = (empty(session('cart_code'))) ? "" : session('cart_code'); 
-        $total = $this->CartService->product_total($value);
+        $value     = (empty(session('cart_code'))) ? "" : session('cart_code'); 
+        // $code = (empty(session('cart_code'))) ? "" : session('cart_code'); 
         $cart_code = $this->CartService->cart_code( $value );
-        return view('Frontend.Website.Cart',compact('cart_code','total'));
+        if(count($cart_code) === 0){
+            $count = 0;
+        }else{
+            $count = count($cart_code);
+        }
+        
+        $total     = $this->CartService->product_total($value);
+        $cart_code = $this->CartService->cart_code( $value );
+        return view('Frontend.Website.Cart',compact('cart_code','total','count'));
     }
     public function addtoCart(Request $request,$id){
         

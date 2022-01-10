@@ -52,7 +52,7 @@ Route::resource('slider',SliderController::class);
 Route::get('/',[HomeController::class,'index']);
 
 Route::get('category/{id}',[FrontendCategoryController::class,'category'])->name('category');
-Route::get('/product-detail/{id}',[HomeController::class,'product_detail'])->name('product_detail');
+Route::get('/product-detail/{id}',[ProductController::class,'product_detail'])->name('product_detail');
 Route::get('sliders',[SliderController::class,'slider'])->name('sliders');
 Route::post('addtocart/{id}',[CartController::class,'addtocart'])->name('addtocart');
 Route::get('cart',[CartController::class,'cart'])->name('cart');
