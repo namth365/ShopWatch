@@ -61,6 +61,7 @@ class CartController extends Controller
         return redirect()->route('cart')->with('success', 'Chỉnh sửa thành công');
     }
     public function destroy($id){
+      
         // $code = (empty(session('cart_code'))) ? "" : session('cart_code'); 
         $delete_cart = $this->CartService->destroy($id);
         return redirect()->route('cart');
