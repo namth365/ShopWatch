@@ -30,10 +30,9 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="logo pull-left">
-                    <a href="/" style="color:black"><img src="images/home/logo-shop.jpg" width= "100px" alt="" /></a>
+                    <a href="/" style="color:black"><img src="{{ asset('images/home/logo-shop.jpg')}}" width= "100px" alt=""/><b style="color:red;font-size:40px">WATCH</b> - SHOP <p style="margin-left: 113px;margin-top: -36px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:blue;">Khẳng định đẳng cấp</p></a>
                 </div>
                 <div class="btn-group pull-right">
-
                 </div>
             </div>
             <div class="col-sm-8">
@@ -51,7 +50,6 @@
     </div>
 </div>
 <!--/header-middle-->
-
 <div class="header-bottom">
     <!--header-bottom-->
     <div class="container">

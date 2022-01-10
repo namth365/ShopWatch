@@ -71,7 +71,7 @@ class CartRepository extends EloquentRepository implements CartInterface {
       return $total;
     }
     public function destroy($id){
-      $delete_cart = Cart::destroy($id);
+      $delete_cart = Cart::findById($id);
       return $delete_cart;
     }
 }
