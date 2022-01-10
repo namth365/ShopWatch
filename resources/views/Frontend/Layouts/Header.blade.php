@@ -30,7 +30,8 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="logo pull-left">
-                    <a href="/" style="color:black"><img src="images/home/logo-shop.jpg" width= "70px" alt="" /> <b>SHOP-WATCH</b></a>
+                    <a href="/" style="color:black"><img src="images/home/logo-shop.jpg" width="70px" alt="" />
+                        <b>SHOP-WATCH</b></a>
                 </div>
                 <div class="btn-group pull-right">
 
@@ -42,8 +43,9 @@
                         <li><a href="/checkout"><i class="fa fa-crosshairs"></i>Thanh Toán</a></li>
                         <!-- <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li> -->
                         <li>
-                        <!-- <small><a href=""></a>0</small> -->
-					    <a  class = "display" href="{{route('cart')}}"><i class="fa fa-shopping-cart"></i> <small style="color:red">({{ $count }})</small> Giỏ hàng</a> 
+                            <!-- <small><a href=""></a>0</small> -->
+                            <a class="display" href="{{route('cart')}}"><i class="fa fa-shopping-cart"></i> <small
+                                    style="color:red">({{ $count }})</small> Giỏ hàng</a>
                         </li>
                     </ul>
                 </div>
@@ -69,11 +71,14 @@
                 <div class="mainmenu pull-left">
                     <ul class="nav navbar-nav collapse navbar-collapse">
                         <li><a href="/" class="active">Trang Chủ</a></li>
-                        <li class="dropdown"><a href="#">Danh Mục<i class="fa fa-angle-down"></i></a>
-                            <ul role="menu" class="sub-menu">
-                                <li><a href="shop.html">Products</a></li>
-                            </ul>
-                        </li>
+                        <li> 
+                        <select class="form-control" name="name">
+                        <option value="">Danh Mục</option>
+                        @foreach ($categories as $category)
+                        <option > <a href="{{route('category',$category->id)}}" class="">{{ $category->name }}</a></option>
+                        @endforeach
+                    </select>
+
                         <li><a href="/lien-he">Liên Hệ</a></li>
                     </ul>
                 </div>

@@ -43,5 +43,6 @@ class Order_ItemsSeeder extends Seeder
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
+
     }
 }

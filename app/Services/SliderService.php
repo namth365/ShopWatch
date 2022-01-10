@@ -3,21 +3,19 @@
 namespace App\Services;
 
 use App\Repositories\Interfaces\SliderInterface;
-
 use App\Services\Interfaces\SliderServiceInterface;
 
 class SliderService implements SliderServiceInterface
 {
-
-    protected $SilderRepository;
-    public function __construct(SliderInterface $SilderRepository)
+    protected $SliderService;
+    public function __construct(SliderInterface $SliderService)
     {
-        $this->SilderRepository = $SilderRepository;
+        $this->SliderService = $SliderService;
     }
     public function getAll($request)
     {
-
-        $sliders = $this->SliderRepository->getAll($request);
+    
+        $sliders = $this->SliderService->getAll($request);
         return $sliders;
     }
     public function findById($id)

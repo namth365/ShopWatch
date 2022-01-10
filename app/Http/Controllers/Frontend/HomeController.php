@@ -34,8 +34,10 @@ class HomeController extends Controller
         
         $categories = $this->CategoryService->getAll($request);
         $products   = $this->ProductService->getAll($request);
+        $sliders    = $this->SliderService->getAll($request);
+
         // dd($categories);
-        return view('Frontend.Website.Home',compact('categories','products','count'));
+        return view('Frontend.Website.Home',compact('categories','products','count','sliders'));
     }
 
     public function slider(Request $request){
@@ -43,7 +45,7 @@ class HomeController extends Controller
         $categories = $this->CategoryService->getAll($request);
         $products   = $this->ProductService->getAll($request);
         $sliders    = $this->SliderService->getAll($request);
-        return view('Frontend.Layouts.Slidebar',compact('sliders'));
+        return view('Frontend.Website.Home',compact('sliders'));
     
     }
    
