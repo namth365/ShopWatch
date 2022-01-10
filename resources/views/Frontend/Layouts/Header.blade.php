@@ -13,11 +13,11 @@
             <div class="col-sm-6">
                 <div class="social-icons pull-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -30,22 +30,29 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="logo pull-left">
+<<<<<<< HEAD
                     <a href="/" style="color:black"><img src="images/home/logo-shop.jpg" width="70px" alt="" />
                         <b>SHOP-WATCH</b></a>
+=======
+                    <a href="/" style="color:black"><img src="{{ asset('images/home/logo-shop.jpg')}}" width= "100px" alt=""/><b style="color:red;font-size:40px">WATCH</b> - SHOP <p style="margin-left: 113px;margin-top: -36px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:blue;">Khẳng định đẳng cấp</p></a>
+>>>>>>> 08a2e82d486c77b8e59cc2c5bb5bea61a5f5c09c
                 </div>
                 <div class="btn-group pull-right">
-
                 </div>
             </div>
             <div class="col-sm-8">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="/checkout"><i class="fa fa-crosshairs"></i>Thanh Toán</a></li>
-                        <!-- <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li> -->
+                        <li><a href=""><i class="fas fa-user"></i>Tài khoản</a></li>
+                        <li><a href="/checkout"><i class="fa fa-crosshairs"></i>Thanh Toán</a></li>  
                         <li>
+<<<<<<< HEAD
                             <!-- <small><a href=""></a>0</small> -->
                             <a class="display" href="{{route('cart')}}"><i class="fa fa-shopping-cart"></i> <small
                                     style="color:red">({{ $count }})</small> Giỏ hàng</a>
+=======
+					    <a  class = "display" href="{{route('cart')}}"><i class="fa fa-shopping-cart"></i> <small style="color:red">({{ $count }})</small> Giỏ hàng</a> 
+>>>>>>> 08a2e82d486c77b8e59cc2c5bb5bea61a5f5c09c
                         </li>
                     </ul>
                 </div>
@@ -54,7 +61,6 @@
     </div>
 </div>
 <!--/header-middle-->
-
 <div class="header-bottom">
     <!--header-bottom-->
     <div class="container">

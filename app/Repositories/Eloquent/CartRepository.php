@@ -70,4 +70,11 @@ class CartRepository extends EloquentRepository implements CartInterface {
       $total = DB::table('carts')->select(DB::raw('sum(price * quantity) as total' ))->where('code', $code)->first();
       return $total;
     }
+    public function destroy($id){
+
+      $delete_cart = Cart::find($id);
+      // dd($delete_cart);
+      $delete_cart->delete();
+      return $delete_cart;
+    }
 }

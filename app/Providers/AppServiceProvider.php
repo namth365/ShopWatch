@@ -36,6 +36,8 @@ use App\Services\Interfaces\CartServiceInterface;
 use App\Repositories\Eloquent\CartRepository;
 use App\Repositories\Interfaces\CartInterface;
 
+
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -71,6 +73,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Paginator::useBootstrap();
     }
 }

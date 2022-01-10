@@ -3,6 +3,7 @@
 use App\Http\Controllers\Frontend\CategoryController as FrontendCategoryController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Frontend\SliderController;
 use App\Http\Controllers\Frontend\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -57,6 +58,8 @@ Route::get('sliders',[SliderController::class,'slider'])->name('sliders');
 Route::post('addtocart/{id}',[CartController::class,'addtocart'])->name('addtocart');
 Route::get('cart',[CartController::class,'cart'])->name('cart');
 Route::post('edit-cart',[CartController::class,'edit_cart'])->name('edit-cart');
+Route::get('delete-cart/{id}',[CartController::class,'destroy'])->name('delete-cart');
+Route::get('check-out',[OrderController::class,'checkout'])->name('check-out');
 
 
 
