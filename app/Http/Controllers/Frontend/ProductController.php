@@ -15,12 +15,14 @@ class ProductController extends Controller
     protected $CategoryService;
     protected $CartService;
     protected $SliderService;
+
     public function __construct(ProductServiceInterface $ProductService, CategoryServiceInterface $CategoryService, CartServiceInterface $CartService,SliderServiceInterface $SliderService)
     {
         $this->ProductService   = $ProductService;
         $this->CategoryService  = $CategoryService;
         $this->CartService      = $CartService;
-        $this->SliderService = $SliderService;
+        $this->SliderService    = $SliderService;
+
     }
     public function product_detail($id,Request $request)
     {
@@ -33,7 +35,9 @@ class ProductController extends Controller
         }
         $categories         = $this->CategoryService->getAll('');
         $product            = $this->ProductService->findById($id);
+
         $sliders            = $this->SliderService->getAll($request);
+
         $related_products   = $this->ProductService->related_products($product->category_id);
         return view('Frontend.Website.ProductDetail', compact('product', 'categories', 'related_products','count','sliders'));
     }

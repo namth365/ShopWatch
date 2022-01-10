@@ -22,6 +22,7 @@ class CartController extends Controller
         $this->CategoryService = $CategoryService;
         $this->SliderService = $SliderService;
 
+
     }
     public function cart(Request $request){
         $value     = (empty(session('cart_code'))) ? "" : session('cart_code'); 
@@ -34,6 +35,7 @@ class CartController extends Controller
         $total     = $this->CartService->product_total($value);
         $cart_code = $this->CartService->cart_code( $value );
         $sliders    = $this->SliderService->getAll($request);
+
 
         return view('Frontend.Website.Cart',compact('cart_code','total','count','sliders'));
     }
