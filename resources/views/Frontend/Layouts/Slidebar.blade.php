@@ -10,27 +10,22 @@
                     </ol>
 
                     <div class="carousel-inner">
-                        <div class="item active">
-                            <div class="col-sm-6">
-                                @foreach($sliders as $slider)
-                                <a href="{{route('sliders')}}"><img
-                                        src="{{ asset('images/home/'.$slider->image) }}" class="girl img-responsive"
-                                        alt="" /></a>
-                                @endforeach
-                            </div>
+                    @foreach($sliders as $key=> $slider)
+                        <div class="item <?= ($key == 0) ? 'active' : ''; ?>">
+                        <img src="{{asset('images/home/'.$slider->image)}}" class="girl img-responsive" alt="" />
                         </div>
-
+                        @endforeach
                     </div>
-
-                    <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 </div>
-
+                <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
             </div>
+
         </div>
+    </div>
     </div>
 </section>

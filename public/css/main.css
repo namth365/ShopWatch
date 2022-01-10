@@ -2521,3 +2521,10 @@ h2.title {
 }
 
 
+.carousel-inner .item img {
+  width: 100%;
+}
+
+.carousel-inner .item {
+  padding-left: unset;
+}
