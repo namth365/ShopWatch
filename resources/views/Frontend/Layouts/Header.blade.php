@@ -73,15 +73,6 @@
                 <div class="mainmenu pull-left">
                     <ul class="nav navbar-nav collapse navbar-collapse">
                         <li><a href="/" class="active">Trang Chủ</a></li>
-                        <li>
-                            <select class="form-control" name="name">
-                                <option value="">Danh Mục</option>
-                                @foreach ($categories as $category)
-                                <option> <a href="{{route('category',$category->id)}}"
-                                        class="">{{ $category->name }}</a></option>
-                                @endforeach
-                            </select>
-
                         <li><a href="/lien-he">Liên Hệ</a></li>
                     </ul>
                 </div>

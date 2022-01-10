@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Services\Interfaces\CartServiceInterface;
 use App\Services\Interfaces\CategoryServiceInterface;
 use App\Services\Interfaces\ProductServiceInterface;
+use App\Services\Interfaces\SliderServiceInterface;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -13,11 +14,14 @@ class CategoryController extends Controller
   protected $ProductService;
   protected $CategoryService;
   protected $CartService;
-  public function __construct(ProductServiceInterface $ProductService, CategoryServiceInterface $CategoryService,CartServiceInterface $CartService)
+  protected $SliderService;
+
+  public function __construct(ProductServiceInterface $ProductService, CategoryServiceInterface $CategoryService,CartServiceInterface $CartService,SliderServiceInterface $SliderService)
   {
     $this->ProductService   = $ProductService;
     $this->CategoryService  = $CategoryService;
     $this->CartService      = $CartService;
+    $this->SliderService      = $SliderService;
   }
   public function category($id, Request $request)
   {
@@ -30,6 +34,8 @@ class CategoryController extends Controller
     }
     $products   = $this->ProductService->category($id);
     $categories = $this->CategoryService->getAll($request);
-    return view('Frontend.Website.Home', compact('categories', 'products','count'));
+    $sliders   = $this->SliderService->getAll($id);
+
+    return view('Frontend.Website.Home', compact('categories', 'products','count','sliders'));
   }
 }

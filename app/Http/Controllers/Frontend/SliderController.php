@@ -19,13 +19,14 @@ class SliderController extends Controller
     public function category($id, Request $request)
     {
       $categories = $this->CategoryService->getAll($request);
-      return view('Frontend.Website.Home', compact('categories'));
+      $sliders    = $this->SliderService->getAll($request);
+      return view('Frontend.Website.Home', compact('categories','sliders'));
     }
     public function slider(Request $request){
 
         $categories = $this->CategoryService->getAll($request);
         $sliders    = $this->SliderService->getAll($request);
-        return view('Frontend.Layouts.Slidebar',compact('sliders'));
+        return view('Frontend.Layouts.Slidebar',compact('sliders','categories'));
     
     }
     
