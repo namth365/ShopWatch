@@ -15,7 +15,7 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $item = new Category;
-        $item->id = 1;
+        $item->id = 10;
         $item->name = "Đồng hồ thời trang ADRIATICA";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
@@ -24,7 +24,7 @@ class CategorySeeder extends Seeder
         $item->save();
 
         $item = new Category;
-        $item->id = 2;
+        $item->id = 11;
         $item->name = "Đồng Hồ thời trang Casio";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
@@ -33,7 +33,7 @@ class CategorySeeder extends Seeder
         $item->save();
 
         $item = new Category;
-        $item->id = 3;
+        $item->id = 12;
         $item->name = "Đồng Hồ thời trang Bulova";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
@@ -42,7 +42,7 @@ class CategorySeeder extends Seeder
         $item->save();
 
         $item = new Category;
-        $item->id = 4;
+        $item->id = 13;
         $item->name = "Đồng Hồ thời trang Timex";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
@@ -51,7 +51,7 @@ class CategorySeeder extends Seeder
         $item->save();
 
         $item = new Category;
-        $item->id = 5;
+        $item->id = 14;
         $item->name = "Đồng Hồ thời trang Tommy Hilfiger";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
@@ -60,7 +60,7 @@ class CategorySeeder extends Seeder
         $item->save();
 
         $item = new Category;
-        $item->id = 6;
+        $item->id = 15;
         $item->name = "Đồng Hồ thời trang Elio";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
@@ -69,7 +69,7 @@ class CategorySeeder extends Seeder
         $item->save();
 
         $item = new Category;
-        $item->id = 7;
+        $item->id = 16;
         $item->name = "Đồng Hồ thời trang Coach";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
@@ -78,7 +78,7 @@ class CategorySeeder extends Seeder
         $item->save();
 
         $item = new Category;
-        $item->id = 8;
+        $item->id = 17;
         $item->name = "Đồng Hồ thời trang Citizen";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
@@ -87,7 +87,7 @@ class CategorySeeder extends Seeder
         $item->save();
 
         $item = new Category;
-        $item->id = 9;
+        $item->id = 18;
         $item->name = "Đồng Hồ Elle";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
@@ -96,7 +96,7 @@ class CategorySeeder extends Seeder
         $item->save();
 
         $item = new Category;
-        $item->id = 10;
+        $item->id = 19;
         $item->name = "Đồng Hồ thời trang Obaku";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;

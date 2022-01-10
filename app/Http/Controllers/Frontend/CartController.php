@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Services\Interfaces\CartServiceInterface;
 use App\Services\Interfaces\CategoryServiceInterface;
 use App\Services\Interfaces\ProductServiceInterface;
+use App\Services\Interfaces\SliderServiceInterface;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -13,14 +14,16 @@ class CartController extends Controller
     protected $ProductService;
     protected $CartService;
     protected $CategoryService;
+    protected $SliderService;
 
-    public function __construct(ProductServiceInterface $ProductService,CartServiceInterface $CartService,CategoryServiceInterface $CategoryService){
+    public function __construct(ProductServiceInterface $ProductService,CartServiceInterface $CartService,CategoryServiceInterface $CategoryService,SliderServiceInterface $SliderService){
         $this->ProductService  = $ProductService;
         $this->CartService     = $CartService;
         $this->CategoryService = $CategoryService;
+        $this->SliderService = $SliderService;
 
     }
-    public function cart(){
+    public function cart(Request $request){
         $value     = (empty(session('cart_code'))) ? "" : session('cart_code'); 
         $cart_code = $this->CartService->cart_code( $value );
         if(count($cart_code) === 0){
@@ -30,7 +33,9 @@ class CartController extends Controller
         }
         $total     = $this->CartService->product_total($value);
         $cart_code = $this->CartService->cart_code( $value );
-        return view('Frontend.Website.Cart',compact('cart_code','total','count'));
+        $sliders    = $this->SliderService->getAll($request);
+
+        return view('Frontend.Website.Cart',compact('cart_code','total','count','sliders'));
     }
     public function addtoCart(Request $request,$id){
         

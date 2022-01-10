@@ -34,7 +34,6 @@
                             alt="" /><b style="color:red;font-size:40px">WATCH</b> - SHOP <p
                             style="margin-left: 113px;margin-top: -36px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:blue;">
                             Khẳng định đẳng cấp</p></a>
-
                 </div>
                 <div class="btn-group pull-right">
                 </div>
@@ -79,7 +78,10 @@
             </div>
             <div class="col-sm-3">
                 <div class="search_box pull-right">
-                    <input type="text" placeholder="Tìm kiếm" />
+                    <form action="" method="get">
+                        @csrf
+                    <input type="text" placeholder="Tìm kiếm" name="search" />
+                    </form>
                 </div>
             </div>
         </div>
