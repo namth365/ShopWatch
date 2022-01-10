@@ -44,14 +44,7 @@ class HomeController extends Controller
         $sliders    = $this->SliderService->getAll($request);
         return view('Frontend.Layouts.Slidebar',compact('sliders'));
     }
-    public function product_detail($id) {
-      
-        $categories         = $this->CategoryService->getAll('');
-        $product            = $this->ProductService->findById($id);
-
-        $related_products   = $this->ProductService->related_products($product->category_id);
-        return view('Frontend.Website.ProductDetail',compact('product','categories','related_products'));
-    }
+   
  
 }
 

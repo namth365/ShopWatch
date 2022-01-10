@@ -74,7 +74,7 @@
 					</ul>
 					<button type="submit" class="btn btn-default update" href="">Cập nhật</button>
 					</form>
-					<a class="btn btn-default check_out" href="/checkout">Check Out</a>
+					<a class="btn btn-default check_out" href="/checkout">Thanh toán</a>
 				</div>
 			</div>
 		</div>
