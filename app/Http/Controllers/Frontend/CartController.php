@@ -22,7 +22,6 @@ class CartController extends Controller
     }
     public function cart(){
         $value     = (empty(session('cart_code'))) ? "" : session('cart_code'); 
-        // $code = (empty(session('cart_code'))) ? "" : session('cart_code'); 
         $cart_code = $this->CartService->cart_code( $value );
         if(count($cart_code) === 0){
             $count = 0;
@@ -59,8 +58,12 @@ class CartController extends Controller
         $code = (empty(session('cart_code'))) ? "" : session('cart_code'); 
         // dd($request->all());
         $update_cart = $this->CartService->update($request,$code);
-
         return redirect()->route('cart')->with('success', 'Chỉnh sửa thành công');
+    }
+    public function destroy($id){
+        $code = (empty(session('cart_code'))) ? "" : session('cart_code'); 
+        $delete_cart = $this->CartService->destroy($id, $code);
+        return redirect()->route('cart');
     }
     
 

@@ -26,7 +26,7 @@ class CartService implements CartServiceInterface {
         return $this->CartRepository->update($request,$id);
     }
     public function destroy($id){
-
+        return $this->CartRepository->destroy($id);
     }
     public function cart_code( $value ){
         return $this->CartRepository->cart_code($value);
@@ -34,7 +34,7 @@ class CartService implements CartServiceInterface {
     public function product_total( $code ){
         return $this->CartRepository->product_total($code);
     }
-  
+    
     
 
 }

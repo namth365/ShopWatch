@@ -65,9 +65,9 @@
 								Thêm vào giỏ hàng
 							</button>
 							</form>
-							<button href="" type="button" class="btn btn-primary" style="display:inline;margin-top:-10px">
+							<!-- <button href="" type="button" class="btn btn-primary" style="display:inline;margin-top:-10px">
 								Tiếp tục mua hàng
-							</button>
+							</button> -->
 						</div>
 					</div>
 				</div>

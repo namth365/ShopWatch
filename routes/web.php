@@ -56,4 +56,5 @@ Route::get('sliders',[SliderController::class,'slider'])->name('sliders');
 Route::post('addtocart/{id}',[CartController::class,'addtocart'])->name('addtocart');
 Route::get('cart',[CartController::class,'cart'])->name('cart');
 Route::post('edit-cart',[CartController::class,'edit_cart'])->name('edit-cart');
+Route::get('delete-cart',[CartController::class,'destroy'])->name('delete-cart');
 
