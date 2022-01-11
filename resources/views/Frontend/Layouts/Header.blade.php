@@ -42,7 +42,6 @@
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
                         <li><a href=""><i class="fas fa-user"></i>Tài khoản</a></li>
-                        <li><a href="/checkout"><i class="fa fa-crosshairs"></i>Thanh Toán</a></li>
                         <li>
                             <a class="display" href="{{route('cart')}}"><i class="fa fa-shopping-cart"></i> <small
                                     style="color:red">({{ $count }})</small> Giỏ hàng</a>

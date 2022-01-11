@@ -21,7 +21,7 @@ class CategoryController extends Controller
     $this->ProductService   = $ProductService;
     $this->CategoryService  = $CategoryService;
     $this->CartService      = $CartService;
-    $this->SliderService      = $SliderService;
+    $this->SliderService    = $SliderService;
   }
   public function category($id, Request $request)
   {
@@ -37,7 +37,7 @@ class CategoryController extends Controller
     $current_category = $this->CategoryService->findById($id);
     // dd($categories);
     $sliders   = $this->SliderService->getAll($request);
-    // dd($products, $categories, $sliders);
+   
     return view('Frontend.Website.Category', compact('categories', 'products','count','sliders','current_category'));
   }
 
