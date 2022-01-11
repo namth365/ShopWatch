@@ -31,7 +31,7 @@
 <div class="col-sm-9 padding-right">
     <div class="features_items">
         <!--features_items-->
-        <h2 class="title text-center">{{$current_category->name}}</h2>
+        <h2 class="title text-center">Tất cả sản phẩm</h2>
         @foreach($products as $product)
         <div class="col-sm-4">
             <div class="product-image-wrapper">
