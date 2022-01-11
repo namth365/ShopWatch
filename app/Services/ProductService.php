@@ -36,6 +36,7 @@ class ProductService implements ProductServiceInterface {
         return $this->ProductRepository->category($id);
     }
     public function filter_search($orderBy){
-        return $this->ProductRepository->filter_search($orderBy);
+        return  $this->ProductRepository->filter_search($orderBy);
+       
     }
 }

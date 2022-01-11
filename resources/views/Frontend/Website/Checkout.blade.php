@@ -4,8 +4,8 @@
     <div class="container">
         <div class="breadcrumbs">
             <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Check out</li>
+                <li><a href="#">Trang chủ</a></li>
+                <li class="active">Thanh toán</li>
             </ol>
         </div>
         <!--/breadcrums-->

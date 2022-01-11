@@ -59,9 +59,9 @@ Route::post('addtocart/{id}',[CartController::class,'addtocart'])->name('addtoca
 Route::get('cart',[CartController::class,'cart'])->name('cart');
 Route::post('edit-cart',[CartController::class,'edit_cart'])->name('edit-cart');
 Route::get('delete-cart/{id}',[CartController::class,'destroy'])->name('delete-cart');
-Route::get('check-out',[OrderController::class,'checkout'])->name('check-out');
+Route::get('check-out',[OrderController::class,'check_out'])->name('check-out');
 Route::get('search',[HomeController::class,'search'])->name('search');
-Route::get('search-price',[HomeController::class,'filter_search'])->name('search-price');
+Route::post('search-price',[ProductController::class,'filter_search'])->name('search-price');
 
 
 

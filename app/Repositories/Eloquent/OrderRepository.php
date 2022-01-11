@@ -15,4 +15,7 @@ class OrderRepository extends EloquentRepository implements OrderInterface {
     public function getAll($request){
   
     }
+    public function check_out($request){
+
+    }
 }

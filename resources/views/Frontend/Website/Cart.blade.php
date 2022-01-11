@@ -72,9 +72,9 @@
 						<li>Phí vận chuyển <span>Free</span></li>
 						<li>Tổng tiền phải thanh toán <span>{{ number_format($total->total)."đ" }}</span></li>
 					</ul>
-					<button type="submit" class="btn btn-default update" href="">Cập nhật</button>
+					<button type="submit" class="btn btn-default update">Cập nhật</button>
 					</form>
-					<a class="btn btn-default check_out" href="/checkout">Thanh toán</a>
+					<a class="btn btn-default check_out" href="{{ route('check-out') }}">Thanh toán</a>
 				</div>
 			</div>
 		</div>

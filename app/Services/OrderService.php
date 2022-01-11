@@ -12,7 +12,7 @@ class OrderService implements OrderServiceInterface {
         $this->OrderRepository = $OrderRepository;
     }
     public function getAll($request){
-
+        return $this->OrderRepository->getAll($request);
     }
     public function findById($id){
         
@@ -25,5 +25,8 @@ class OrderService implements OrderServiceInterface {
     }
     public function destroy($id){
 
+    }
+    public function check_out($request){
+        return $this->OrderRepository->check_out($request);
     }
 }
