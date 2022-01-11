@@ -21,7 +21,7 @@ class CategoryController extends Controller
     $this->ProductService   = $ProductService;
     $this->CategoryService  = $CategoryService;
     $this->CartService      = $CartService;
-    $this->SliderService      = $SliderService;
+    $this->SliderService    = $SliderService;
   }
   public function category($id, Request $request)
   {
@@ -32,11 +32,13 @@ class CategoryController extends Controller
     } else {
       $count = count($cart_code);
     }
-    $products   = $this->ProductService->category($id);
+    $products   = $this->ProductService->category($id,$request);
     $categories = $this->CategoryService->getAll($request);
+    $current_category = $this->CategoryService->findById($id);
     // dd($categories);
     $sliders   = $this->SliderService->getAll($request);
-    // dd($products, $categories, $sliders);
-    return view('Frontend.Website.Home', compact('categories', 'products','count','sliders'));
+   
+    return view('Frontend.Website.Category', compact('categories', 'products','count','sliders','current_category'));
   }
+
 }

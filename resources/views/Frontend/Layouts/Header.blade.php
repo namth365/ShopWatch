@@ -42,7 +42,6 @@
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
                         <li><a href=""><i class="fas fa-user"></i>Tài khoản</a></li>
-                        <li><a href="/checkout"><i class="fa fa-crosshairs"></i>Thanh Toán</a></li>
                         <li>
                             <a class="display" href="{{route('cart')}}"><i class="fa fa-shopping-cart"></i> <small
                                     style="color:red">({{ $count }})</small> Giỏ hàng</a>
@@ -76,21 +75,21 @@
             </div>
             <div class="col-sm-3">
                 <div>
-                    <form action="{{route('search-price')}}" method="post" style="display:flex;">
-                    @csrf
+                    <form action=""  style="display:flex;">
+                   
                         <select name= "price_filter">
                             <option>-Giá-</option>
                             <option value="500000">500,000đ - 2,500,000đ</option>
                             <option value="2500000">2,500,000đ - 5,000,000đ</option>
                             <option value="5000000"> >5000000đ</option>
                         </select>
-                        <button type="submit" class="btn btn-warning" style="margin-left: 5px;">Lọc</button>
+                        <button  class="btn btn-warning" style="margin-left: 5px;">Lọc</button>
                     </form>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="search_box pull-right">
-                    <form action="{{route('search')}}" method="get">
+                    <form action="" method="get">
                     <input type="text" placeholder="Tìm kiếm" name="search"/>
                     <button type="submit" class="btn btn-warning"><i class="fas fa-search"></i></button>
                     </form>

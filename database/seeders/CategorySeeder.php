@@ -23,6 +23,7 @@ class CategorySeeder extends Seeder
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
+
         $item = new Category;
         $item->id = 2;
         $item->name = "Đồng Hồ thời trang Casio";
@@ -31,6 +32,7 @@ class CategorySeeder extends Seeder
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
+
         $item = new Category;
         $item->id = 3;
         $item->name = "Đồng Hồ thời trang Bulova";
@@ -39,6 +41,7 @@ class CategorySeeder extends Seeder
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
+
         $item = new Category;
         $item->id = 4;
         $item->name = "Đồng Hồ thời trang Timex";
@@ -47,6 +50,7 @@ class CategorySeeder extends Seeder
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
+
         $item = new Category;
         $item->id = 5;
         $item->name = "Đồng Hồ thời trang Tommy Hilfiger";
@@ -55,6 +59,7 @@ class CategorySeeder extends Seeder
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
+
         $item = new Category;
         $item->id = 6;
         $item->name = "Đồng Hồ thời trang Elio";
@@ -63,6 +68,7 @@ class CategorySeeder extends Seeder
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
+
         $item = new Category;
         $item->id = 7;
         $item->name = "Đồng Hồ thời trang Coach";
@@ -71,6 +77,7 @@ class CategorySeeder extends Seeder
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
+
         $item = new Category;
         $item->id = 8;
         $item->name = "Đồng Hồ thời trang Citizen";
@@ -79,6 +86,7 @@ class CategorySeeder extends Seeder
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
+
         $item = new Category;
         $item->id = 9;
         $item->name = "Đồng Hồ Elle";
@@ -87,6 +95,7 @@ class CategorySeeder extends Seeder
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
+        
         $item = new Category;
         $item->id = 10;
         $item->name = "Đồng Hồ thời trang Obaku";

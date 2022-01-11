@@ -48,7 +48,6 @@ Route::resource('slider',SliderController::class);
 
 //Front-end
 Route::get('/',[HomeController::class,'index']);
-
 Route::get('category/{id}',[FrontendCategoryController::class,'category'])->name('category');
 Route::get('/product-detail/{id}',[ProductController::class,'product_detail'])->name('product_detail');
 Route::get('sliders',[SliderController::class,'slider'])->name('sliders');
@@ -60,7 +59,7 @@ Route::get('check-out',[OrderController::class,'check_out'])->name('check-out');
 Route::get('success',[OrderController::class,'success'])->name('success');
 Route::post('postRegister',[OrderController::class,'postRegister'])->name('postRegister');
 Route::get('search',[HomeController::class,'search'])->name('search');
-Route::post('search-price',[ProductController::class,'filter_search'])->name('search-price');
+Route::get('search-price',[ProductController::class,'filter_search'])->name('search-price');
 
 
 
