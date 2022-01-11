@@ -44,6 +44,18 @@ class ProductController extends Controller
     public function filter_search(Request $request)
     {
         $orderBy = $request->price_filter;
+        $max = 0;
+        if($orderBy == 500000){
+            $max = 2500000;
+        }
+      
+        if($orderBy == 2500000){
+            $max = 5000000;
+        }
+        
+        if($orderBy == 5000000){
+            $max = 10000000;
+        }
         $values = (empty(session('cart_code'))) ? "" : session('cart_code');
         $carts = $this->CartService->cart_code($values);
         if (count($carts) === 0) {
@@ -51,9 +63,9 @@ class ProductController extends Controller
         } else {
             $count = count($carts);
         }
-        $sliders            = $this->SliderService->getAll($request);
+        $sliders    = $this->SliderService->getAll($request);
         $categories = $this->CategoryService->getAll('');
-        $products = $this->ProductService->filter_search($orderBy);
+        $products   = $this->ProductService->filter_search($orderBy,$max);
        
         return view('Frontend.Website.Home', compact('categories', 'products', 'count','sliders'));
     }

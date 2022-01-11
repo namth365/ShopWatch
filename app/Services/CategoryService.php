@@ -17,7 +17,7 @@ class CategoryService implements CategoryServiceInterface {
         return $categories;
     }
     public function findById($id){
-        
+        return $this->CategoryRepository->findById($id);
     }
     public function create($request){
 
@@ -28,4 +28,6 @@ class CategoryService implements CategoryServiceInterface {
     public function destroy($id){
 
     }
+   
+
 }

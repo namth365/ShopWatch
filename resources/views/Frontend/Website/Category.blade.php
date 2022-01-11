@@ -1,4 +1,4 @@
-@extends('Frontend.Layouts.Master')
+@extends('Frontend.Layouts.Category')
 @section('content')
 
 <div class="col-sm-3">
@@ -29,6 +29,9 @@
     </div>
 </div>
 <div class="col-sm-9 padding-right">
+    <div class="category-banner " style="margin-bottom:20px">
+        <img src="{{$current_category->banner}}" alt="">
+    </div>
     <div class="features_items">
         <!--features_items-->
         <h2 class="title text-center">{{$current_category->name}}</h2>

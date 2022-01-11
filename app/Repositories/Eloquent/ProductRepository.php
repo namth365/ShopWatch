@@ -18,7 +18,7 @@ class ProductRepository extends EloquentRepository implements ProductInterface
     public function getAll($request)
     {
         $products = $this->model->paginate(6);
-        // dd(123);
+
         return $products;
     }
     public function findById($id)
@@ -30,14 +30,21 @@ class ProductRepository extends EloquentRepository implements ProductInterface
         $related_product = DB::table('products')->where('category_id', $id)->paginate(3);
         return $related_product;
     }
-    public function category($id)
+    public function category($id,$request)
     {
-        $category = Product::where('category_id', $id)->paginate(6);
-        return $category;
+        $search = $request->search;
+        if($search){
+            $products = $this->model->where('category_id', $id)->where('name','like','%' . $search. '%')->paginate(6);
+        }else{
+            $products = $this->model->where('category_id', $id)->paginate(6);
+        }
+        // $category = Product::where('category_id', $id)->paginate(6);
+        return $products;
     }
-    public function filter_search($orderBy)
+    public function filter_search($orderBy,$max)
     {
-        $filter_search = DB::table('products')->where('price','>', "" . $orderBy . "")->orderBy('price', "ASC","DEC")->paginate(6);
+        $filter_search = DB::table('products')->where('price','>', "" . $orderBy . "")->where("price","<=", "" . $max . "")->orderBy('price', "ASC")->paginate(6);
+       
         return $filter_search;
     }
 }

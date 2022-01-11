@@ -4,8 +4,8 @@
 	<div class="container">
 		<div class="breadcrumbs">
 			<ol class="breadcrumb">
-				<li><a  href="/"> Trang Chủ >></a></li>
-				<li><a >Giỏ Hàng</a></li>
+				<li><a href="/"> Trang Chủ >></a></li>
+				<li><a>Giỏ Hàng</a></li>
 			</ol>
 		</div>
 		<div class="table-responsive cart_info">
@@ -21,6 +21,13 @@
 					</tr>
 				</thead>
 				<tbody>
+					@if(count($cart_code) === 0)
+					<tr>
+						<td colspan="6" class="cart_product">
+							<b>Chưa có sản phẩm được thêm vào giỏ hàng</b>
+						</td>
+					</tr>
+					@endif
 					@foreach($cart_code as $cart)
 					<tr>
 						<td class="cart_product">
@@ -68,7 +75,7 @@
 			<div class="col-sm-6">
 				<div class="total_area">
 					<ul>
-						<li>Tổng <span>{{  number_format($total->total)."đ" }}</span></li>
+						<li>Tổng <span>{{ number_format($total->total)."đ" }}</span></li>
 						<li>Phí vận chuyển <span>Free</span></li>
 						<li>Tổng tiền phải thanh toán <span>{{ number_format($total->total)."đ" }}</span></li>
 					</ul>
