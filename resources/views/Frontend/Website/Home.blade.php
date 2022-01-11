@@ -26,6 +26,7 @@
         </div>
         <br>
         <!--/shipping-->
+
     </div>
 </div>
 <div class="col-sm-9 padding-right">
@@ -48,7 +49,6 @@
         </div>
         @endforeach
     </div>
-    
     <div class=" d-flex justify-content-end text-center">
         {{ $products->links() }}
     </div>

@@ -28,7 +28,7 @@ Route::get('/', function () {
 // Route::get('/cart', function () {
 //     return view('Frontend.Website.Cart');
 // });
-Route::get('/checkout', function () {
+Route::get('/check-out', function () {
     return view('Frontend.Website.Checkout');
 });
 Route::get('/404', function () {
@@ -36,9 +36,6 @@ Route::get('/404', function () {
 });
 Route::get('/admin', function () {
     return view('Backend.Admin.Index');
-});
-Route::get('/success', function () {
-    return view('Frontend.Website.Success');
 });
 
 //Back-end
@@ -59,6 +56,8 @@ Route::get('cart',[CartController::class,'cart'])->name('cart');
 Route::post('edit-cart',[CartController::class,'edit_cart'])->name('edit-cart');
 Route::get('delete-cart/{id}',[CartController::class,'destroy'])->name('delete-cart');
 Route::get('check-out',[OrderController::class,'check_out'])->name('check-out');
+Route::get('success',[OrderController::class,'success'])->name('success');
+Route::post('postRegister',[OrderController::class,'postRegister'])->name('postRegister');
 Route::get('search',[HomeController::class,'search'])->name('search');
 Route::get('search-price',[ProductController::class,'filter_search'])->name('search-price');
 

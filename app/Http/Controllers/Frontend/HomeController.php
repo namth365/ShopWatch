@@ -7,6 +7,8 @@ use App\Services\Interfaces\CartServiceInterface;
 use App\Services\Interfaces\CategoryServiceInterface;
 use App\Services\Interfaces\ProductServiceInterface;
 use App\Services\Interfaces\SliderServiceInterface;
+use Illuminate\Support\Facades\Validator;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -25,6 +27,7 @@ class HomeController extends Controller
     }
     public function index(Request $request)
     {
+        
         $code = (empty(session('cart_code'))) ? "" : session('cart_code'); 
         $cart_code = $this->CartService->cart_code( $code );
         if(count($cart_code) === 0){
@@ -56,5 +59,4 @@ class HomeController extends Controller
        
         return view('Frontend.Website.Home', compact('categories','products','count','sliders'));
     }
-  
 }

@@ -48,8 +48,9 @@ use App\Services\OrderService;
 use App\Services\Interfaces\OrderServiceInterface;
 
 use App\Repositories\Eloquent\OrderRepository;
+use App\Repositories\Eloquent\UsersRepository;
 use App\Repositories\Interfaces\OrderInterface;
-
+use App\Repositories\Interfaces\UserInterface;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
@@ -74,11 +75,14 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(CartInterface::class,CartRepository::class);
         //SearchInterface - SearchRepository
         $this->app->singleton(SearchInterface::class, SearchRepository::class);
+
         //OrderInterface - OrderRepository
         $this->app->singleton(OrderInterface::class, OrderRepository::class);
 
+        $this->app->singleton(UserInterface::class, UsersRepository::class);
         /* Binding  Service*/
         $this->app->singleton(CategoryServiceInterface::class, CategoryService::class);
+        $this->app->singleton(UserServiceInterface::class, UserService::class);
         $this->app->singleton(ProductServiceInterface::class, ProductService::class);
         $this->app->singleton(SliderServiceInterface::class, SliderService::class);
         $this->app->singleton(CartServiceInterface::class, CartService::class);

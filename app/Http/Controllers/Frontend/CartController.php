@@ -27,6 +27,7 @@ class CartController extends Controller
     public function cart(Request $request){
         $value     = (empty(session('cart_code'))) ? "" : session('cart_code'); 
         $cart_code = $this->CartService->cart_code( $value );
+       
         if(count($cart_code) === 0){
             $count = 0;
         }else{
