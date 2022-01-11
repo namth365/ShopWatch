@@ -44,10 +44,8 @@
                         <li><a href=""><i class="fas fa-user"></i>Tài khoản</a></li>
                         <li><a href="/checkout"><i class="fa fa-crosshairs"></i>Thanh Toán</a></li>
                         <li>
-                            <!-- <small><a href=""></a>0</small> -->
                             <a class="display" href="{{route('cart')}}"><i class="fa fa-shopping-cart"></i> <small
                                     style="color:red">({{ $count }})</small> Giỏ hàng</a>
-
                         </li>
                     </ul>
                 </div>
@@ -78,10 +76,13 @@
             </div>
             <div class="col-sm-3">
                 <div>
-                    <form action="" method="get" style="display:flex;">
-                        <select name= "sector" value="Giá"> 
-                            <option value="Thấp đến cap">Thấp đến cao</option>
-                            <option value="Cao đến thấp">Cao đến thấp</option>
+                    <form action="{{route('search-price')}}" method="post" style="display:flex;">
+                    @csrf
+                        <select name= "price_filter">
+                            <option>-Giá-</option>
+                            <option value="500000">500,000đ - 2,500,000đ</option>
+                            <option value="2500000">2,500,000đ - 5,000,000đ</option>
+                            <option value="5000000"> >5000000đ</option>
                         </select>
                         <button type="submit" class="btn btn-warning" style="margin-left: 5px;">Lọc</button>
                     </form>

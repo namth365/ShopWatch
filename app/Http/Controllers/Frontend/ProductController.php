@@ -17,15 +17,15 @@ class ProductController extends Controller
     protected $CartService;
     protected $SliderService;
 
-    public function __construct(ProductServiceInterface $ProductService, CategoryServiceInterface $CategoryService, CartServiceInterface $CartService,SliderServiceInterface $SliderService)
+    public function __construct(ProductServiceInterface $ProductService, CategoryServiceInterface $CategoryService, CartServiceInterface $CartService, SliderServiceInterface $SliderService)
     {
+       
         $this->ProductService   = $ProductService;
         $this->CategoryService  = $CategoryService;
         $this->CartService      = $CartService;
         $this->SliderService    = $SliderService;
-
     }
-    public function product_detail($id,Request $request)
+    public function product_detail($id, Request $request)
     {
         $code = (empty(session('cart_code'))) ? "" : session('cart_code');
         $cart_code = $this->CartService->cart_code($code);
@@ -39,21 +39,22 @@ class ProductController extends Controller
         $sliders            = $this->SliderService->getAll($request);
         $related_products   = $this->ProductService->related_products($product->category_id);
         // dd($product->toArray());
-        return view('Frontend.Website.ProductDetail', compact('product', 'categories', 'related_products','count','sliders'));
+        return view('Frontend.Website.ProductDetail', compact('product', 'categories', 'related_products', 'count', 'sliders'));
     }
-    public function filter_search($orderBy, Request $request){
-   
-        // $products = $this->productService->filterProduct($orderBy);
-        // $values = (empty(session('cart_code'))) ? "" : session('cart_code'); 
-        // $carts = $this->CartService->cart_code( $values );
-        // if(count($carts) === 0){
-        //     $count = 0;
-        // }else{
-        //     $count = count($carts);
-        // }
-        // $categories = $this->CategoryService->getAll($request);
-
-        // return view('Frontend.Website.Home', compact('categories','products','count'));
-        
+    public function filter_search(Request $request)
+    {
+        $orderBy = $request->price_filter;
+        $values = (empty(session('cart_code'))) ? "" : session('cart_code');
+        $carts = $this->CartService->cart_code($values);
+        if (count($carts) === 0) {
+            $count = 0;
+        } else {
+            $count = count($carts);
+        }
+        $sliders            = $this->SliderService->getAll($request);
+        $categories = $this->CategoryService->getAll('');
+        $products = $this->ProductService->filter_search($orderBy);
+       
+        return view('Frontend.Website.Home', compact('categories', 'products', 'count','sliders'));
     }
 }

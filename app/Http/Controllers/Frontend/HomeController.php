@@ -27,6 +27,7 @@ class HomeController extends Controller
     }
     public function index(Request $request)
     {
+        
         $code = (empty(session('cart_code'))) ? "" : session('cart_code'); 
         $cart_code = $this->CartService->cart_code( $code );
         if(count($cart_code) === 0){
