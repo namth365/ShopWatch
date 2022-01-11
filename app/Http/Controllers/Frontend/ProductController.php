@@ -7,7 +7,6 @@ use App\Services\Interfaces\CartServiceInterface;
 use App\Services\Interfaces\CategoryServiceInterface;
 use App\Services\Interfaces\ProductServiceInterface;
 use App\Services\Interfaces\SliderServiceInterface;
-
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -22,10 +21,10 @@ class ProductController extends Controller
         $this->ProductService   = $ProductService;
         $this->CategoryService  = $CategoryService;
         $this->CartService      = $CartService;
-        $this->SliderService   = $SliderService;
+        $this->SliderService    = $SliderService;
 
     }
-    public function product_detail($id)
+    public function product_detail($id,Request $request)
     {
         $code = (empty(session('cart_code'))) ? "" : session('cart_code');
         $cart_code = $this->CartService->cart_code($code);
@@ -36,7 +35,8 @@ class ProductController extends Controller
         }
         $categories         = $this->CategoryService->getAll('');
         $product            = $this->ProductService->findById($id);
-        $sliders    = $this->SliderService->getAll('');
+
+        $sliders            = $this->SliderService->getAll($request);
 
         $related_products   = $this->ProductService->related_products($product->category_id);
         return view('Frontend.Website.ProductDetail', compact('product', 'categories', 'related_products','count','sliders'));

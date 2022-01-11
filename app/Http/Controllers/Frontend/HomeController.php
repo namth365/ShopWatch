@@ -41,15 +41,15 @@ class HomeController extends Controller
         // dd($categories);
         return view('Frontend.Website.Home',compact('categories','products','count','sliders'));
     }
-
-    public function slider(Request $request){
-
+    public function search(Request $request){
+        $code = (empty(session('cart_code'))) ? "" : session('cart_code'); 
+        $key_word = $this->CartService->cart_code( $code );
         $categories = $this->CategoryService->getAll($request);
         $products   = $this->ProductService->getAll($request);
         $sliders    = $this->SliderService->getAll($request);
-        return view('Frontend.Website.Home',compact('sliders'));
-    
-    }
+        return view('Frontend.Website.Home', compact('categories','products','count','sliders'));
+
    
+    }
  
 }

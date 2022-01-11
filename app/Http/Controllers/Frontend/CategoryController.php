@@ -34,7 +34,7 @@ class CategoryController extends Controller
     }
     $products   = $this->ProductService->category($id);
     $categories = $this->CategoryService->getAll($request);
-    $sliders   = $this->SliderService->getAll($id);
+    $sliders   = $this->SliderService->getAll($request);
 
     return view('Frontend.Website.Home', compact('categories', 'products','count','sliders'));
   }

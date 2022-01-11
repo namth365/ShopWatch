@@ -36,6 +36,12 @@ use App\Services\Interfaces\CartServiceInterface;
 use App\Repositories\Eloquent\CartRepository;
 use App\Repositories\Interfaces\CartInterface;
 
+//Search
+use App\Services\SearchService;
+use App\Services\Interfaces\SearchServiceInterface;
+
+use App\Repositories\Eloquent\SearchRepository;
+use App\Repositories\Interfaces\SearchInterface;
 
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
@@ -59,11 +65,14 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(SliderInterface::class, SliderRepository::class);
          //CartInterface - CartRepository
         $this->app->singleton(CartInterface::class,CartRepository::class);
+        //SearchInterface - SearchRepository
+        $this->app->singleton(SearchInterface::class, SearchRepository::class);
         /* Binding  Service*/
         $this->app->singleton(CategoryServiceInterface::class, CategoryService::class);
         $this->app->singleton(ProductServiceInterface::class, ProductService::class);
         $this->app->singleton(SliderServiceInterface::class, SliderService::class);
         $this->app->singleton(CartServiceInterface::class, CartService::class);
+        $this->app->singleton(SearchServiceInterface::class, SearchService::class);
     }
 
     /**
