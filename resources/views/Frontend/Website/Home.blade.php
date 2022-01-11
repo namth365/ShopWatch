@@ -22,11 +22,11 @@
         <!--/category-products-->
         <div class="shipping text-center">
             <!--shipping-->
-            <img src="{{ asset('images/home/pr2.jpg')}}" alt="" height= "290px"; width="250px"; />
+            <img src="{{ asset('images/home/pr2.jpg')}}" alt="" height="290px" ; width="250px" ; />
         </div>
         <br>
         <!--/shipping-->
-    
+
     </div>
 </div>
 <div class="col-sm-9 padding-right">
@@ -49,7 +49,7 @@
         </div>
         @endforeach
     </div>
-    <div class="page_number">
+    <div class=" d-flex justify-content-end text-center">
         {{ $products->links() }}
     </div>
     <!--features_items-->

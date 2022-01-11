@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Category;
 
+
 class CategorySeeder extends Seeder
 {
     /**
@@ -15,88 +16,79 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $item = new Category;
-        $item->id = 10;
+        $item->id = 1;
         $item->name = "Đồng hồ thời trang ADRIATICA";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
-
         $item = new Category;
-        $item->id = 11;
+        $item->id = 2;
         $item->name = "Đồng Hồ thời trang Casio";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
-
         $item = new Category;
-        $item->id = 12;
+        $item->id = 3;
         $item->name = "Đồng Hồ thời trang Bulova";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
-
         $item = new Category;
-        $item->id = 13;
+        $item->id = 4;
         $item->name = "Đồng Hồ thời trang Timex";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
-
         $item = new Category;
-        $item->id = 14;
+        $item->id = 5;
         $item->name = "Đồng Hồ thời trang Tommy Hilfiger";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
-
         $item = new Category;
-        $item->id = 15;
+        $item->id = 6;
         $item->name = "Đồng Hồ thời trang Elio";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
-
         $item = new Category;
-        $item->id = 16;
+        $item->id = 7;
         $item->name = "Đồng Hồ thời trang Coach";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
-
         $item = new Category;
-        $item->id = 17;
+        $item->id = 8;
         $item->name = "Đồng Hồ thời trang Citizen";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
-
         $item = new Category;
-        $item->id = 18;
+        $item->id = 9;
         $item->name = "Đồng Hồ Elle";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
-
         $item = new Category;
-        $item->id = 19;
+        $item->id = 10;
         $item->name = "Đồng Hồ thời trang Obaku";
         $item->banner = "Đồng Hồ";
         $item->parent_id = 1;

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Services\Interfaces\CartServiceInterface;
 use App\Services\Interfaces\CategoryServiceInterface;
 use App\Services\Interfaces\ProductServiceInterface;
@@ -35,10 +36,24 @@ class ProductController extends Controller
         }
         $categories         = $this->CategoryService->getAll('');
         $product            = $this->ProductService->findById($id);
-
         $sliders            = $this->SliderService->getAll($request);
-
         $related_products   = $this->ProductService->related_products($product->category_id);
+        // dd($product->toArray());
         return view('Frontend.Website.ProductDetail', compact('product', 'categories', 'related_products','count','sliders'));
+    }
+    public function filter_search($orderBy, Request $request){
+   
+        // $products = $this->productService->filterProduct($orderBy);
+        // $values = (empty(session('cart_code'))) ? "" : session('cart_code'); 
+        // $carts = $this->CartService->cart_code( $values );
+        // if(count($carts) === 0){
+        //     $count = 0;
+        // }else{
+        //     $count = count($carts);
+        // }
+        // $categories = $this->CategoryService->getAll($request);
+
+        // return view('Frontend.Website.Home', compact('categories','products','count'));
+        
     }
 }

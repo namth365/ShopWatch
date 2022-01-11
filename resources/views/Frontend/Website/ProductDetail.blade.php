@@ -1,6 +1,7 @@
 @extends('Frontend.Layouts.Master')
 @section('content')
 <section>
+
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
@@ -12,8 +13,7 @@
                             <div class="panel-heading">
                                 @foreach($categories as $category)
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian"
-                                        href="{{route('category',$category->id)}}">
+                                    <a href="{{route('category',$category->id)}}">
                                         <br>
                                         {{$category->name}}
                                     </a>
@@ -76,7 +76,7 @@
                     <!--recommended_items-->
                     <h2 class="title text-center">Sản Phẩm Liên Quan</h2>
 
-                    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                    <<<<<<< HEAD <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="item active">
                                 @foreach($related_products as $related_product)
@@ -112,12 +112,46 @@
                         <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
                             <i class="fa fa-angle-right"></i>
                         </a>
+                </div>
+            </div>
+            <!--/recommended_items-->
+
+        </div>
+    </div>
+    </div>
+    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                @foreach($related_products as $related_product)
+                <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                        <div class="single-products">
+                            <div class="productinfo text-center">
+                                <img src="{{asset('images/product-details/'.$related_product->image)}}" alt="" />
+                                <h2>{{number_format($related_product->price)."đ"}}</h2>
+                                <p>{{$related_product->name}}</p>
+                                <a href="{{route('product_detail', $related_product->id)}}" class="btn btn-warning">Xem
+                                    Chi Tiết</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!--/recommended_items-->
-
+                @endforeach
             </div>
+
         </div>
+        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+    </div>
+    <!--/recommended_items-->
+
+    </div>
+    </div>
     </div>
 </section>
 @endsection

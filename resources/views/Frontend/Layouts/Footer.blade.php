@@ -57,10 +57,9 @@
 					                <div class="col-sm-3 col-sm-offset-1">
 					                    <div class="single-widget">
 					                        <h2>Nhận thông tin</h2>
-					                        <form action="#" class="searchform">
+					                        <form action="#" class="searchform"  style="display: table-footer-group;">
 					                            <input type="text" placeholder="Nhập địa chỉ email" />
-					                            <button type="submit" class="btn btn-default"><i
-					                                    class="fa fa-arrow-circle-o-right"></i></button>
+					                            <button type="submit" class="btn btn-default"><i class="fas fa-arrow-alt-circle-right"></i></button>
 					                            <p>Nhận thông tin khuyến mãi <br />...</p>
 					                        </form>
 					                    </div>
