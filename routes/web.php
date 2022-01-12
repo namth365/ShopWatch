@@ -7,6 +7,9 @@ use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Frontend\SliderController;
 use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Admin\ProductsController;
+use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Admin\OrdersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,17 +39,17 @@ Route::get('/404', function () {
     return view('Frontend.Website.404');
 });
 Route::get('/admin', function () {
-    return view('Backend.Admin.Index');
+    return view('Backend.Home');
 });
 
 //Back-end
 Route::group(['prefix' => 'admin'], function () {
     Route::resource('categories', CategoriesController::class);
-    Route::resource('products', ProductController::class);
-    Route::resource('users', UserController::class);
-    Route::resource('orders', OrderController::class);
-    Route::resource('orderitem', OrderitemController::class);
-    Route::resource('slider', SliderController::class);
+    Route::resource('products', ProductsController::class);
+    Route::resource('users', UsersController::class);
+    Route::resource('orders', OrdersController::class);
+    Route::resource('orderitem', OrderitemsController::class);
+    Route::resource('slider', SlidersController::class);
 });
 //Front-end
 Route::get('/', [HomeController::class, 'index']);
