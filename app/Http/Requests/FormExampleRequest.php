@@ -24,7 +24,7 @@ class FormExampleRequest extends FormRequest
     public function rules()
     {
         return [ 
-            'name' => 'required|max:255',
+                  'name' => 'required|max:255',
                   'email' => 'required|unique:users|max:255',
                   'phone' => 'required|unique:users|max:255',
                   'address' => 'required|max:255',

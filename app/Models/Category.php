@@ -14,6 +14,7 @@ class Category extends Model
         'id','name','banner','parent_id'
     ];
     public $timestamps = false;
+    protected $primaryKey = 'id';
 
     public function product(){
         return $this->hasMany(Product::class);

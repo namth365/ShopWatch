@@ -16,6 +16,36 @@ class CategoryRepository extends EloquentRepository implements CategoryInterface
         $categories = $this->model->paginate(6);
         return $categories;
     }
-    
-   
+    public function create($request)
+    {
+        return Category::orderBy('id', 'DESC')->get();
+    }
+    public function edit($request,$id)
+    {
+        return Category::find($request,$id);
+    }
+    public function store($request)
+    {
+        $category = new Category();
+        $category->name    = $request->name;
+        $category->banner  = $request->banner;
+        $category->parent_id  = $request->parent_id;
+
+        $category->save();
+    }
+    public function update($request, $id)
+    {
+        $category = Category::find($id);
+        $category->name  = $request->name;
+        $category->banner = $request->banner;
+        $category->parent_id  = $request->parent_id;
+
+        $category->save();
+    }
+    public function destroy($id)
+    {
+        $category = Category::find($id);
+        $category->delete();
+    return $category;
+    }
 }
