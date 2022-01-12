@@ -20,13 +20,23 @@ class CategoryService implements CategoryServiceInterface {
         return $this->CategoryRepository->findById($id);
     }
     public function create($request){
+        return $this->CategoryRepository->create($request);
+
+    }
+    public function store($request){
+        return $this->CategoryRepository->store($request);
+
+    }
+    public function edit($request,$id){
+        return $this->CategoryRepository->edit($request,$id);
 
     }
     public function update($request,$id){
+        return $this->CategoryRepository->update($request,$id);
 
     }
     public function destroy($id){
-
+        return $this->CategoryRepository->destroy($id);
     }
    
 
