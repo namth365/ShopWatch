@@ -25,7 +25,8 @@ class OrderRepository extends EloquentRepository implements OrderInterface {
        return $order;
     }
     public function getAll($request){
-  
+        $orders = $this->model->paginate(6);
+        return $orders;
     }
     public function check_out($request){
 
