@@ -37,6 +37,8 @@ class ProductService implements ProductServiceInterface {
     }
     public function filter_search($orderBy,$max){
         return  $this->ProductRepository->filter_search($orderBy,$max);
-       
+    }
+    public function store($request){
+        return $this->ProductRepository->store($request);
     }
 }
