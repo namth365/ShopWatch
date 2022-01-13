@@ -29,9 +29,7 @@ Route::get('/product-detail', function () {
 Route::get('/', function () {
     return view('Frontend.Website.Home');
 });
-// Route::get('/cart', function () {
-//     return view('Frontend.Website.Cart');
-// });
+
 Route::get('/check-out', function () {
     return view('Frontend.Website.Checkout');
 });

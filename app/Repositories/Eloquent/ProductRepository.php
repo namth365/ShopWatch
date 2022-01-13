@@ -47,4 +47,7 @@ class ProductRepository extends EloquentRepository implements ProductInterface
        
         return $filter_search;
     }
+    public function store($request){
+        
+    }
 }
