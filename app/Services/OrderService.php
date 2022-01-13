@@ -26,6 +26,12 @@ class OrderService implements OrderServiceInterface {
     public function destroy($id){
 
     }
+    public function store($id){
+
+    }
+    public function edit($request,$id){
+
+    }
     public function check_out($request){
         return $this->OrderRepository->check_out($request);
     }
