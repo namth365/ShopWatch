@@ -48,9 +48,16 @@ use App\Services\OrderService;
 use App\Services\Interfaces\OrderServiceInterface;
 
 use App\Repositories\Eloquent\OrderRepository;
-use App\Repositories\Eloquent\UsersRepository;
 use App\Repositories\Interfaces\OrderInterface;
+
+//User
+use App\Services\UserService;
+use App\Services\Interfaces\UserServiceInterface;
+
+use App\Repositories\Eloquent\UserRepository;
 use App\Repositories\Interfaces\UserInterface;
+
+
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
@@ -65,21 +72,20 @@ class AppServiceProvider extends ServiceProvider
     {
         //RepositoryInterface - EloquentRepository
         $this->app->singleton(RepositoryInterface::class, EloquentRepository::class);
-         //CategoryInterface - CategoryRepository
+        //CategoryInterface - CategoryRepository
         $this->app->singleton(CategoryInterface::class, CategoryRepository::class);
-         //ProductInterface - ProductRepository
+        //ProductInterface - ProductRepository
         $this->app->singleton(ProductInterface::class, ProductRepository::class);
-         //SliderInterface - SliderRepository
+        //SliderInterface - SliderRepository
         $this->app->singleton(SliderInterface::class, SliderRepository::class);
-         //CartInterface - CartRepository
-        $this->app->singleton(CartInterface::class,CartRepository::class);
+        //CartInterface - CartRepository
+        $this->app->singleton(CartInterface::class, CartRepository::class);
         //SearchInterface - SearchRepository
         $this->app->singleton(SearchInterface::class, SearchRepository::class);
-
         //OrderInterface - OrderRepository
         $this->app->singleton(OrderInterface::class, OrderRepository::class);
-
-        $this->app->singleton(UserInterface::class, UsersRepository::class);
+        //UserInterface - UserRepository
+        $this->app->singleton(UserInterface::class, UserRepository::class);
         /* Binding  Service*/
         $this->app->singleton(CategoryServiceInterface::class, CategoryService::class);
         $this->app->singleton(UserServiceInterface::class, UserService::class);

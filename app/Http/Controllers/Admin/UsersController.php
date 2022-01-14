@@ -3,18 +3,28 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Services\Interfaces\UserServiceInterface;
 use Illuminate\Http\Request;
-
+use App\Models\User;
 class UsersController extends Controller
 {
+    protected $UserService;
+
+    public function __construct(UserServiceInterface $UserService){
+        $this->UserService = $UserService;
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view ('Backend.Admin.Users.Index');
+            $users = $this->UserService->getAll($request);
+            $params = [
+                'users'=> $users
+            ];
+        return view ('Backend.Admin.Users.Index', $params);
 
     }
 

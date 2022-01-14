@@ -1,7 +1,3 @@
-<!-- Preloader -->
-<div class="preloader flex-column justify-content-center align-items-center">
-  <img class="animation__shake" src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
-</div>
 
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -23,10 +19,10 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link">
-    <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+  <div  class="brand-link">
+    <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">Watch-shop
     <span class="brand-text font-weight-light"></span>
-  </a> <br>
+  </div> <br>
 
   <!-- Sidebar -->
   <div class="sidebar">
@@ -54,9 +50,9 @@
 
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-copy"></i>
+          <i class="fas fa-bars"></i>
             <p>
-              Dashboard
+           Tổng quát
             </p>
           </a>
       </ul>
