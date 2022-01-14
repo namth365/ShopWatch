@@ -7,88 +7,87 @@
         <div class="col-lg-12">
             <h1 class="page-header text-center">Đơn Hàng {{$orders->count()}}</h1>
         </div>
+        <form class="form-inline" action="#" method="GET" style="display:flex">
+            <input class="form-control mr-sm-2" type="search" placeholder="Tìm đơn hàng..." name="search"
+                style="height:33px">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+        </form>
     </div>
     @if (Session::has('success'))
     <div class="alert alert-success"> <i class="fas fa-check-square"></i> {{session::get('success')}}</div>
     @endif
-    <div class="row">    <form class="form-inline" action="#" method="GET" style="display:flex">
-                <input class="form-control mr-sm-2" type="search" placeholder="Tìm đơn hàng..." name="search"
-                    style="height:33px">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i
-                        class="fas fa-search"></i></button>
-            </form>
-        <div class="col-xs-12 col-md-9 col-lg-9">
-            <div class="panel panel-primary">
-                <div class="panel-body">
-                    <div class="bootstrap-table">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr class="bg-primary">
-                                    <th style="width:40%">Tên Đơn Hàng</th>
-                                    <th style="width:20%">Email</th>
-                                    <th style="width:20%">Địa Chỉ</th>
-                                    <th style="width:20%">Số Điện Thoại</th>
-                                    <th style="width:20%">Giới Tính</th>
-                                    <th style="width:20%">Tổng Tiền</th>
-                                    <th style="width:20%">Chức năng</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($orders as $order)
-                                <tr>
-                                    <td>{{ $order->name }}</td>
-                                    <td>{{ $order->email }}</td>
-                                    <td>{{ $order->address }}</td>
-                                    <td>{{ $order->phone }}</td>
-                                    <td>{{ $order->gender }}</td>
-                                    <td>{{ $order->total }}</td>
-                                    <td>
-                                        <a href="{{route('orders.edit',[$order->id])}}" class="btn btn-warning"><i
-                                                class="far fa-edit"></i></a>
-                                        <form action="{{route('orders.destroy',$order->id)}}" method="post"
-                                            style="display:inline">
-                                            @csrf
-                                            @method('delete')
-                                            <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                data-target="#exampleModal">
-                                                <i class="far fa-trash-alt"></i>
-                                            </button>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Xóa</h5>
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Bạn có muốn xóa {{$order->name}}?
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-dismiss="modal">Hủy</button>
-                                                            <button type="submit" class="btn btn-danger">Xóa</button>
-                                                        </div>
+
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <div class="bootstrap-table">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="bg-primary">
+                                <th style="width:20%">Tên Đơn Hàng</th>
+                                <th style="width:15%">Email</th>
+                                <th style="width:15%">Địa Chỉ</th>
+                                <th style="width:10%">Số Điện Thoại</th>
+                                <th style="width:10%">Giới Tính</th>
+                                <th style="width:10%">Tổng Tiền</th>
+                                <th style="width:10%">Chức năng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($orders as $order)
+                            <tr>
+                                <td>{{ $order->name }}</td>
+                                <td>{{ $order->email }}</td>
+                                <td>{{ $order->address }}</td>
+                                <td>{{ $order->phone }}</td>
+                                <td>{{ $order->gender }}</td>
+                                <td>{{ $order->total }}</td>
+                                <td>
+                                    <a href="{{route('orders.show',[$order->id])}}" class="btn btn-warning"><i
+                                            class="fas fa-th-list" title="Xem"></i></a>
+                                    <form action="{{route('orders.destroy',$order->id)}}" method="post"
+                                        style="display:inline" title="Xóa">
+                                        @csrf
+                                        @method('delete')
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#exampleModal">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Xóa</h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Bạn có muốn xóa {{$order->name}}?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Hủy</button>
+                                                        <button type="submit" class="btn btn-danger">Xóa</button>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        <div class=" d-flex justify-content-end">
-                            {{ $orders->links() }}
-                        </div>
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <div class=" d-flex justify-content-end">
+                        {{ $orders->links() }}
                     </div>
-                    <div class="clearfix"></div>
                 </div>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>

@@ -41,6 +41,8 @@ class CategoryRepository extends EloquentRepository implements CategoryInterface
         $category->parent_id  = $request->parent_id;
 
         $category->save();
+        return redirect()->route('categories.index')->with('status','Cập nhật thể loại thành công');
+
     }
     public function destroy($id)
     {

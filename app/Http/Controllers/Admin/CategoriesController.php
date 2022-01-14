@@ -39,8 +39,9 @@ class CategoriesController extends Controller
      */
     public function create() 
     {
-        // $categories = $this->CategoryService->create();
-        // return view ('Backend.Admin.Categories.Index')->with(compact('categories'));
+        // $categories = $this->CategoryService->getAll();
+        $categories = [];
+        return view ('Backend.Admin.Categories.Add')->with(compact('categories'));
         
     }
 
@@ -52,7 +53,7 @@ class CategoriesController extends Controller
      */
     public function store(CategoryRequest $request)
     {
-        $adCategpries =$this->CategoryService->store($request);
+        $categories =$this->CategoryService->store($request);
         return redirect()->route('categories.index')->with('status', 'Thêm danh mục thành công !');
     }
 
@@ -73,13 +74,13 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($request,$id)
+    public function edit($id)
     {
-        $categories = $this->CategoryService->edit($request,$id);
+        $category = $this->CategoryService->findById($id);
         $params = [
-            'categories' => $categories
+            'category' => $category
         ];
-        return view('Backend.Admin.Categories.Index', $params);
+        return view('Backend.Admin.Categories.Edit', $params);
         
     }
 
@@ -92,8 +93,12 @@ class CategoriesController extends Controller
      */
     public function update(CategoryRequest $request, $id)
     {
-        $this->CategoryService->update($request, $id);
-        return redirect()->route('categories.index')->with('status', 'Cập nhật danh mục sản phẩm thành công!');
+        // dd($request->all());
+        $category = $this->CategoryService->update($request, $id);
+    
+        return redirect()->route('categories.index',[
+            'category' => $category
+        ])->with('status', 'Cập nhật danh mục sản phẩm thành công!');
     }
 
     /**
