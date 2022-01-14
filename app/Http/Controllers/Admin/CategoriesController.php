@@ -52,7 +52,7 @@ class CategoriesController extends Controller
      */
     public function store(CategoryRequest $request)
     {
-        $adCategpries =$this->CategoryService->store($request);
+        $addCategpries =$this->CategoryService->store($request);
         return redirect()->route('categories.index')->with('status', 'Thêm danh mục thành công !');
     }
 
@@ -106,9 +106,7 @@ class CategoriesController extends Controller
     {
     
         $delete_category = $this->CategoryService->destroy($id);
-
         $delete_category->delete();
-
         Session::flash('success', 'Xóa thành công');
         return redirect()->route('categories.index');
     

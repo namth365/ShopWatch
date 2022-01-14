@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
+use App\Models\Category;
 use App\Models\Product;
 use App\Services\Interfaces\CategoryServiceInterface;
 use App\Services\Interfaces\ProductServiceInterface;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProductsController extends Controller
 {
@@ -23,13 +26,11 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $categories = $this->CategoryService->getAll($request);
-        $products = $this->ProductService->getAll($request);
+        $products = $this->ProductService->productPaginate('created_at','desc',5);
         $params = [
-            'products'=>$products,
-            'categories'=>$categories
+            'products'=>$products
         ];
         return view ('Backend.Admin.Products.Index',$params);
         
@@ -44,11 +45,11 @@ class ProductsController extends Controller
     {
         // echo __METHOD__;
         // die();
-        // $categories = $this->CategoryService->getAll($request);
-        // $params = [
-        //     'categories'=>$categories
-        // ];
-        return view ('Backend.Admin.Products.Add');
+        $categories = $this->CategoryService->getAll($request);
+        $params = [
+            'categories'=>$categories
+        ];
+        return view ('Backend.Admin.Products.Add',$params);
     }
 
     /**
@@ -57,28 +58,11 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        $data = $request->only('name', 'price', 'category_id', 'status','description','supplier','quantity');
-
-
-        if ($request->hasFile('image')) {
-            $get_image          = $request->image;
-            //tạo file upload trong public để chạy ảnh
-            $path               = 'upload';
-            $get_name_image     = $get_image->getClientOriginalName(); //abc.jpg 
-            //explode "." [abc,jpg]
-            //
-            $name_image         = current(explode('.', $get_name_image)); //trả về phần tử thứ 1 của mảng
-            //getClientOriginalExtension: tạo đuôi ảnh
-            $new_image          = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
-            //abc nối số ngẫu nhiên từ 0-99, nối "." ->đuôi file jpg
-            $get_image->move($path, $new_image); //chuyển file ảnh tới thư mục
-            $data['image']   = $new_image;
-        }
-        // dd($data);
-        Product::create($data);
-        return redirect()->route('Products.index')->with('success', 'Thêm sản phẩm thành công');
+      
+       $this->ProductService->store($request);
+       return redirect()->route('products.index')->with('success', 'Thêm sản phẩm' .$request->name. 'thành công');
     }
 
     /**
@@ -100,7 +84,13 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $products = Product::find($id);
+        $categories = Category::all();
+        $params = [
+            'products' => $products,
+            'categories' => $categories
+        ];
+        return view('Backend.Admin.Products.Edit', $params);
     }
 
     /**
@@ -110,9 +100,11 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
-        //
+        $this->ProductService->update($request, $id);
+        return redirect()->route('products.index');
+
     }
 
     /**
@@ -123,6 +115,7 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->ProductService->destroy($id);
+        return redirect()->route('products.index')->with('danger', 'Xóa sản phẩm thành công');
     }
 }

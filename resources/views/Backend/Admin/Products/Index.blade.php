@@ -23,7 +23,8 @@
 				<div class="panel-body">
 					<div class="bootstrap-table">
 						<div class="table-responsive">
-							<a href="{{ route('products.create') }}" class="btn btn-primary"><i class="fas fa-folder-plus"></i>Thêm sản phẩm</a>
+							<a href="{{ route('products.create') }}" class="btn btn-success"><i class="fas fa-folder-plus"></i>Thêm sản phẩm</a>
+							
 							<table class="table table-bordered" style="margin-top:20px;">
 								<thead>
 									<tr class="bg-primary">
@@ -45,21 +46,22 @@
 										<td>
 											<img width="130px" style="margin:auto" src="{{ asset('images/product-details/'.$product->image) }}" class="thumbnail">
 										</td>
-										<td>{{ $product->price }}</td>
-										<td>{{ $product->category_id }}</td>
+										<td>{{ number_format($product->price). "đ" }}</td>
+										<td>{{ $product->category->name }}</td>
 										<td>{{ $product->quantity }}</td>
 										<td>{{ $product->status }}</td>
 										<td>
-											<a href="" class="btn btn-warning"><i class="far fa-edit"></i></a>
-											<form action="" method="post" style="display:inline">
-											
+											<a href="{{route('products.edit', $product->id)}}" class="btn btn-warning"><i class="far fa-edit"></i></a>
+											<form action="{{route('products.destroy', $product->id)}}" method="post" style="display:inline">
+												@csrf
+												@method('DELETE')
 												<!-- Button trigger modal -->
-												<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" >
+												<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#pr-<?php echo $product->id ;?>" >
 												<i class="far fa-trash-alt"></i>
 												</button>
 
 												<!-- Modal -->
-												<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal fade" id="pr-<?php echo $product->id ;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 													<div class="modal-dialog" role="document">
 														<div class="modal-content">
 															<div class="modal-header">
