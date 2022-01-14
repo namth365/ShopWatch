@@ -43,6 +43,7 @@ class ProductController extends Controller
     }
     public function filter_search(Request $request)
     {
+       
         $orderBy = $request->price_filter;
         $max = 0;
         if($orderBy == 500000){

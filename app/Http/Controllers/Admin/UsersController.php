@@ -21,6 +21,7 @@ class UsersController extends Controller
     public function index(Request $request)
     {
             $users = $this->UserService->getAll($request);
+          
             $params = [
                 'users'=> $users
             ];
@@ -35,7 +36,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('Backend.Admin.Users.Add');
     }
 
     /**
@@ -46,7 +47,8 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->UserService->store($request);
+        return redirect()->route('users.index')->with('success', 'Thêm nhân viên' .$request->name. 'thành công');
     }
 
     /**
@@ -68,7 +70,11 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        $params = [
+            'user'=>$user
+        ];
+        return view ('Backend.Admin.Users.Edit',$params);
     }
 
     /**
@@ -79,8 +85,11 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        // echo __METHOD__;
+        // die();
+        $this->UserService->update($request, $id);
+        return redirect()->route('users.index')->with('success','Cập nhật nhân viên'.$request->name. 'thành công');
     }
 
     /**
@@ -91,6 +100,7 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->UserService->destroy($id);
+        return redirect()->route('users.index')->with('danger', 'Xóa nhân viên thành công');
     }
 }
