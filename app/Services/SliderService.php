@@ -30,4 +30,10 @@ class SliderService implements SliderServiceInterface
     public function destroy($id)
     {
     }
+    public function edit($request, $id){
+
+    }
+    public function store($request){
+        
+    }
 }

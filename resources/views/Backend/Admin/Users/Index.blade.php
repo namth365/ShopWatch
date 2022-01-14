@@ -23,40 +23,37 @@
 				<div class="panel-body">
 					<div class="bootstrap-table">
 						<div class="table-responsive">
-							<a href="" class="btn btn-success"><i class="fas fa-user-plus"></i> Thêm nhân viên</a>
+							<a href="{{ route('users.create') }}" class="btn btn-success"><i class="fas fa-user-plus"></i> Thêm nhân viên</a>
 							
 							<table class="table table-bordered" style="margin-top:20px;">
 								<thead>
 									<tr class="bg-primary">
 										<th>STT</th>
 										<th>Tên nhân viên</th>
+										<th>Chức vụ</th>
 										<th>Email</th>
-                                        <th>Chức vụ</th>
 										<th>Số điện thoại</th>	
 										<th>Tùy chọn</th>
 									</tr>
 								</thead>
 								<tbody>
-								
+								@foreach($users as $key => $user)
 									<tr>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										
+										<td>{{ $key + 1 }}</td>
+										<td>{{ $user->name }}</td>
+										<td>{{ $user->position }}</td>
+										<td> {{ $user->email }}</td>
+										<td> {{ $user->phone }}</td>		
 										<td>
-											<a href="" class="btn btn-warning"><i class="far fa-edit"></i></a>
-											<form action="" method="post" style="display:inline">
+											<a href="{{route('users.edit',$user->id)}}" class="btn btn-warning"><i class="far fa-edit"></i></a>
+											<form action="{{ route('users.destroy',$user->id) }}" method="post" style="display:inline">
 												@csrf
 												@method('DELETE')
 												<!-- Button trigger modal -->
-												<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#pr">
-												<i class="far fa-trash-alt"></i>
-												</button>
+												<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#pr-<?php echo $user->id ;?>" >
 
 												<!-- Modal -->
-												<div class="modal fade" id="pr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal fade" id="pr-<?php echo $user->id ;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 													<div class="modal-dialog" role="document">
 														<div class="modal-content">
 															<div class="modal-header">
@@ -66,7 +63,7 @@
 																</button>
 															</div>
 															<div class="modal-body">
-																Bạn có muốn xóa ?
+																Bạn có muốn xóa {{ $user->name }} ?
 															</div>
 															<div class="modal-footer">
 																<button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
@@ -78,7 +75,7 @@
 											</form>
 										</td>
 									</tr>
-							
+							@endforeach
 								</tbody>
 							</table>
 						

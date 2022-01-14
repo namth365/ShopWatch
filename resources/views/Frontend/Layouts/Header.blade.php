@@ -75,8 +75,8 @@
             </div>
             <div class="col-sm-3">
                 <div>
-                    <form action=""  style="display:flex;">
-                   
+                    <form action="{{ route('search-price') }}" style="display:flex;">
+
                         <select name= "price_filter">
                             <option>-Giá-</option>
                             <option value="500000">500,000đ - 2,500,000đ</option>

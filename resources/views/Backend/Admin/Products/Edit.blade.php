@@ -37,8 +37,8 @@
 								</div>
 								<br>
 								<label>Tình trạng</label>
-								<select name="status" class="form-control" value="{{ $products->status }}">
-									<option value="">--Chọn tình trạng--</option>
+								<select name="status" class="form-control">
+									<option value="{{ $products->status }}">{{ $products->status }}</option>
 									<option value="Còn hàng">Còn hàng</option>
 									<option value="Hết hàng">Hết hàng</option>
 								</select>

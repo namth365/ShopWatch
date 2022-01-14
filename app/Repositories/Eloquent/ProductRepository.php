@@ -43,8 +43,13 @@ class ProductRepository extends EloquentRepository implements ProductInterface
     }
     public function filter_search($orderBy, $max)
     {
-        $filter_search = DB::table('products')->where('price', '>', "" . $orderBy . "")->where("price", "<=", "" . $max . "")->orderBy('price', "ASC")->paginate(6);
 
+        $filter_search = DB::table('products')
+        ->where('price', '>', "" . $orderBy . "")
+        ->where("price", "<=", "" . $max . "")
+        ->orderBy('price', "ASC")
+        ->paginate(3);
+        // dd($filter_search);
         return $filter_search;
     }
     public function store($request)
