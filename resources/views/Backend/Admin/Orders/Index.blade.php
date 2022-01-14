@@ -17,20 +17,20 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i
                         class="fas fa-search"></i></button>
             </form>
-        <div class="col-xs-12 col-md-9 col-lg-9">
+        <div class="col-lg-12">
             <div class="panel panel-primary">
                 <div class="panel-body">
                     <div class="bootstrap-table">
                         <table class="table table-bordered">
                             <thead>
                                 <tr class="bg-primary">
-                                    <th style="width:40%">Tên Đơn Hàng</th>
-                                    <th style="width:20%">Email</th>
-                                    <th style="width:20%">Địa Chỉ</th>
-                                    <th style="width:20%">Số Điện Thoại</th>
-                                    <th style="width:20%">Giới Tính</th>
-                                    <th style="width:20%">Tổng Tiền</th>
-                                    <th style="width:20%">Chức năng</th>
+                                    <th >Tên Đơn Hàng</th>
+                                    <th >Email</th>
+                                    <th >Địa Chỉ</th>
+                                    <th >Số Điện Thoại</th>
+                                    <th >Giới Tính</th>
+                                    <th >Tổng Tiền</th>
+                                    <th >Chức năng</th>
                                 </tr>
                             </thead>
                             <tbody>
