@@ -73,9 +73,9 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($request,$id)
+    public function edit($id)
     {
-        $categories = $this->CategoryService->edit($request,$id);
+        $categories = Category::find($id);
         $params = [
             'categories' => $categories
         ];
@@ -93,7 +93,7 @@ class CategoriesController extends Controller
     public function update(CategoryRequest $request, $id)
     {
         $this->CategoryService->update($request, $id);
-        return redirect()->route('categories.index')->with('status', 'Cập nhật danh mục sản phẩm thành công!');
+        return redirect()->route('categories.index')->with('status', 'Cập nhật danh mục sản phẩm' .$request->name.' thành công!');
     }
 
     /**
@@ -107,8 +107,8 @@ class CategoriesController extends Controller
     
         $delete_category = $this->CategoryService->destroy($id);
         $delete_category->delete();
-        Session::flash('success', 'Xóa thành công');
-        return redirect()->route('categories.index');
+       
+        return redirect()->route('categories.index')->with('success','Xóa danh mục thành công');
     
     }
 }

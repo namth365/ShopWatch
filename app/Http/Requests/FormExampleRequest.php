@@ -29,7 +29,6 @@ class FormExampleRequest extends FormRequest
                   'phone' => 'required|unique:users|max:255',
                   'address' => 'required|max:255',
                   'gender' => 'required|max:255',
-                  'birthday' => 'required|max:255',
                   'password' => 'required|max:255',
             ];
     }
@@ -37,14 +36,13 @@ class FormExampleRequest extends FormRequest
     {
         return  [
             'email.unique' => 'Email đã tồn tại',
-            'email.required' => 'Phải có email',
-            'name.required' => 'Phải có tên',
-            'phone.required' => 'Phải có số điện thoại',
+            'email.required' => 'Vui lòng nhập email',
+            'name.required' => 'Vui lòng nhập tên',
+            'phone.required' => 'Vui lòng nhập số điện thoại',
             'phone.unique' => 'Số điện thoại đã tồn tại',
-            'gender.required' => 'Phải có giới tính',
-            'birthday.required' => 'Phải có ngày sinh',
-            'address.required' => 'Phải có địa chỉ',
-            'password.required' => 'Phải có mật khẩu',
+            'gender.required' => 'Vui lòng nhập giới tính',
+            'address.required' => 'Vui lòng nhập địa chỉ',
+            'password.required' => 'Vui lòng nhập mật khẩu',
         ];
     }
 }
