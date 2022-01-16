@@ -15,7 +15,7 @@ class UserRepository extends EloquentRepository implements UserInterface
     }
     public function getAll($request)
     {
-        $users = $this->model->paginate(6);
+        $users = $this->model->paginate(5);
         return $users;
     }
     public function create($request)

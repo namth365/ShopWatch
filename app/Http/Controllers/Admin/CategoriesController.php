@@ -10,15 +10,15 @@ use App\Services\CategoryService;
 use App\Http\Requests\CategoryRequest;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+
 class CategoriesController extends Controller
 {
-  protected $CategoryService;
-    
-    public function __construct( CategoryServiceInterface $CategoryService)
+    protected $CategoryService;
+
+    public function __construct(CategoryServiceInterface $CategoryService)
     {
-     
-      $this->CategoryService  = $CategoryService;
-     
+
+        $this->CategoryService  = $CategoryService;
     }
     /**
      * Display a listing of the resource.
@@ -28,8 +28,8 @@ class CategoriesController extends Controller
     public function index(Request $request)
     {
         $categories = $this->CategoryService->getAll($request);
-        return view ('Backend.Admin.Categories.Index',["categories"=>$categories]);
-        $categories = DB::table('categories')->count('categories');
+        // $counts = DB::table('categories')->count('categories');
+        return view('Backend.Admin.Categories.Index',compact('categories'));
     }
 
     /**
@@ -37,11 +37,9 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() 
+    public function create()
     {
-        // $categories = $this->CategoryService->create();
-        // return view ('Backend.Admin.Categories.Index')->with(compact('categories'));
-        
+      
     }
 
     /**
@@ -52,8 +50,8 @@ class CategoriesController extends Controller
      */
     public function store(CategoryRequest $request)
     {
-        $addCategpries =$this->CategoryService->store($request);
-        return redirect()->route('categories.index')->with('status', 'Thêm danh mục thành công !');
+        $this->CategoryService->store($request);
+        return redirect()->route('categories.index')->with('success', 'Thêm danh mục'.$request->name.' thành công !');
     }
 
     /**
@@ -64,7 +62,6 @@ class CategoriesController extends Controller
      */
     public function show(Request $request)
     {
-       
     }
 
     /**
@@ -75,12 +72,11 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::find($id);
+        $category = Category::find($id);
         $params = [
-            'categories' => $categories
+            'category' => $category
         ];
         return view('Backend.Admin.Categories.Index', $params);
-        
     }
 
     /**
@@ -93,7 +89,7 @@ class CategoriesController extends Controller
     public function update(CategoryRequest $request, $id)
     {
         $this->CategoryService->update($request, $id);
-        return redirect()->route('categories.index')->with('status', 'Cập nhật danh mục sản phẩm' .$request->name.' thành công!');
+        return redirect()->route('categories.index')->with('warning','Cập nhật danh mục'.$request->name.'thành công');
     }
 
     /**
@@ -104,11 +100,8 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-    
-        $delete_category = $this->CategoryService->destroy($id);
-        $delete_category->delete();
-       
-        return redirect()->route('categories.index')->with('success','Xóa danh mục thành công');
-    
+
+        $this->CategoryService->destroy($id);
+        return redirect()->route('categories.index')->with('danger','Xóa sản phẩm thành công');
     }
 }

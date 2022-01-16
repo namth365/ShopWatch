@@ -55,7 +55,8 @@
                                 </div>
                                 <br>
                                 <label>Giới tính</label>
-                                <select name="gender">
+                                <select name="gender" class="form-control">
+                                    <option value="">--Chọn giới tính--</option>
                                     <option value="Name">Nam</option>
                                     <option value="Nữ">Nữ</option>
                                 </select>

@@ -2,7 +2,7 @@
 
 @section('content')
 
-@include('Backend.Layouts.Dashboard')
+<!-- @include('Backend.Layouts.Dashboard') -->
 
 
 @endsection

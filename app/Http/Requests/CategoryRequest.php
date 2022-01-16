@@ -33,10 +33,10 @@ class CategoryRequest extends FormRequest
     {
         return  [
             'banner.unique' => 'Banner đã tồn tại',
-            'banner.required' => 'Phải có banner',
+            'banner.required' => 'Vui lòng chọn banner',
             'name.unique' => 'Tên đã tồn tại',
-            'name.required' => 'Phải có tên thể loại',
-            'parent_id.required' => 'Phải có parent id',
+            'name.required' => 'Vui lòng nhập tên',
+            'parent_id.required' => 'Vui lòng chọn danh mục cha',
         ];
     }
 }

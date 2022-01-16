@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
 use App\Services\Interfaces\UserServiceInterface;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -45,7 +46,7 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         $this->UserService->store($request);
         return redirect()->route('users.index')->with('success', 'Thêm nhân viên' .$request->name. 'thành công');
@@ -84,7 +85,7 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {   
         // echo __METHOD__;
         // die();

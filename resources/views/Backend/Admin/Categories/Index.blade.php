@@ -42,7 +42,7 @@
                                 <p style="color:red">{{ $errors->first('banner') }}</p>
                                 @endif
                             </div>
-                            <label>Parent_id</label>
+                            <label>Danh mục cha</label>
                             <input type="text" name="parent_id" class="form-control" placeholder="Parent_id..."> <br>
                             <div class="error-message">
                                 @if ($errors->any())
@@ -64,7 +64,7 @@
                                 <tr class="bg-primary">
                                     <th style="width:40%">Tên danh mục</th>
                                     <th style="width:20%">Banner</th>
-                                    <th style="width:20%">Parent_id</th>
+                                    <th style="width:20%">Danh mục cha</th>
                                     <th style="width:20%">Chức năng</th>
                                 </tr>
                             </thead>
@@ -83,11 +83,11 @@
                                             @method('delete')
                                             <!-- Button trigger modal -->
                                             <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                data-target="#exampleModal">
+                                                data-target="#ct-<?= $category->id ;?>">
                                                 <i class="far fa-trash-alt"></i>
                                             </button>
                                             <!-- Modal -->
-                                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                            <div class="modal fade" id="ct-<?= $category->id ;?>" tabindex="-1" role="dialog"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
@@ -109,7 +109,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- <button type="submit" onclick="return confirm('Bạn có muốn xóa danh mục {{ $category->name }} ?')" class="btn btn-danger"><i class="far fa-trash-alt"></i></button> -->
                                         </form>
                                     </td>
                                 </tr>
