@@ -75,6 +75,15 @@
             </p>
           </a>
         </li>
+
+        <li class="nav-item">
+        <a href="/admin/users" class="nav-link">
+        <i class="fas fa-users"></i>
+            <p>
+           Quản lý nhân viên
+            </p>
+          </a>
+        </li>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
