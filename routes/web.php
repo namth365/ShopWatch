@@ -38,9 +38,9 @@ Route::get('/check-out', function () {
 Route::get('/404', function () {
     return view('Frontend.Website.404');
 });
-Route::get('/admin', function () {
-    return view('Backend.Home');
-});
+// Route::get('/admin', function () {
+//     return view('Backend.Home');
+// });
 
 
 //Back-end

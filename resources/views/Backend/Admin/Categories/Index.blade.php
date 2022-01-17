@@ -5,7 +5,7 @@
 <div class="main">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header text-center">Danh mục sản phẩm</h1>
+          <h1 class="page-header text-center">Danh mục sản phẩm</h1>
         </div>
     </div>
     <nav class="navbar">

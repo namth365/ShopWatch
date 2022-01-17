@@ -54,9 +54,9 @@ class ProductService implements ProductServiceInterface
     {
         return $this->ProductRepository->edit($request, $id);
     }
-    public function productPaginate($col, $type, $number)
-    {
-        return $this->ProductRepository->productPaginate($col, $type, $number);
-    }
+    // public function productPaginate($col, $type, $number)
+    // {
+    //     return $this->ProductRepository->productPaginate($col, $type, $number);
+    // }
   
 }

@@ -9,7 +9,7 @@ interface ProductServiceInterface extends ServiceInterface{
     public function category($id,$request);
     public function filter_search($orderBy,$max);
     public function store($request);
-    public function productPaginate($col,$type,$number);
+    // public function productPaginate($col,$type,$number);
     public function destroy($id);
     public function update($request, $id);
     public function edit($request, $id);
