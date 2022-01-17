@@ -30,7 +30,7 @@
                                 <tr class="bg-primary">
                                     <th style="width:40%">Tên danh mục</th>
                                     <th style="width:20%">Banner</th>
-                                    <th style="width:20%">Parent_id</th>
+                                    <th style="width:20%">Danh mục cha</th>
                                     <th style="width:20%">Chức năng</th>
                                 </tr>
                             </thead>
@@ -75,7 +75,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- <button type="submit" onclick="return confirm('Bạn có muốn xóa danh mục {{ $category->name }} ?')" class="btn btn-danger"><i class="far fa-trash-alt"></i></button> -->
                                         </form>
                                     </td>
                                 </tr>

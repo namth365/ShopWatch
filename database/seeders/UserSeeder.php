@@ -23,6 +23,7 @@ class UserSeeder extends Seeder
         $item->birthday = "2000/10/10";
         $item->email = "aa@gmail.com";
         $item->password = "123456";
+        $item->position = "Giám đốc";
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();
@@ -36,6 +37,7 @@ class UserSeeder extends Seeder
         $item->birthday = "2000/10/10";
         $item->email = "bb@gmail.com";
         $item->password = "123456";
+        $item->position = "Nhân viên";
         $item->created_at = date('Y-m-d H:i:s');
         $item->updated_at  = date('Y-m-d H:i:s');
         $item->save();

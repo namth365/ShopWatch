@@ -71,18 +71,18 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        <div class=" d-flex justify-content-end">
-                            {{ $orders->links() }}
-                        </div>
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <div class=" d-flex justify-content-end">
+                        {{ $orders->links() }}
                     </div>
-                    <div class="clearfix"></div>
                 </div>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>

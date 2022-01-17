@@ -12,7 +12,7 @@
         <!--/checkout-options-->
 
         <div class="review-payment">
-            <h2>Kiểm Tra Đơn Hàng Và Thông Tin </h2>
+            <h2>Xác nhận mua hàng</h2>
         </div>
        
             <div class="table-responsive cart_info">
@@ -20,7 +20,7 @@
                     <thead>
                         <tr class="cart_menu">
                             <td class="image">Hình Ảnh</td>
-                            <td class="description">Mô Tả</td>
+                            <td class="description">Sản phẩm</td>
                             <td class="price">Giá</td>
                             <td class="quantity">Số Lượng</td>
                             <td class="total">Tổng Tiền</td>
@@ -72,44 +72,44 @@
                         <form action="{{ route('postRegister') }}" method="post">
             @csrf
             @method('post')
-                            <p>Thông Tin Đặt Hàng</p>
+                            <p style="color:red">Thông Tin Đặt Hàng</p>
                             <div class="form-one">
 
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div>
                                             <label>Tên Khách Hàng <span>*</span></label>
-                                            <input type="text" name="name" value="{{old('name')}}">
+                                            <input type="text" name="name" value="{{old('name')}}" class="form-control">
                                             <span style="color:red;">@error("name"){{ $message }} @enderror</span>
                                         </div>
                                         <div>
                                             <label>Địa chỉ <span>*</span></label>
-                                            <input type="text" name="address" value="{{old('address')}}">
+                                            <input type="text" name="address" value="{{old('address')}}" class="form-control">
                                             <span style="color:red;">@error("address"){{ $message }} @enderror</span>
                                         </div>
                                         <div>
                                             <label>Số điện thoại<span>*</span></label>
-                                            <input type="text" name="phone" value="{{old('phone')}}">
+                                            <input type="text" name="phone" value="{{old('phone')}}" class="form-control">
                                             <span style="color:red;">@error("phone"){{ $message }} @enderror</span>
                                         </div>
                                         <div>
                                             <label>Giới Tính <span>*</span></label>
-                                            <input type="text" name="gender" value="{{old('gender')}}">
+                                            <input type="text" name="gender" value="{{old('gender')}}" class="form-control">
                                             <span style="color:red;">@error("gender"){{ $message }} @enderror</span>
                                         </div>
-                                        <div>
+                                        <!-- <div>
                                             <label>Ngày Sinh <span>*</span></label>
                                             <input type="date" name="birthday" value="{{old('birthday')}}">
                                             <span style="color:red;">@error("birthday"){{ $message }} @enderror</span>
-                                        </div>
+                                        </div> -->
                                         <div>
                                             <label> Email <span>*</span></label>
-                                            <input type="email" name="email" value="{{old('email')}}">
+                                            <input type="email" name="email" value="{{old('email')}}" class="form-control">
                                             <span style="color:red;">@error("email"){{ $message }} @enderror</span>
                                         </div>
                                         <div>
                                             <label> Mật khẩu <span>*</span></label>
-                                            <input type="password" name="password" value="{{old('password')}}">
+                                            <input type="password" name="password" value="{{old('password')}}" class="form-control">
                                             <span style="color:red;">@error("password"){{ $message }} @enderror</span>
                                         </div>
                                     </div>

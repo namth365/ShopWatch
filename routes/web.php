@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Frontend\SliderController;
 use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\OrdersController;
@@ -44,6 +45,7 @@ Route::get('/admin', function () {
 
 //Back-end
 Route::group(['prefix' => 'admin'], function () {
+    Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::resource('categories', CategoriesController::class);
     Route::resource('products', ProductsController::class);
     Route::resource('users', UsersController::class);

@@ -76,7 +76,7 @@
                     <!--recommended_items-->
                     <h2 class="title text-center">Sản Phẩm Liên Quan</h2>
 
-                    <<<<<<< HEAD <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="item active">
                                 @foreach($related_products as $related_product)
@@ -86,17 +86,10 @@
                                             <div class="productinfo text-center">
                                                 <form action="{{route('addtocart',$product->id)}}" method="post">
                                                     @csrf
-                                                    <img src="{{asset('images/product-details/'.$related_product->image)}}"
-                                                        alt="" />
+                                                    <img src="{{asset('images/product-details/'.$related_product->image)}}" alt="" />
                                                     <h2>{{number_format($related_product->price)."đ"}}</h2>
                                                     <p>{{$related_product->name}}</p>
-                                                    <a href="{{route('product_detail', $product->id)}}"
-                                                        class="btn btn-warning">Xem Chi Tiết</a>
-
-                                                    <button type="submit" class="btn btn-fefault cart">
-                                                        <i class="fa fa-shopping-cart"></i>
-                                                        Thêm vào giỏ hàng
-                                                    </button>
+                                                    <a href="{{route('product_detail', $product->id)}}" class="btn btn-warning">Xem Chi Tiết</a>
                                                 </form>
                                             </div>
                                         </div>
@@ -112,46 +105,11 @@
                         <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
                             <i class="fa fa-angle-right"></i>
                         </a>
-                </div>
-            </div>
-            <!--/recommended_items-->
-
-        </div>
-    </div>
-    </div>
-    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="item active">
-                @foreach($related_products as $related_product)
-                <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="{{asset('images/product-details/'.$related_product->image)}}" alt="" />
-                                <h2>{{number_format($related_product->price)."đ"}}</h2>
-                                <p>{{$related_product->name}}</p>
-                                <a href="{{route('product_detail', $related_product->id)}}" class="btn btn-warning">Xem
-                                    Chi Tiết</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                @endforeach
+                <!--/recommended_items-->
             </div>
-
         </div>
-        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-            <i class="fa fa-angle-left"></i>
-        </a>
-        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-            <i class="fa fa-angle-right"></i>
-        </a>
-    </div>
-    </div>
-    <!--/recommended_items-->
-
-    </div>
-    </div>
     </div>
 </section>
 @endsection
