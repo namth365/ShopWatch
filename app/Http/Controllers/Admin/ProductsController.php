@@ -19,16 +19,15 @@ class ProductsController extends Controller
     public function __construct(ProductServiceInterface $ProductService, CategoryServiceInterface $CategoryService){
       $this->ProductService = $ProductService;
       $this->CategoryService = $CategoryService;
-
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = $this->ProductService->productPaginate('created_at','desc',5);
+        $products = $this->ProductService->getAll($request);
         $params = [
             'products'=>$products
         ];

@@ -52,7 +52,6 @@
                 <div class="small-box bg-danger">
                     <div class="inner">
                         <h3>{{ $employees_count }}</h3>
-
                         <p>Nhân viên</p>
                     </div>
                     <div class="icon">
