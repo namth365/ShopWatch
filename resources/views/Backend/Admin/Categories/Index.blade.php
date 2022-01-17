@@ -2,13 +2,14 @@
 
 @section('content')
 
-<div class=" main">
+<div class="main">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header text-center">Danh mục sản phẩm {{$categories->count()}}</h1> 
+            <h1 class="page-header text-center">Danh mục sản phẩm</h1>
         </div>
     </div>
     <nav class="navbar">
+        <a class="btn btn-success" href="{{route('categories.create')}}"><i class="fas fa-file-upload"></i>Thêm</a>
         <form class="form-inline" action="#" method="GET" style="display:flex">
             <input class="form-control mr-sm-2" type="search" placeholder="Tìm danh mục..." name="search"
                 style="height:33px">
@@ -19,43 +20,8 @@
     <div class="alert alert-success"> <i class="fas fa-check-square"></i> {{session::get('success')}}</div>
     @endif
     <div class="row">
-        <div class="col-xs-12 col-md-3 col-lg-3">
-            <div class="panel panel-primary">
-                <div class="bg-primary">
-                    Thêm danh mục 
-                </div>
-                <div class="panel-body">
-                    <div class="form-group">
-                        <form method="POST" action="">
-                            @csrf
-                            <label>Tên danh mục:</label>
-                            <input type="text" name="name" class="form-control" placeholder="Tên danh mục..."> <br>
-                            <div class="error-message">
-                                @if ($errors->any())
-                                <p style="color:red">{{ $errors->first('name') }}</p>
-                                @endif
-                            </div>
-                            <label>Banner</label>
-                            <input type="text" name="banner" class="form-control" placeholder="Banner..."> <br>
-                            <div class="error-message">
-                                @if ($errors->any())
-                                <p style="color:red">{{ $errors->first('banner') }}</p>
-                                @endif
-                            </div>
-                            <label>Danh mục cha</label>
-                            <input type="text" name="parent_id" class="form-control" placeholder="Parent_id..."> <br>
-                            <div class="error-message">
-                                @if ($errors->any())
-                                <p style="color:red">{{ $errors->first('parent_id') }}</p>
-                                @endif
-                            </div>
-                            <button type="submit" class="btn btn-success"><i class="fas fa-file-upload"></i>Thêm</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-9 col-lg-9">
+
+        <div class="col-lg-12">
             <div class="panel panel-primary">
                 <div class="panel-body">
                     <div class="bootstrap-table">
@@ -75,19 +41,19 @@
                                     <td>{{ $category->banner }}</td>
                                     <td>{{ $category->parent_id }}</td>
                                     <td>
-                                        <a href="{{route('categories.edit',[$category->id])}}" class="btn btn-warning"><i
-                                                class="far fa-edit"></i></a>
+                                        <a href="{{route('categories.edit',$category->id)}}"
+                                            class="btn btn-warning"><i class="far fa-edit"></i></a>
                                         <form action="{{route('categories.destroy',$category->id)}}" method="post"
                                             style="display:inline">
                                             @csrf
                                             @method('delete')
                                             <!-- Button trigger modal -->
                                             <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                data-target="#ct-<?= $category->id ;?>">
+                                                data-target="#pr-<?php echo $category->id; ?>">
                                                 <i class="far fa-trash-alt"></i>
                                             </button>
                                             <!-- Modal -->
-                                            <div class="modal fade" id="ct-<?= $category->id ;?>" tabindex="-1" role="dialog"
+                                            <div class="modal fade" id="pr-<?php echo $category->id; ?>" tabindex="-1" role="dialog"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">

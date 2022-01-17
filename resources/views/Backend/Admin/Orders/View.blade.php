@@ -61,54 +61,31 @@
                 <div class="col-lg-12">
                     <table class="table">
                         <thead>
-                        <tr class="text-center text-danger">
-                            <td>Đơn Hàng</td>
-                            <td>Sản Phẩm</td>
-                            <td>Hình Ảnh</td>
-                            <td>Số Lượng</td>
-                            <td>Tổng Tiền</td>
-                        </tr>
+                            <tr class="text-center text-danger">
+                                <td>Đơn Hàng</td>
+                                <td>Sản Phẩm</td>
+                                <td>Hình Ảnh</td>
+                                <td>Số Lượng</td>
+                                <td>Tổng Tiền</td>
+                            </tr>
                         </thead>
                         <tbody>
-                        @foreach ($order->orderitems as $order_item)
-                        <tr class="text-center">
-                            <td>{{$order_item->order_id }}</td>
-                            <td>{{$order_item->product->name}}</td>
-                            <td><img src="{{ asset('images/product-details/'.$order_item->product->image) }}" alt="" style="width: 150px"></td>
-                            <td>{{$order_item->product->quantity}}</td>
-                            <td>{{ number_format ($order_item->total) }}</td>
-                        </tr>
-                        @endforeach
+                            @foreach ($order->orderitems as $order_item)
+                            <tr class="text-center">
+                                <td>{{$order_item->order_id }}</td>
+                                <td>{{$order_item->product->name}}</td>
+                                <td><img src="{{ asset('images/product-details/'.$order_item->product->image) }}" alt=""
+                                        style="width: 150px"></td>
+                                <td>{{$order_item->product->quantity}}</td>
+                                <td>{{ number_format ($order_item->total) }}</td>
+                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <form action="{{route('orders.update',$order->id)}}" class="" method="post">
-                        @csrf
-                        @method('put')
-                        <div class="form-group">
-                            <label for=""> Trạng thái đơn hàng</label>
-                            <select name="status" id="" class="form-control">
-                                <option <?= ($order->status === 0) ? "selected" : ""; ?> value="0" class="">Chưa hoàn
-                                    thành</option>
-                                <option <?= ($order->status === 1) ? "selected" : ""; ?> value="1" class="">Hoàn thành
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary" type="submit"> Cập nhật</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
         </div>
     </div>
-</div>
-
-
 </div>
 
 @endsection

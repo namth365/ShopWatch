@@ -72,13 +72,12 @@
                 <div class="small-box bg-secondary">
                     <div class="inner">
                         <h3>{{ $sliders_count }}</h3>
-
                         <p>Slider</p>
                     </div>
                     <div class="icon">
                     <i class="fas fa-scroll"></i>
                     </div>
-                    <a href="{{route('users.index')}}" class="small-box-footer">Xem Chi Tiết <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="{{route('sliders.index')}}" class="small-box-footer">Xem Chi Tiết <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->

@@ -5,7 +5,7 @@
 <div class=" main">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header text-center">Đơn Hàng {{$orders->count()}}</h1>
+            <h1 class="page-header text-center">Đơn Hàng</h1>
         </div>
         <form class="form-inline" action="#" method="GET" style="display:flex">
             <input class="form-control mr-sm-2" type="search" placeholder="Tìm đơn hàng..." name="search"

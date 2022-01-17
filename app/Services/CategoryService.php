@@ -38,6 +38,8 @@ class CategoryService implements CategoryServiceInterface {
     public function destroy($id){
         return $this->CategoryRepository->destroy($id);
     }
-   
+    public function search($request){
+        return $this->CategoryRepository->search($request);
+    }
 
 }

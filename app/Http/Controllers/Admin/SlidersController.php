@@ -104,4 +104,9 @@ class SlidersController extends Controller
         Session::flash('success','Xóa thành công');
         return redirect()->route('sliders.index');
     }
+
+    public function search(Request $request) {
+        $sliders = $this->SliderService->search($request);
+        return view ('Backend.Admin.Sliders.Index',['sliders' =>$sliders]);
+    }
 }
