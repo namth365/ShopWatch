@@ -83,9 +83,13 @@
                         <li>Phí vận chuyển <span>Free</span></li>
                         <li>Tổng tiền phải thanh toán <span>{{ number_format($total->total)."đ" }}</span></li>
                     </ul>
-                    <button type="submit" class="btn btn-default update">Cập nhật</button>
+                    <button type="submit" class="btn btn-warning update">Cập nhật</button>
                     </form>
-                    <a class="btn btn-default check_out" href="{{ route('check-out') }}">Thanh toán</a>
+                    @if(count($cart_code) === 0)
+                    <a class="btn btn-warning check_out" onclick="return confirm('Bạn chưa chọn sản phẩm nào')">Thanh toán</a>
+                    @else
+                    <a class="btn btn-warning check_out" href="{{ route('check-out') }}">Thanh toán</a>
+                    @endif
                 </div>
             </div>
         </div>

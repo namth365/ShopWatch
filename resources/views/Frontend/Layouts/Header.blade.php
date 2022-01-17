@@ -30,10 +30,8 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="logo pull-left">
-                    <a href="/" style="color:black"><img src="{{ asset('images/home/logo-shop.jpg')}}" width="100px"
-                            alt="" /><b style="color:red;font-size:40px">WATCH</b> - SHOP <p
-                            style="margin-left: 113px;margin-top: -36px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:blue;">
-                            Khẳng định đẳng cấp</p></a>
+                    <a href="/" style="color:black"><img src="{{ asset('images/home/logo-shop.jpg')}}" width="100px" alt="" /><b style="color:orange;font-size:40px">WATCH</b> - SHOP <p style="margin-left: 113px;margin-top: -36px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                            Khẳng định đẳng cấp phái mạnh</p></a>
                 </div>
                 <div class="btn-group pull-right">
                 </div>
@@ -41,10 +39,11 @@
             <div class="col-sm-8">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
+                        <li><a href="/"><i class="fas fa-home"></i>Trang chủ</a></li>
+
                         <li><a href=""><i class="fas fa-user"></i>Tài khoản</a></li>
                         <li>
-                            <a class="display" href="{{route('cart')}}"><i class="fa fa-shopping-cart"></i> <small
-                                    style="color:red">({{ $count }})</small> Giỏ hàng</a>
+                            <a class="display" href="{{route('cart')}}"><i class="fa fa-shopping-cart"></i> <small style="color:red">({{ $count }})</small> Giỏ hàng</a>
                         </li>
                     </ul>
                 </div>
@@ -74,24 +73,21 @@
                 </div>
             </div>
             <div class="col-sm-3">
-                <div>
-                    <form action="{{ route('search-price') }}" style="display:flex;">
 
-                        <select name= "price_filter">
-                            <option>-Giá-</option>
-                            <option value="500000">500,000đ - 2,500,000đ</option>
-                            <option value="2500000">2,500,000đ - 5,000,000đ</option>
-                            <option value="5000000"> >5000000đ</option>
-                        </select>
-                        <button  class="btn btn-warning" style="margin-left: 5px;">Lọc</button>
-                    </form>
+                <div class="dropdown">
+                    <a class="btn btn-warning" data-toggle="dropdown" >Lọc giá <span class="caret" ></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ route('search-price','ASC') }}">Thấp đến cao</a></li>
+                        <li><a href="{{ route('search-price','DESC') }}">Cao đến thấp</a></li>
+                    </ul>
                 </div>
+
             </div>
             <div class="col-sm-3">
                 <div class="search_box pull-right">
                     <form action="" method="get">
-                    <input type="text" placeholder="Tìm kiếm" name="search"/>
-                    <button type="submit" class="btn btn-warning"><i class="fas fa-search"></i></button>
+                        <input type="text" placeholder="Tìm kiếm" name="search" />
+                        <button type="submit" class="btn btn-warning"><i class="fas fa-search"></i></button>
                     </form>
                 </div>
             </div>

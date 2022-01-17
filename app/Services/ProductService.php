@@ -42,9 +42,9 @@ class ProductService implements ProductServiceInterface
     {
         return $this->ProductRepository->category($id, $request);
     }
-    public function filter_search($orderBy, $max)
+    public function filter_search($orderBy)
     {
-        return  $this->ProductRepository->filter_search($orderBy, $max);
+        return  $this->ProductRepository->filter_search($orderBy);
     }
     public function store($request)
     {
