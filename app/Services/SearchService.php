@@ -32,5 +32,11 @@ class SearchService implements SearchServiceInterface
     public function search($request){
         return $this->SearchService->search($request);
     }
+    public function store($request){
+
+    }
+    public function edit($request, $id){
+        
+    }
    
 }

@@ -24,7 +24,9 @@
 					<div class="bootstrap-table">
 						<div class="table-responsive">
 							<a href="{{ route('users.create') }}" class="btn btn-success"><i class="fas fa-user-plus"></i> Thêm nhân viên</a>
-							
+							@if (Session::has('success'))
+							<div class="alert alert-success"> <i class="fas fa-check-square"></i> {{session::get('success')}}</div>
+							@endif
 							<table class="table table-bordered" style="margin-top:20px;">
 								<thead>
 									<tr class="bg-primary">
@@ -32,30 +34,30 @@
 										<th>Tên nhân viên</th>
 										<th>Chức vụ</th>
 										<th>Email</th>
-										<th>Số điện thoại</th>	
+										<th>Số điện thoại</th>
 										<th>Tùy chọn</th>
 									</tr>
 								</thead>
 								<tbody>
-								@foreach($users as $key => $user)
+									@foreach($users as $key => $user)
 									<tr>
 										<td>{{ $key + 1 }}</td>
 										<td>{{ $user->name }}</td>
 										<td>{{ $user->position }}</td>
 										<td> {{ $user->email }}</td>
-										<td> {{ $user->phone }}</td>		
+										<td> {{ $user->phone }}</td>
 										<td>
 											<a href="{{route('users.edit',$user->id)}}" class="btn btn-warning"><i class="far fa-edit"></i></a>
 											<form action="{{ route('users.destroy',$user->id) }}" method="post" style="display:inline">
 												@csrf
 												@method('DELETE')
 												<!-- Button trigger modal -->
-												<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#urs-<?php echo $user->id ;?>">
-												<i class="far fa-trash-alt"></i> 
-											</button>
+												<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#urs-<?php echo $user->id; ?>">
+													<i class="far fa-trash-alt"></i>
+												</button>
 
 												<!-- Modal -->
-												<div class="modal fade" id="urs-<?php echo $user->id ;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal fade" id="urs-<?php echo $user->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 													<div class="modal-dialog" role="document">
 														<div class="modal-content">
 															<div class="modal-header">
@@ -77,13 +79,13 @@
 											</form>
 										</td>
 									</tr>
-							@endforeach
+									@endforeach
 								</tbody>
 							</table>
-						
+
 						</div>
 					</div>
-				
+
 				</div>
 			</div>
 		</div>
