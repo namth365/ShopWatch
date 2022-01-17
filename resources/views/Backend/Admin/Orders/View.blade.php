@@ -105,7 +105,6 @@ $statuses = [
     </div>
 </div>
 
-
 </div>
 
 @endsection

@@ -56,7 +56,7 @@ class CategoriesController extends Controller
 
         // $categories =$this->CategoryService->store($request);
 
-        $addCategpries =$this->CategoryService->store($request);
+        $addCategpries = $this->CategoryService->store($request);
         return redirect()->route('categories.index')->with('status', 'Thêm danh mục thành công !');
     }
 
