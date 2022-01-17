@@ -12,9 +12,9 @@
                     <div class="carousel-inner">
                     @foreach($sliders as $key=> $slider)
                         <div class="item <?= ($key == 0) ? 'active' : ''; ?>">
-                       <a href="{{route('category',$slider->id)}}"> <img src="{{asset('images/home/'.$slider->image)}}" class="girl img-responsive" alt="" />{{ $slider->name }}</a>
+                       <a href="{{ route('category',$slider->id) }}"> <img src="{{asset('images/home/'.$slider->image)}}" class="girl img-responsive" alt="" />{{ $slider->name }}</a>
                         </div>
-                        @endforeach
+                    @endforeach
                     </div>
                 </div>
                 <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">

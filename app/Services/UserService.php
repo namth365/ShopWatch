@@ -7,28 +7,36 @@ use App\Services\Interfaces\UserServiceInterface;
 
 class UserService implements UserServiceInterface
 {
-    protected $UserInterface;
-    public function __construct(UserInterface $UserInterface)
+    protected $UserRepository;
+    public function __construct(UserInterface $UserRepository)
     {
-        $this->UserInterface = $UserInterface;
+        $this->UserRepository = $UserRepository;
     }
     public function getAll($request)
     {
-    
-        $sliders = $this->UserInterface->getAll($request);
-        return $sliders;
+        $users = $this->UserRepository->getAll($request);
+        return $users;
     }
     public function findById($id)
     {
+        return $this->UserRepository->findById($id);
     }
     public function create($request)
     {
-        return $this->UserInterface->create($request);
+        return $this->UserRepository->create($request);
     }
     public function update($request, $id)
     {
+
     }
     public function destroy($id)
     {
+        return $this->UserRepository->destroy($id);
+    }
+    public function store($request){
+
+    }
+    public function edit($request, $id){
+        
     }
 }

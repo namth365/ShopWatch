@@ -15,7 +15,7 @@ class OrderService implements OrderServiceInterface {
         return $this->OrderRepository->getAll($request);
     }
     public function findById($id){
-        
+        return $this->OrderRepository->findById($id);
     }
     public function create($request){
         return $this->OrderRepository->create($request);

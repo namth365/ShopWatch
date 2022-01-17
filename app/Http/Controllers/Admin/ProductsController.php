@@ -3,10 +3,24 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
+use App\Models\Category;
+use App\Models\Product;
+use App\Services\Interfaces\CategoryServiceInterface;
+use App\Services\Interfaces\ProductServiceInterface;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProductsController extends Controller
 {
+    protected $ProductService;
+    protected $CategoryService;
+
+    public function __construct(ProductServiceInterface $ProductService, CategoryServiceInterface $CategoryService){
+      $this->ProductService = $ProductService;
+      $this->CategoryService = $CategoryService;
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +28,11 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        return view ('Backend.Admin.Products.Index');
+        $products = $this->ProductService->productPaginate('created_at','desc',5);
+        $params = [
+            'products'=>$products
+        ];
+        return view ('Backend.Admin.Products.Index',$params);
         
     }
 
@@ -23,9 +41,15 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        // echo __METHOD__;
+        // die();
+        $categories = $this->CategoryService->getAll($request);
+        $params = [
+            'categories'=>$categories
+        ];
+        return view ('Backend.Admin.Products.Add',$params);
     }
 
     /**
@@ -34,9 +58,11 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+      
+       $this->ProductService->store($request);
+       return redirect()->route('products.index')->with('success', 'Thêm sản phẩm' .$request->name. 'thành công');
     }
 
     /**
@@ -58,7 +84,13 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $products = Product::find($id);
+        $categories = Category::all();
+        $params = [
+            'products' => $products,
+            'categories' => $categories
+        ];
+        return view('Backend.Admin.Products.Edit', $params);
     }
 
     /**
@@ -68,9 +100,11 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
-        //
+        $this->ProductService->update($request, $id);
+        return redirect()->route('products.index');
+
     }
 
     /**
@@ -81,6 +115,7 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->ProductService->destroy($id);
+        return redirect()->route('products.index')->with('danger', 'Xóa sản phẩm thành công');
     }
 }

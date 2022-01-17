@@ -30,7 +30,10 @@
 </div>
 <div class="col-sm-9 padding-right">
     <div class="category-banner " style="margin-bottom:20px">
+
         <img src="{{$current_category->banner}}" alt="">
+   
+
     </div>
     <div class="features_items">
         <!--features_items-->
