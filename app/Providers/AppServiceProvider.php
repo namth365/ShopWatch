@@ -47,7 +47,6 @@ use App\Repositories\Interfaces\SearchInterface;
 use App\Services\OrderService;
 use App\Services\Interfaces\OrderServiceInterface;
 
-
 use App\Repositories\Eloquent\OrderRepository;
 use App\Repositories\Interfaces\OrderInterface;
 
@@ -57,6 +56,7 @@ use App\Services\Interfaces\UserServiceInterface;
 
 use App\Repositories\Eloquent\UserRepository;
 use App\Repositories\Interfaces\UserInterface;
+
 
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;

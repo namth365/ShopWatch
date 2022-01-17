@@ -1,12 +1,7 @@
 @extends('Backend.Index')
 @section('content')
-<?php
-$statuses = [
-    0 => "Chưa hoàn thành",
-    1 => "Hoàn thành"
-];
-?>
-<h1>Xem Chi Tiết Đơn Hàng</h1>
+
+<h1>Đơn hàng của {{ $order->name }} </h1>
 
 <div class="col-12">
     <div class="card">
@@ -18,39 +13,44 @@ $statuses = [
             @endif
 
             <div class="row">
-
                 <div class="col-lg-6">
                     <table class="table">
                         <tr>
-                            <td class="">Ngày đặt hàng</td>
-                            <td class="">{{ date('d/m/Y',strtotime($order->created_at))   }}</td>
+                            <td>Ngày đặt hàng:</td>
+                            <td>{{ date('d/m/Y',strtotime($order->created_at)) }}</td>
                         </tr>
                         <tr>
-                            <td class="">Người đặt hàng</td>
-                            <td class="">{{$order->name}} </td>
-
+                            <td>Người đặt hàng:</td>
+                            <td>{{ $order->name }} </td>
                         </tr>
                         <tr>
-                            <td class="">Số điện thoại người đặt hàng</td>
-                            <td class="">{{$order->phone}}</td>
-
+                            <td>Số điện thoại người đặt hàng:</td>
+                            <td>{{ $order->phone }}</td>
                         </tr>
                     </table>
                 </div>
                 <div class="col-lg-6">
                     <table class="table">
                         <tr>
-                            <td class="">Tổng giá trị đơn hàng</td>
-                            <td class="">{{ number_format ($order->total) }}</td>
+                            <td>Tổng giá trị đơn hàng:</td>
+                            <td>{{ number_format ($order->total) }}</td>
                         </tr>
                         <tr>
-                            <td class="">Địa Chỉ</td>
-                            <td class="">{{$order->address}} </td>
+                            <td>Địa Chỉ</td>
+                            <td>{{$order->address}} </td>
 
                         </tr>
                         <tr>
-                            <td class="">Trạng thái đơn hàng</td>
-                            <td class="">{{ $statuses[$order->status]}}</td>
+                            <td>Trạng thái đơn hàng:</td>
+                            <td>
+                                @if ($order->status == 0)
+                                Đang chờ
+                                @elseif ($order->status == 1)
+                                Đang vận chuyển
+                                @else
+                                Đã hoàn thành
+                                @endif
+                            </td>
 
                         </tr>
                     </table>
@@ -60,23 +60,26 @@ $statuses = [
             <div class="row">
                 <div class="col-lg-12">
                     <table class="table">
-                        <tr class="">
-                            <td class="">Đơn Hàng</td>
-                            <td class="">Sản Phẩm</td>
-                            <td class="">Số Lượng</td>
-                            <td class="">Hình Ảnh</td>
-                            <td class="">Tổng Tiền</td>
+                        <thead>
+                        <tr class="text-center text-danger">
+                            <td>Đơn Hàng</td>
+                            <td>Sản Phẩm</td>
+                            <td>Hình Ảnh</td>
+                            <td>Số Lượng</td>
+                            <td>Tổng Tiền</td>
                         </tr>
+                        </thead>
+                        <tbody>
                         @foreach ($order->orderitems as $order_item)
-                        <tr class="">
-                            <td class="">{{$order_item->order_id }}</td>
-                            <td class="">{{$order_item->product->name}}</td>
-                            <td class="">{{$order_item->product->quantity}}</td>
-                            <td class=""><img src="{{ asset('images/product-details/'.$order_item->product->image) }}"
-                                    alt="" style="width: 150px"></td>
-                            <td class="">{{ number_format ($order_item->total) }}</td>
+                        <tr class="text-center">
+                            <td>{{$order_item->order_id }}</td>
+                            <td>{{$order_item->product->name}}</td>
+                            <td><img src="{{ asset('images/product-details/'.$order_item->product->image) }}" alt="" style="width: 150px"></td>
+                            <td>{{$order_item->product->quantity}}</td>
+                            <td>{{ number_format ($order_item->total) }}</td>
                         </tr>
                         @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -104,6 +107,7 @@ $statuses = [
         </div>
     </div>
 </div>
+
 
 </div>
 

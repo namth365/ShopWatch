@@ -24,6 +24,7 @@
 					<div class="bootstrap-table">
 						<div class="table-responsive">
 							<a href="{{ route('users.create') }}" class="btn btn-success"><i class="fas fa-user-plus"></i> Thêm nhân viên</a>
+							
 							<table class="table table-bordered" style="margin-top:20px;">
 								<thead>
 									<tr class="bg-primary">
@@ -36,28 +37,6 @@
 									</tr>
 								</thead>
 								<tbody>
-<<<<<<< HEAD
-								
-									<tr>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										
-										<td>
-											<a href="" class="btn btn-warning"><i class="far fa-edit"></i></a>
-											<form action="" method="post" style="display:inline">
-												@csrf
-												@method('DELETE')
-												<!-- Button trigger modal -->
-												<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#pr">
-												<i class="far fa-trash-alt"></i>
-												</button>
-
-												<!-- Modal -->
-												<div class="modal fade" id="pr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-=======
 								@foreach($users as $key => $user)
 									<tr>
 										<td>{{ $key + 1 }}</td>
@@ -77,7 +56,6 @@
 
 												<!-- Modal -->
 												<div class="modal fade" id="urs-<?php echo $user->id ;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
->>>>>>> 48e345b03e531127f37fd6f2e74c92158c3e46b7
 													<div class="modal-dialog" role="document">
 														<div class="modal-content">
 															<div class="modal-header">
@@ -87,11 +65,7 @@
 																</button>
 															</div>
 															<div class="modal-body">
-<<<<<<< HEAD
-																Bạn có muốn xóa ?
-=======
 																Bạn có muốn xóa {{ $user->name }} ?
->>>>>>> 48e345b03e531127f37fd6f2e74c92158c3e46b7
 															</div>
 															<div class="modal-footer">
 																<button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
@@ -103,11 +77,7 @@
 											</form>
 										</td>
 									</tr>
-<<<<<<< HEAD
-							
-=======
 							@endforeach
->>>>>>> 48e345b03e531127f37fd6f2e74c92158c3e46b7
 								</tbody>
 							</table>
 						

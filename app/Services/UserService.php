@@ -27,12 +27,14 @@ class UserService implements UserServiceInterface
     }
     public function update($request, $id)
     {
+        return $this->UserRepository->update($request, $id);
     }
     public function destroy($id)
     {
         return $this->UserRepository->destroy($id);
     }
     public function store($request){
+        return $this->UserRepository->store($request);
     }
     public function edit($request, $id){
         

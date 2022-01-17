@@ -11,7 +11,6 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\OrdersController;
-use App\Http\Controllers\Admin\SlidersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,7 +50,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('users', UsersController::class);
     Route::resource('orders', OrdersController::class);
     Route::resource('orderitem', OrderitemsController::class);
-    Route::resource('sliders', SlidersController::class);
+    Route::resource('slider', SlidersController::class);
 });
 //Front-end
 Route::get('/', [HomeController::class, 'index']);

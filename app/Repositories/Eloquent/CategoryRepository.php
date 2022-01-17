@@ -12,6 +12,7 @@ class CategoryRepository extends EloquentRepository implements CategoryInterface
         return Category::class;
     }
     public function getAll($request){
+     
         $categories = $this->model->paginate(6);
         return $categories;
     }
@@ -40,8 +41,6 @@ class CategoryRepository extends EloquentRepository implements CategoryInterface
         $category->parent_id  = $request->parent_id;
 
         $category->save();
-        return redirect()->route('categories.index')->with('status','Cập nhật thể loại thành công');
-
     }
     public function destroy($id)
     {

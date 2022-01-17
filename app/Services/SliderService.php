@@ -5,40 +5,35 @@ namespace App\Services;
 use App\Repositories\Interfaces\SliderInterface;
 use App\Services\Interfaces\SliderServiceInterface;
 
-class SliderService implements SliderServiceInterface {
-
-    protected $SliderRepository;
-    public function __construct(SliderInterface $SliderRepository)
+class SliderService implements SliderServiceInterface
+{
+    protected $SliderService;
+    public function __construct(SliderInterface $SliderService)
     {
-        $this->SliderRepository = $SliderRepository;
+        $this->SliderService = $SliderService;
     }
     public function getAll($request)
     {
-        $sliders = $this->SliderRepository->getAll($request);
+    
+        $sliders = $this->SliderService->getAll($request);
         return $sliders;
     }
     public function findById($id)
     {
-        return $this->SliderRepository->findById($id);
     }
     public function create($request)
     {
-        return $this->SliderRepository->create($request);
+    }
+    public function update($request, $id)
+    {
+    }
+    public function destroy($id)
+    {
+    }
+    public function edit($request, $id){
 
     }
     public function store($request){
-        return $this->SliderRepository->store($request);
-
-    }
-    public function edit($request,$id){
-        return $this->SliderRepository->edit($request,$id);
-
-    }
-    public function update($request,$id){
-        return $this->SliderRepository->update($request,$id);
-
-    }
-    public function destroy($id){
-        return $this->SliderRepository->destroy($id);
+        
     }
 }

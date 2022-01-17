@@ -34,5 +34,11 @@ class CartService implements CartServiceInterface {
     public function product_total( $code ){
         return $this->CartRepository->product_total($code);
     }
+    public function edit($request, $id){
+
+    }
+    public function store($request){
+        
+    }
 
 }

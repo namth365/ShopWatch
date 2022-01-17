@@ -31,7 +31,7 @@
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-        <li class="nav-item"> 
+        <li class="nav-item">
           <a href="{{route('dashboard')}}" class="nav-link">
           <i class="fas fa-bars"></i>
             <p>
