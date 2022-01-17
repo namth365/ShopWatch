@@ -1,6 +1,11 @@
 @extends('Backend.Index')
 @section('content')
-
+<?php
+$statuses = [
+    0 => "Chưa hoàn thành",
+    1 => "Hoàn thành"
+];
+?>
 <h1>Đơn hàng của {{ $order->name }} </h1>
 
 <div class="col-12">
@@ -42,16 +47,7 @@
                         </tr>
                         <tr>
                             <td>Trạng thái đơn hàng:</td>
-                            <td>
-                                @if ($order->status == 0)
-                                Đang chờ
-                                @elseif ($order->status == 1)
-                                Đang vận chuyển
-                                @else
-                                Đã hoàn thành
-                                @endif
-                            </td>
-
+                            <td>{{ $statuses[$order->status]}}</td>
                         </tr>
                     </table>
                 </div>

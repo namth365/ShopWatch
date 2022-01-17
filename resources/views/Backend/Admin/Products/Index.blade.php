@@ -24,7 +24,9 @@
 					<div class="bootstrap-table">
 						<div class="table-responsive">
 							<a href="{{ route('products.create') }}" class="btn btn-success"><i class="fas fa-folder-plus"></i>Thêm sản phẩm</a>
-							
+							@if (Session::has('success'))
+							<div class="alert alert-success"> <i class="fas fa-check-square"></i> {{session::get('success')}}</div>
+							@endif
 							<table class="table table-bordered" style="margin-top:20px;">
 								<thead>
 									<tr class="bg-primary">
@@ -39,7 +41,7 @@
 									</tr>
 								</thead>
 								<tbody>
-								@foreach($products as $key=> $product)
+									@foreach($products as $key=> $product)
 									<tr>
 										<td>{{ $key + 1 }}</td>
 										<td>{{ $product->name }}</td>
@@ -56,12 +58,12 @@
 												@csrf
 												@method('DELETE')
 												<!-- Button trigger modal -->
-												<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#pr-<?php echo $product->id ;?>" >
-												<i class="far fa-trash-alt"></i>
+												<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#pr-<?php echo $product->id; ?>">
+													<i class="far fa-trash-alt"></i>
 												</button>
 
 												<!-- Modal -->
-												<div class="modal fade" id="pr-<?php echo $product->id ;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal fade" id="pr-<?php echo $product->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 													<div class="modal-dialog" role="document">
 														<div class="modal-content">
 															<div class="modal-header">
@@ -71,7 +73,7 @@
 																</button>
 															</div>
 															<div class="modal-body">
-																Bạn có muốn xóa {{ $product->name }}  ?
+																Bạn có muốn xóa {{ $product->name }} ?
 															</div>
 															<div class="modal-footer">
 																<button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
@@ -83,7 +85,7 @@
 											</form>
 										</td>
 									</tr>
-								@endforeach
+									@endforeach
 								</tbody>
 							</table>
 							<div class=" d-flex justify-content-end">

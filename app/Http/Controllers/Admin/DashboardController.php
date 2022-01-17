@@ -32,8 +32,7 @@ class DashboardController extends Controller
 
     }
     public function index(){
-            // echo __METHOD__;
-            // die();
+          
         $categories_count =  Category::count();
         $products_count   =  Product::count();
         $orders_count     =  Order::count();
