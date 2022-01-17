@@ -18,7 +18,7 @@
             </div>
             <div class="panel-body">
                 <div class="form-group">
-                    <form method="POST" action="{{route('sliders.store')}}">
+                    <form method="POST" action="{{route('sliders.store')}}" enctype="multipart/form-data">
                         @csrf
                         <label>Tên danh mục:</label>
                         <input type="text" name="name" class="form-control" value="{{old('name')}}"> <br>

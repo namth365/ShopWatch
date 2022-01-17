@@ -39,9 +39,11 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-      
+        // $categories = $this->CategoryService->getAll();
+        $categories = [];
+        return view ('Backend.Admin.Categories.Add')->with(compact('categories'));
+        
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -50,8 +52,11 @@ class CategoriesController extends Controller
      */
     public function store(CategoryRequest $request)
     {
-        $this->CategoryService->store($request);
-        return redirect()->route('categories.index')->with('success', 'Thêm danh mục'.$request->name.' thành công !');
+
+        // $categories =$this->CategoryService->store($request);
+
+        $addCategpries = $this->CategoryService->store($request);
+        return redirect()->route('categories.index')->with('status', 'Thêm danh mục thành công !');
     }
 
     /**
@@ -72,13 +77,15 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::find($id);
+
+        $category = $this->CategoryService->findById($id);
         $params = [
             'category' => $category
         ];
-        return view('Backend.Admin.Categories.Index', $params);
-    }
+        return view('Backend.Admin.Categories.Edit', $params);
+        
 
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -88,8 +95,13 @@ class CategoriesController extends Controller
      */
     public function update(CategoryRequest $request, $id)
     {
-        $this->CategoryService->update($request, $id);
-        return redirect()->route('categories.index')->with('warning','Cập nhật danh mục'.$request->name.'thành công');
+        // dd($request->all());
+        $category = $this->CategoryService->update($request, $id);
+    
+        return redirect()->route('categories.index',[
+            'category' => $category
+        ])->with('status', 'Cập nhật danh mục sản phẩm thành công!');
+
     }
 
     /**
@@ -100,8 +112,19 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
+    
+        $delete_category = $this->CategoryService->destroy($id);
+        $delete_category->delete();
+        Session::flash('success', 'Xóa thành công');
+        return redirect()->route('categories.index');
+    
 
-        $this->CategoryService->destroy($id);
-        return redirect()->route('categories.index')->with('danger','Xóa sản phẩm thành công');
+    }
+
+    public function search($request) {
+        $categories = $this->CategoryService->search($request);
+        return redirect()->route('categories.index',[
+            'categories' => $categories
+        ]);
     }
 }

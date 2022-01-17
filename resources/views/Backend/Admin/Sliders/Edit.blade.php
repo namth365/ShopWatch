@@ -18,7 +18,7 @@
             </div>
             <div class="panel-body">
                 <div class="form-group">
-                    <form method="POST" action="{{route('sliders.update',$slider->id)}}">
+                    <form method="POST" action="{{route('sliders.update',$slider->id)}}" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
                         <label>Tên danh mục:</label>
@@ -29,7 +29,7 @@
                             @endif
                         </div>
                         <label>Banner</label>
-                        <input type="text" name="image" class="form-control" value="{{$slider->image}}"> <br>
+                        <input type="file" name="image" class="form-control" value="{{$slider->image}}"> <br>
                         <div class="error-message">
                             @if ($errors->any())
                             <p style="color:red">{{ $errors->first('image') }}</p>

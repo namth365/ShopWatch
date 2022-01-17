@@ -48,4 +48,17 @@ class CategoryRepository extends EloquentRepository implements CategoryInterface
         $category->delete();
     return $category;
     }
+
+    public function search($request) {
+        $categories      = Category::all();
+        $search = $request->search;
+        if ($search) {
+            $search = str_replace(' ','%', $search);
+            $categories = Category::where('name', 'like','%'.$search.'%')->get();
+        } else {
+            $categories = Category::all();
+        }
+
+        return $categories;
+    }
 }

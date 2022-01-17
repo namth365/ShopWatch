@@ -25,7 +25,7 @@ class SliderRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:sliders,id,'.$this->id.'|max:255',
-            'image' => 'required|max:255',
+            'image' => 'required'
         ];
     }
     public function messages()

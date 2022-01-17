@@ -37,7 +37,9 @@
                                 @foreach($sliders as $slider)
                                 <tr>
                                     <td>{{ $slider->name }}</td>
-                                    <td>{{ $slider->image }}</td>
+                                    <td><img src="{{ asset('images/sliders/'.$slider->image) }}" alt=""
+                                    style="width: 150px">
+                            </td>
                                     <td>
                                         <a href="{{route('sliders.edit',$slider->id)}}"
                                             class="btn btn-warning"><i class="far fa-edit"></i></a>
@@ -73,16 +75,13 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- <button type="submit" onclick="return confirm('Bạn có muốn xóa danh mục {{ $category->name }} ?')" class="btn btn-danger"><i class="far fa-trash-alt"></i></button> -->
                                         </form>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                        <div class=" d-flex justify-content-end">
-                            {{ $sliders->links() }}
-                        </div>
+                       
                     </div>
                     <div class="clearfix"></div>
                 </div>
