@@ -21,6 +21,7 @@ class OrderRepository extends EloquentRepository implements OrderInterface {
         $order->address =   $request->address;
         $order->gender  =   $request->gender;
         $order->total   =   $request->total;
+        $order->status = 0;
         $order->save();
        return $order;
     }

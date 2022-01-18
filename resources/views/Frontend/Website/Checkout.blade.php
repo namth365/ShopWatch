@@ -124,7 +124,7 @@
                 <label><input type="checkbox">Thanh Toán Khi Nhận Hàng</label>
             </span>
             <div class="success">
-                <button  class="btn btn-default get" >Xác Nhận</button>
+                <button  class="btn btn-warning get" >Xác Nhận</button>
             </div>
         </div>
         </form>
