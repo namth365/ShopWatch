@@ -52,10 +52,12 @@ class ProductRepository extends EloquentRepository implements ProductInterface
     {
       
         $data = $request->only('name', 'price', 'category_id', 'status','description','supplier','quantity');
+        // dd($request->hasFile('image'));
         if ($request->hasFile('image')) {
+            
             $get_image          = $request->image;
             //tạo file upload trong public để chạy ảnh
-            $path               = 'images/product-details';
+            $path               = 'images/product-details';        
             $get_name_image     = $get_image->getClientOriginalName(); //abc.jpg 
             //explode "." [abc,jpg]
             $name_image         = current(explode('.', $get_name_image)); //trả về phần tử thứ 1 của mảng
@@ -64,8 +66,9 @@ class ProductRepository extends EloquentRepository implements ProductInterface
             //abc nối số ngẫu nhiên từ 0-99, nối "." ->đuôi file jpg
             $get_image->move($path, $new_image); //chuyển file ảnh tới thư mục
             $data['image']   = $new_image;
+            // dd($data['image']);
         }
-        // dd($data);
+       
          Product::create($data);
      
         return redirect()->route('products.index')->with('success', 'Thêm sản phẩm'.$request->name. 'thành công');

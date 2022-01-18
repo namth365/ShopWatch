@@ -46,16 +46,17 @@ class OrderController extends Controller
         } else {
             $count = count($cart_code);
         }
-        $sliders            = $this->SliderService->getAll($request);
+        $sliders   = $this->SliderService->getAll($request);
         return view('Frontend.Website.Checkout', compact('cart_code', 'count', 'sliders'));
     }
     public function success($order_id)
     {
+        
+        $order = $this->OrderRepository->findById($order_id);
+        $order_details = OrderItems::where('order_id', $order_id)->get();
+        // dd($order_details);
 
-        $order = Order::find($order_id);
-        $order_detail = OrderItems::where('order_id', $order_id)->get();
-
-        return view('Frontend.Website.Success', compact('order', 'order_detail'));
+        return view('Frontend.Website.Success', compact('order', 'order_details'));
     }
     public function postRegister(FormExampleRequest $request)
     {
