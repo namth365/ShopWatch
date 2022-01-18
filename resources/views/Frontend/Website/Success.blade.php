@@ -119,7 +119,7 @@
                 <div class="col-lg-12">
                     <table class="table table-striped">
                         <thead>
-                            <tr style="background:rgba(255, 102, 0, 1)">
+                            <tr style="background:rgba(255, 102, 0, 1);color:white">
                                 <td>Sản phẩm</td>
                                
                                 <td>Hình Ảnh</td>
@@ -139,7 +139,7 @@
                                     <a href=""><img src="{{asset('images/product-details/'. $order_detail->product->image)}}" width="100px" height="100px" alt=""></a>
                                 </td>
                                 <td>
-                                    {{$order_detail->product->price}}
+                                    {{number_format($order_detail->product->price)."đ"}}
                                 </td>
                                 <td>
                                     {{$order_detail->quantity}}

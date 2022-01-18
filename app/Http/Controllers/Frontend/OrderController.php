@@ -52,7 +52,7 @@ class OrderController extends Controller
     public function success($order_id)
     {
         
-        $order = $this->OrderRepository->findById($order_id);
+        $order = Order::find($order_id);
         $order_details = OrderItems::where('order_id', $order_id)->get();
         // dd($order_details);
 
