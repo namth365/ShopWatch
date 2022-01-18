@@ -5,7 +5,7 @@
 <div class="main">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header text-center">Thêm slider</h1>
+            <h1 class="page-header text-center">Cập nhật slider</h1>
         </div>
     </div>
     @if (Session::has('success'))
@@ -20,15 +20,17 @@
                         <form method="POST" action="{{route('sliders.update',$slider->id)}}" enctype="multipart/form-data">
                             @method('PUT')
                             @csrf
-                            <label>Tên danh mục:</label>
+                            <label>Tên Slider:</label>
                             <input type="text" name="name" class="form-control" value="{{$slider->name}}"> <br>
                             <div class="error-message">
                                 @if ($errors->any())
                                 <p style="color:red">{{ $errors->first('name') }}</p>
                                 @endif
                             </div>
-                            <label>Banner</label>
+                            <label>Hình Ảnh</label>
                             <input type="file" name="image" class="form-control" value="{{$slider->image}}"> <br>
+                            <td><img src="{{ asset('images/sliders/'.$slider->image) }}" alt=""
+                                    style="width: 150px">
                             <div class="error-message">
                                 @if ($errors->any())
                                 <p style="color:red">{{ $errors->first('image') }}</p>

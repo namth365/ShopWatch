@@ -64,10 +64,9 @@ class OrderController extends Controller
         $code           = (empty(session('cart_code'))) ? "" : session('cart_code');
         $total          = $this->CartService->product_total($code);
         $request->total = $total->total;
-
-        $orderCurrent   = $this->checkCustomerExist($request->phone, $request->email);
-
-        if ($orderCurrent === 0) {
+        $orderCurrent   = $this->checkCustomerExist($request->phone,$request->email);
+        
+        if($orderCurrent === 0){
             // thêm vô cơ sở dữ liệu 
             $addOrders =  $this->OrderService->create($request);
             // lấy id = khi vừa Insert xog

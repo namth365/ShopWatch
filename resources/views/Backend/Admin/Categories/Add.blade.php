@@ -42,6 +42,7 @@
                                 <p style="color:red">{{ $errors->first('parent_id') }}</p>
                                 @endif
                             </div>
+
                             <button type="submit" class="btn btn-success"><i class="fas fa-file-upload"></i>Thêm</button>
                             <a href="{{ route('categories.index') }}" class="btn btn-danger">Hủy</a>
 
