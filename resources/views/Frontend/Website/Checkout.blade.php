@@ -107,11 +107,11 @@
                                             <input type="email" name="email" value="{{old('email')}}" class="form-control">
                                             <span style="color:red;">@error("email"){{ $message }} @enderror</span>
                                         </div>
-                                        <div>
+                                        <!-- <div>
                                             <label> Mật khẩu <span>*</span></label>
                                             <input type="password" name="password" value="{{old('password')}}" class="form-control">
                                             <span style="color:red;">@error("password"){{ $message }} @enderror</span>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 

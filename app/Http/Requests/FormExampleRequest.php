@@ -29,7 +29,8 @@ class FormExampleRequest extends FormRequest
                   'phone' => 'required|unique:users|max:255',
                   'address' => 'required|max:255',
                   'gender' => 'required|max:255',
-                  'password' => 'required|max:255',
+                  'total' => 'required|max:255',
+                  'status' => 'required|max:255',
             ];
     }
     public function messages()
@@ -42,7 +43,7 @@ class FormExampleRequest extends FormRequest
             'phone.unique' => 'Số điện thoại đã tồn tại',
             'gender.required' => 'Vui lòng nhập giới tính',
             'address.required' => 'Vui lòng nhập địa chỉ',
-            'password.required' => 'Vui lòng nhập mật khẩu',
+            'total.required' => 'Vui lòng nhập mật khẩu',
         ];
     }
 }

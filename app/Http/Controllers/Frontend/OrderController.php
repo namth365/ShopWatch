@@ -56,7 +56,7 @@ class OrderController extends Controller
         $code           = (empty(session('cart_code'))) ? "" : session('cart_code'); 
         $total          = $this->CartService->product_total($code);
         $request->total = $total->total;
-    
+        $status = 0;
         $orderCurrent   = $this->checkCustomerExist($request->phone,$request->email);
         
         if($orderCurrent === 0){
