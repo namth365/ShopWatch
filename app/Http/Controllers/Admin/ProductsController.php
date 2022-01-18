@@ -102,7 +102,7 @@ class ProductsController extends Controller
     public function update(ProductRequest $request, $id)
     {
         $this->ProductService->update($request, $id);
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->with('success','Cập nhật'.$request->name.'thành công');
 
     }
 
@@ -115,6 +115,6 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         $this->ProductService->destroy($id);
-        return redirect()->route('products.index')->with('danger', 'Xóa sản phẩm thành công');
+        return redirect()->route('products.index')->with('success', 'Xóa sản phẩm thành công');
     }
 }

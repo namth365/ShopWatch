@@ -105,16 +105,61 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                 
+
                 </div>
-               
+
             </div>
         </div>
     </div>
     <!--/header-bottom-->
     </header>
     <div class="container">
+        <div class="table-responsive cart_info">
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr style="background:rgba(255, 102, 0, 1)">
+                                <td>Sản phẩm</td>
+                               
+                                <td>Hình Ảnh</td>
+                                <td>Giá</td>
+                                <td>Số Lượng</td>
+                                <td>Tổng Tiền</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($order_details as $order_detail)
+                            <tr>
+                                <td>
+                                    <h4><a href="{{route('product_detail',$order_detail->id)}}">{{$order_detail->product->name}}</a></h4>
+                                </td>
+                            
+                                <td>
+                                    <a href=""><img src="{{asset('images/product-details/'. $order_detail->product->image)}}" width="100px" height="100px" alt=""></a>
+                                </td>
+                                <td>
+                                    {{$order_detail->product->price}}
+                                </td>
+                                <td>
+                                    {{$order_detail->quantity}}
+                                </td>
+                                <td>
+                                    <p class="cart_total_price">{{number_format($order_detail->total)."đ"}}</p>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
         <div class="row">
+            <div class="col-md-3">
+
+            </div>
             <div class="col-md-6 mx-auto mt-5">
                 <div class="payment">
                     <div class="payment_header">
@@ -128,7 +173,6 @@
                 </div>
             </div>
             <style type="text/css">
-
                 .payment {
                     border: 1px solid #f2f2f2;
                     height: 280px;

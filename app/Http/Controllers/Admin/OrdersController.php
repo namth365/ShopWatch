@@ -83,11 +83,7 @@ protected $OrderService;
      */
     public function update(Request $request, $id)
     {
-        // $order = Order::find($id);
-        // $order->status = $request->status;
-        // $order->save();
-
-        // return redirect()->route('orders.show',$id)->with('status','Cập nhật thành công');
+        
     }
 
 
