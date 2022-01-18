@@ -25,13 +25,13 @@ class FormExampleRequest extends FormRequest
     {
         return [ 
                   'name' => 'required|max:255',
-                  'email' => 'required|unique:users|max:255',
-                  'phone' => 'required|unique:users|max:255',
+                  'email' => 'required|max:255',
+                  'phone' => 'required|max:255',
                   'address' => 'required|max:255',
                   'gender' => 'required|max:255',
-                  'total' => 'required|max:255',
-                  'status' => 'required|max:255',
-            ];
+                  //'total' => 'required|max:255',
+                  //'status' => 'required|max:255',            
+        ];
     }
     public function messages()
     {

@@ -85,6 +85,7 @@ class OrderController extends Controller
             $order_detail->product_id = $cart->product_id;
             $order_detail->total = $cart->total;
             $order_detail->quantity =  $cart->quantity;
+            $order_detail->status = 0;
             $order_detail->save();
         }
         $delete = Cart::where('code', $code)->delete();
