@@ -28,7 +28,6 @@ class CategoriesController extends Controller
     public function index(Request $request)
     {
         $categories = $this->CategoryService->getAll($request);
-        // $counts = DB::table('categories')->count('categories');
         return view('Backend.Admin.Categories.Index',compact('categories'));
     }
 
@@ -52,8 +51,6 @@ class CategoriesController extends Controller
      */
     public function store(CategoryRequest $request)
     {
-
-        // $categories =$this->CategoryService->store($request);
 
         $addCategpries = $this->CategoryService->store($request);
         return redirect()->route('categories.index')->with('status', 'Thêm danh mục thành công !');

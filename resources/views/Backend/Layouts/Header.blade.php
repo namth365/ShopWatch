@@ -38,6 +38,52 @@
            Tổng quát
             </p>
           </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/admin/categories" class="nav-link">
+          <i class="fab fa-apple"></i>
+            <p>
+            Quản lý danh mục 
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/admin/products" class="nav-link">
+          <i class="fab fa-product-hunt"></i>
+            <p>
+           Quản lý sản phẩm
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+        <a href="/admin/orders" class="nav-link">
+        <i class="fas fa-book"></i>
+            <p>
+           Quản lý đơn hàng
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+        <a href="/admin/sliders" class="nav-link">
+        <i class="fas fa-spider"></i>
+            <p>
+           Quản lý slider
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+        <a href="/admin/users" class="nav-link">
+        <i class="fas fa-users"></i>
+            <p>
+           Quản lý nhân viên
+            </p>
+          </a>
+        </li>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

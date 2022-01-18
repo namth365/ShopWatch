@@ -11,7 +11,7 @@
 						<h1>Thêm sản phẩm</h1>
 					</div>
 					<div class="panel-body">
-						<form method="post" action="{{route('products.store')}}">
+						<form method="post" action="{{route('products.store')}}" enctype="multipart/form-data">
 							<div class="row" style="margin-right:15px; margin-left:15px">
 								@csrf
 								<label>Tên sản phẩm:</label>

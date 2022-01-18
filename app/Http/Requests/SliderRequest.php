@@ -33,7 +33,7 @@ class SliderRequest extends FormRequest
         return  [
             'name.unique' => 'Slider đã tồn tại',
             'name.required' => 'Phải có slider',
-            'image.required' => 'Phải có tên thể loại',
+            'image.required' => 'Phải có ảnh slider',
         ];
     }
 }

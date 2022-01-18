@@ -97,11 +97,6 @@
                                             <input type="text" name="gender" value="{{old('gender')}}" class="form-control">
                                             <span style="color:red;">@error("gender"){{ $message }} @enderror</span>
                                         </div>
-                                        <!-- <div>
-                                            <label>Ngày Sinh <span>*</span></label>
-                                            <input type="date" name="birthday" value="{{old('birthday')}}">
-                                            <span style="color:red;">@error("birthday"){{ $message }} @enderror</span>
-                                        </div> -->
                                         <div>
                                             <label> Email <span>*</span></label>
                                             <input type="email" name="email" value="{{old('email')}}" class="form-control">
@@ -120,7 +115,7 @@
                     </div>
                 </div>
             </div>
-    
+    <br>
         <div class="payment-options">
             <span>
                 <label><input type="checkbox">Chuyển Khoản</label>
